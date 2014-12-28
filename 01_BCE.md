@@ -1,4 +1,4 @@
-# Berkeley Common Environment
+# Operating Systems & the Berkeley Common Environment
 
 > ## Learning objectives
 > 
