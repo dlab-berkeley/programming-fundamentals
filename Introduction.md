@@ -1,3 +1,6 @@
+# Programming Fundamentals
+
+### Motivation
 
 Here's the dream:
 
@@ -24,7 +27,7 @@ This sorry state of affairs persists for four reasons:
 *   *Autodidact Chauvinism.*
     Since there are no classrooms, scholars are pressured to teach themselves. But self-learning is time consuming and nearly impossible without a base level of knowledge.
 
-# Why Bother?
+### Why Bother?
 
 Why learn to program?
 
@@ -37,7 +40,7 @@ Why learn to program?
 *   *Better Science.*
     (Quality) programming can open the door to better transparency, reproducibility, and collaboration in the Social Sciences.
 
-# Learning Objectives
+### Learning Objectives
 
 > The basic learning objective of this course is to leave here with the 
 > knowledge and skills required to learn on your own, whether that's through 
