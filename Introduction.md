@@ -30,11 +30,11 @@ Why learn to program?
 
 *   *Practical Efficiency.*
     Even though it takes some time at first, learning how to program can save you an enormous amount of time doing basic tasks that you would otherwise do by hand, once you get the hang of it.
-*   *New Tools*
+*   *New Tools.*
     Some things are impossible, or nearly impossible to do by hand. Computers open the door for new tools and methods, but many require programming skills.
-*   *New Data*
+*   *New Data.*
     The Internet is a wealth of data, waiting to be analyzed! Whether its collecting Twitter data, working with the Congress API, or scraping websites, programming knowledge is a must.
-*   *Better Science*
+*   *Better Science.*
     (Quality) programming can open the door to better transparency, reproducibility, and collaboration in the Social Sciences.
 
 # Learning Objectives
@@ -62,11 +62,12 @@ Specifically, by the end of this 3 hours course, I want everyone here be able to
 My name is Rochelle Terman and I'm a Ph.D. Candidate in Political Science. 
 
 * A year ago, I didn't know how to program. Now I program almost every day. 
-* I program mostly in Python, R, and PHP.
-* I also do a lot of web development, especially in Drupal + Wordpress
+* I program mostly in Python, R, and PHP. I'm interested in text analysis, webscraping, and visualization.
+* I also do a lot of web development, especially in Drupal + Wordpress.
+* My dissertation is on human rights. 
 * I won't be able to answer all your questions.
 * No one will.
-* Programming is one endless Google Search.
+* Because programming is one endless Google Search.
 
 ### Acknowledgments
 
@@ -74,4 +75,4 @@ This learning module borrows and adapts materials from the following organizatio
 
 *   [Software Carpentry](http://software-carpentry.org)
 *   [Mark Huberty](http://polisci.berkeley.edu/people/person/mark-huberty)
-*   
+*   [Dav Clark](https://github.com/davclark)
