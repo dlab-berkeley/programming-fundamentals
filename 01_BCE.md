@@ -33,7 +33,7 @@ Unix has several fundamental differences compared with Windows:
 
 #### Unix v. Apple OSX
 
-OSX *is* Unix: A version called Darwin, based on (BSD)[https://en.wikipedia.org/wiki/Berkeley_Software_Distribution]. It comes packaged with all the necessary tools:
+OSX *is* Unix: A version called Darwin, based on [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution). It comes packaged with all the necessary tools:
 * The full suite of command-line tools in the **Terminal**
 * An X11() server for graphics
 * Secure shell and secure copy for working over networks 
@@ -47,9 +47,9 @@ Linux is a [free and open source](https://en.wikipedia.org/wiki/Free_and_open-so
 
 ## Key Components of Unix 
 
-Adapted from (Indiana University)[https://kb.iu.edu/d/agat]
+(Adapted from [Indiana University](https://kb.iu.edu/d/agat))
 
-Unix has Three main components
+Unix has three main components
 
 #### Kernel
 
