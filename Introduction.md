@@ -78,4 +78,5 @@ This learning module borrows and adapts materials from the following organizatio
 
 *   [Software Carpentry](http://software-carpentry.org)
 *   [Mark Huberty](http://polisci.berkeley.edu/people/person/mark-huberty)
-*   [Dav Clark](https://github.com/davclark)
+*   @davclark)
+*   @aculich
