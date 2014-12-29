@@ -131,5 +131,16 @@ One useful thing will be to share folders between the VM and the host machine so
 
 If you're use to a Mac, cmd+C will no longer work. Use CTRL+C instead.
 
+## Exercises
+
+#### Challenge 1
+
+1. Make a duplicate of a folder on your regular computer. 
+2. Add the copy you just made as a shared folder to your BCE VM. 
+
+#### Challenge 2
+
+1. Open up a text a file in your shared folder. Make an edit and save.
+2. Now go back to your regular machine. Did the edit appear? Why or why not?
 
 
