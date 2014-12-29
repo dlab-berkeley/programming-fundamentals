@@ -57,7 +57,7 @@ This requires her to:
 
 The problem is, Rochelle has procrastinated for the last year and now has to get this project done ASAP. If she completes steps 1-2 by hand, it will take it approximately a gazillian years.
 
-The next few lessons will show Rochelle how do this task in a jiffy, using the Shell on her computer, and the help of some friendly collaborators who put their code online. 
+The next few lessons will show Rochelle how do this task in a jiffy, using the Shell on her computer, and the help of some friendly collaborators who share their code online. 
 
 ## What and Why
 
