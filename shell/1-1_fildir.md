@@ -54,7 +54,7 @@ $ pwd
 /home/oski
 ~~~
 
-> ## Alphabet Soup {.callout}
+> #### Alphabet Soup
 > 
 > If the command to find out who we are is `whoami`, the command to find
 > out where we are ought to be called `whereami`, so why is it `pwd`
@@ -113,7 +113,7 @@ The names that don't have trailing slashes, like `file.txt` are plain old files.
 
 And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
 
-> ## What's In A Name? {.callout}
+> #### What's In A Name?
 > 
 > You may have noticed that all of our's files' names are "something dot
 > something". This is just a convention: we can call a file `file` or
@@ -149,7 +149,7 @@ The output shows us that there are four text files and two sub-sub-directories.O
 
 Notice, by the way that we spelled the directory name `data`. It doesn't have a trailing slash: that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart. And it doesn't begin with a slash because it's a **relative path**, i.e., it tells `ls` how to find something from where we are, rather than from the root of the file system.
 
-> ## Parameters vs. Arguments {.callout}
+> #### Parameters vs. Arguments
 >
 > According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
 > the terms **argument** and **parameter** mean slightly different things.
@@ -252,7 +252,7 @@ data/       notes.txt
 
 `-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/users/nelle`, refers to the `/users` directory).
 
-> ## Hidden Files: For Your Own Protection
+> #### Hidden Files: For Your Own Protection
 > 
 > As you can see, a bunch of other items just appeared when we enter `ls -a`. 
 > These files and directories begin with `.` followed by a name. These are 
@@ -263,7 +263,7 @@ data/       notes.txt
 
 As you can see, it also displays another special directory that's just called `.`, which means "the current working directory". It may seem redundant to have a name for it, but we'll see some uses for it soon.
 
-> ## Orthogonality {.callout}
+> #### Orthogonality
 > 
 > The special names `.` and `..` don't belong to `ls`; they are interpreted 
 > the same way by every program. For example, if we are in `/users/nelle/data`,
@@ -312,7 +312,7 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 <img src="fig/filesystem-challenge.svg" alt="Filesystem for Challenge Questions" />
 
-> ## FIXME {.challenge}
+> #### FIXME
 >
 > If `pwd` displays `/users/thing`, what will `ls ../backup` display?
 > 
@@ -321,7 +321,7 @@ This is called **tab completion**, and we will see it in many other tools as we 
 > 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
 > 4.  `original pnas_final pnas_sub`
 
-> ## FIXME {.challenge}
+> #### FIXME
 >
 > If `pwd` displays `/users/backup`,
 > and `-r` tells `ls` to display things in reverse order,
@@ -336,7 +336,7 @@ This is called **tab completion**, and we will see it in many other tools as we 
 > 3.  `ls -r -F /users/backup`
 > 4.  Either \#2 or \#3 above, but not \#1.
 
-> ## FIXME {.challenge}
+> #### FIXME
 >
 > What does the command `cd` without a directory name do?
 > 
