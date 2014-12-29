@@ -226,7 +226,7 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski//data
+/home/oski/data
 ~~~
 ~~~ {.input}
 $ cd ..
