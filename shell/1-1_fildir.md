@@ -381,6 +381,8 @@ If the command `ls -a` works, and `ls -F` works, what do you think will happen i
 
 **Syntax**: `ls [OPTION] ARGUMENT]`
 
+**Common Flags**: To see all, click [here](http://linuxcommand.org/man_pages/ls1.html) or type `man ls` for the Linux help page. *Hint: type `q` to escape the help page and return to the shell.*
+
 | flag | description |
 | ---- | ----------- |
 | -l | long format, displaying Unix file types, permissions, number of hard links, owner, group, size, last-modified date and filename |
