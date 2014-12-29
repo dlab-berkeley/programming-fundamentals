@@ -245,7 +245,7 @@ $ pwd
 The special directory `..` doesn't usually show up when we run `ls`. If we want to display it, we can give `ls` the `-a` flag:
 
 ~~~ {.input}
-$ ls -F -a
+$ ls -a
 ~~~
 ~~~ {.output}
 .              .gnome              setup_ipython_notebook.sh
