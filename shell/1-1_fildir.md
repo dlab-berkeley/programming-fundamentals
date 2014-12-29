@@ -395,7 +395,7 @@ If the command `ls -a` works, and `ls -F` works, what do you think will happen i
 | -h | print sizes in human readable format. (e.g., 1K, 234M, 2G, etc.) (may not be available on all systems) |
 | -1 | show only 1 file per line. |
 
-You can combine them, so for example `ls -a -p -t` is valid, and `ls -apt is also valid, and shorter.
+You can combine them, so for example `ls -a -p -t` is valid, and `ls -apt` is also valid, and shorter.
 
 #### 3. `cd`
 
