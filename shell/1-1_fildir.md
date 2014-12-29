@@ -65,13 +65,17 @@ $ pwd
 > actually a win for usability. The reality is that commands were added to
 > Unix one by one, without any master plan, by people who were immersed in
 > its jargon. The result is as inconsistent as the roolz uv Inglish
-> speling, but we're stuck with it now.
+> speling, but we're stuck with it now. 
+> 
+> The good news is: because these basic commands were so integral to the 
+> development of early Unix, they have stuck around, and appear (in some form) 
+> in almost all programming languages.
 
 To understand what a "home directory" is, let's have a look at how the file system as a whole is organized. At the top is the **root directory** that holds everything else.
 
 We refer to it using a slash character `/` on its own; this is the leading slash in `/home/oski`.
 
-Inside that directory are several other directories: `bin` (which is where some built-in programs are stored), `etc` (where local configuration files are stored), `tmp` (for temporary files that don't need to be stored long-term), and so on.
+Inside that directory are several other directories: `bin` (which is where some built-in programs are stored), `data` (holding miscellaneous data files) `etc` (where local configuration files are stored), `tmp` (for temporary files that don't need to be stored long-term), and so on.
 
 > If you're working on a Mac, the file structure will look similar, but not 
 > identical. The following image shows a file system graph for the typical Mac.
@@ -85,15 +89,16 @@ We know that our current working directory `/home/oski` is stored inside `/home`
 > it refers to the root directory. When it appears *inside* a name,
 > it's just a separator.
 
-Let's see what's in Nelle's home directory by running `ls`,
+Let's see what's in Oski's home directory by running `ls`,
 which stands for "listing":
 
 ~~~ {.input}
 $ ls
 ~~~
 ~~~ {.output}
-Desktop    Downloads  Music     Public  setup_ipython_notebook.sh  Videos
-Documents  file.text  Pictures  R       Templates
+data       Downloads  Pictures  setup_ipython_notebook.sh
+Desktop    file.txt  Public    Templates
+Documents  Music      R         Videos
 ~~~
 
 `ls` prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns.
@@ -104,8 +109,9 @@ We can make its output more comprehensible by using the **flag** `-F`, which tel
 $ ls -F
 ~~~
 ~~~ {.output}
-Desktop/    Downloads/  Music/     Public/  setup_ipython_notebook.sh*  Videos/
-Documents/  file.text   Pictures/  R/       Templates/
+data/       Downloads/  Pictures/  setup_ipython_notebook.sh*
+Desktop/    file.txt   Public/    Templates/
+Documents/  Music/      R/         Videos/
 ~~~
 
 Here,
@@ -135,15 +141,14 @@ And note that there is a space between `ls` and `-F`: without it, the shell thin
 > cause the operating system to try to open it with a music player
 > when someone double-clicks it.
 
-Now let's take a look at what's in Rochelle's `data` directory by running `ls -F data`, i.e., the command `ls` with the **arguments** `-F` and `data`. The second argument --- the one *without* a leading dash --- tells `ls` that
+Now let's take a look at what's in Oski's `data` directory by running `ls -F data`, i.e., the command `ls` with the **arguments** `-F` and `data`. The second argument --- the one *without* a leading dash --- tells `ls` that
 we want a listing of something other than our current working directory:
 
 ~~~ {.input}
 $ ls -F data
 ~~~
 ~~~ {.output}
-amino-acids.txt   elements/     morse.txt
-pdb/              planets.txt   sunspot.txt
+articles.txt  bar.txt  foo.txt  logs/  recipes/  smile.txt
 ~~~
 
 The output shows us that there are four text files and two sub-sub-directories.Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
@@ -170,21 +175,20 @@ network.cfg
 
 The leading `/` tells the computer to follow the path from the root of the filesystem, so it always refers to exactly one directory, no matter where we are when we run the command.
 
-What if we want to change our current working directory? Before we do this, `pwd` shows us that we're in `/users/nelle`, and `ls` without any arguments shows us that directory's contents:
+What if we want to change our current working directory? Before we do this, `pwd` shows us that we're in `/home/oski`, and `ls` without any arguments shows us that directory's contents:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/users/nelle
+/home/oski
 ~~~
 ~~~ {.input}
 $ ls
 ~~~
 ~~~ {.output}
-creatures  molecules           pizza.cfg
-data       north-pacific-gyre  solar.pdf
-Desktop    notes.txt           writing
+data     Documents  file.text  Pictures  R                          Templates
+Desktop  Downloads  Music      Public    setup_ipython_notebook.sh  Videos
 ~~~
 
 We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
@@ -193,28 +197,27 @@ We can use `cd` followed by a directory name to change our working directory. `c
 $ cd data
 ~~~
 
-`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/users/nelle/data`.
+`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/data`.
 
-If we run `ls` without arguments now, it lists the contents of `/users/nelle/data`, because that's where we now are:
+If we run `ls` without arguments now, it lists the contents of `/home/oski/data`, because that's where we now are:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/users/nelle/data
+/home/oski/data
 ~~~
 ~~~ {.input}
 $ ls -F
 ~~~
 ~~~ {.output}
-amino-acids.txt   elements/     morse.txt
-pdb/              planets.txt   sunspot.txt
+articles.txt  bar.txt  foo.txt  logs/  recipes/  smile.txt
 ~~~
 
 We now know how to go down the directory tree: how do we go up? We could use an absolute path:
 
 ~~~ {.input}
-$ cd /users/nelle
+$ cd /home/oski/
 ~~~
 
 but it's almost always simpler to use `cd ..` to go up one level:
@@ -223,20 +226,20 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/users/nelle/data
+/home/oski//data
 ~~~
 ~~~ {.input}
 $ cd ..
 ~~~
 
 `..` is a special directory name meaning "the directory containing this one",
-or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/users/nelle`:
+or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/home/oski/`:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/users/nelle
+/home/oski/
 ~~~
 
 The special directory `..` doesn't usually show up when we run `ls`. If we want to display it, we can give `ls` the `-a` flag:
@@ -245,10 +248,21 @@ The special directory `..` doesn't usually show up when we run `ls`. If we want 
 $ ls -F -a
 ~~~
 ~~~ {.output}
-./          Desktop/             pizza.cfg
-../         molecules/           solar.pdf
-creatures/  north-pacific-gyre/  writing/
-data/       notes.txt
+.              .gnome              setup_ipython_notebook.sh
+..             .ICEauthority       .subversion
+.bash_history  .ipynb_checkpoints  Templates
+.bash_logout   .ipython            .thumbnails
+.bashrc        .local              .vboxclient-clipboard.pid
+.cache         .mozilla            .vboxclient-display.pid
+.config        Music               .vboxclient-draganddrop.pid
+data           Pictures            .vboxclient-seamless.pid
+.dbus          .pip                .vbox_version
+Desktop        .pki                Videos
+Documents      .profile            .Xauthority
+Downloads      Public              .xsession-errors
+file.txt       R                   .xsession-errors.old
+.gconf         .Rhistory
+.gitconfig     .rstudio-desktop
 ~~~
 
 `-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/users/nelle`, refers to the `/users` directory).
@@ -264,20 +278,17 @@ data/       notes.txt
 
 As you can see, it also displays another special directory that's just called `.`, which means "the current working directory". It may seem redundant to have a name for it, but we'll see some uses for it soon.
 
-> #### Orthogonality
+> #### Phone Home
 > 
-> The special names `.` and `..` don't belong to `ls`; they are interpreted 
-> the same way by every program. For example, if we are in `/users/nelle/data`,
-> the command `ls ..` will give us a listing of `/users/nelle`. When the 
-> meanings of the parts are the same no matter how they're combined,
-> programmers say they are **orthogonal**: Orthogonal systems tend to be 
-> easier for people to learn because there are fewer special cases and 
-> exceptions to keep track of.
+> If you ever want to get to the home directory immediately, you can use the 
+> shortcut `~`. For example, type `cd ~` and you'll get back home in a jiffy. 
+> `~` will also stand in for your home directory in paths, so for instance 
+> `~/data` is the same as `/home/oski/data`
 
-### Nelle's Pipeline: Organizing Files
 
-Knowing just this much about files and directories, Nelle is ready to organize the files that the protein assay machine will create. First, she creates a directory called `north-pacific-gyre` (to remind herself where the data came from). Inside that, she creates a directory called `2012-07-03`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating
-a directory called `revised-revised-results-3`.)
+### Rochelle's Pipeline: Organizing Files
+
+Knowing just this much about files and directories, Rochelle is ready to organize the files that the protein assay machine will create. First, she creates a directory called `north-pacific-gyre` (to remind herself where the data came from). Inside that, she creates a directory called `2012-07-03`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
 > Nelle names her directories "year-month-day", with leading zeroes for months 
 > and days, because the shell displays file and directory names in 
@@ -312,6 +323,8 @@ since there are 1520 possibilities; pressing tab twice brings up a list of all t
 This is called **tab completion**, and we will see it in many other tools as we go on.
 
 <img src="fig/filesystem-challenge.svg" alt="Filesystem for Challenge Questions" />
+
+If you quickly need the path of a file or directory, you can also copy the file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file or directory will appear. 
 
 > #### FIXME
 >
@@ -348,4 +361,60 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 > #### FIXME
 >
-> What does the command `ls` do when used with the -s and -h arguments?
+> What does the command `ls` do when used with the -s arguments?
+> 
+
+> #### FIXME
+>
+> If the command `ls -a` works, and `ls -F` works, what do you think will 
+> happen if you enter `ls -a -F`? What about `ls -aF`
+>
+
+ 
+
+## Summary and Cheat Sheets
+
+### Commands
+
+### `pwd`
+
+**Sumary**: Prints working directory.
+
+**Syntax**: `pwd`
+
+### `ls`
+
+**Sumary**: Lists the contents of a directory.
+
+**Syntax**: `ls [OPTION] ARGUMENT]`
+
+| flag | description |
+| -l | long format, displaying Unix file types, permissions, number of hard links, owner, group, size, last-modified date and filename |
+| -f | do not sort. Useful for directories containing large numbers of files. |
+| -F | appends a character revealing the nature of a file, for example, * for an executable, or / for a directory. Regular files have no suffix.|
+| -a | lists all files in the given directory, including those whose names start with "." (which are hidden files in Unix). By default, these files are excluded from the list. |
+| -R | recursively lists subdirectories. The command ls -R / would therefore list all files. |
+| -d | shows information about a symbolic link or directory, rather than about the link's target or listing the contents of a directory. |
+| -t | sort the list of files by modification time. |
+| -h | print sizes in human readable format. (e.g., 1K, 234M, 2G, etc.) (may not be available on all systems) |
+| -1 | show only 1 file per line. |
+
+You can combine them, so for example `ls -a -p -t` is valid, and `ls -apt is also valid, and shorter.
+
+### `cd`
+
+**Summary**: Change working directory
+
+**Syntax**: `cd [OPION] [DIRECTORY]`
+
+### Shortcuts
+
+Four Shortcuts:
+
+1. **Tab Complete**: If you type enough letters of your command or argument, then you can press tab to have it automatically completed.
+
+2. **Up Arrow**: Pressing the up arrow will bring your last command back to the command line. Try it!
+
+3. **`~`**: stands for your home directory.
+
+4. **Copy + Paste Paths**: copy a directory or file in your GUI, and paste it into your shell. The full path of the directory or file will appear. 
