@@ -75,7 +75,8 @@ Inside that directory are several other directories: `bin` (which is where some 
 
 > If you're working on a Mac, the file structure will look similar, but not 
 > identical. The following image shows a file system graph for the typical Mac.
-> ![File Directory](https://swcarpentry.github.io/shell-novice/fig/home-directories.svg)
+
+![File Directory](https://swcarpentry.github.io/shell-novice/fig/home-directories.svg)
 
 We know that our current working directory `/home/oski` is stored inside `/home` because `/home` is the first part of its name. Similarly, we know that `/home` is stored inside the root directory `/` because its name begins with `/`.
 
