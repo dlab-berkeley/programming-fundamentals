@@ -322,8 +322,6 @@ since there are 1520 possibilities; pressing tab twice brings up a list of all t
 
 This is called **tab completion**, and we will see it in many other tools as we go on.
 
-<img src="fig/filesystem-challenge.svg" alt="Filesystem for Challenge Questions" />
-
 If you quickly need the path of a file or directory, you can also copy the file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file or directory will appear. 
 
 > #### FIXME
