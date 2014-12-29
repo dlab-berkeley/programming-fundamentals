@@ -112,6 +112,24 @@ Why use BCE?
 
 Install BCE using the instructions found [here](http://collaboratool.berkeley.edu/using-virtualbox.html)
 
+#### Using BCE
+
+BCE is like working on a completely different computer. So there are some things to remember:
+
+**You will have different files.**
+
+One useful thing will be to share folders between the VM and the host machine so that you can access the files on your computer from the VM. Do the following:
+
+1. Got to “Devices > Shared Folder Settings” and click on the icon of a folder with a “+” on the right side.
+2. Select a folder to share, e.g. your home directory on your computer by clicking on “Folder Path” and choosing “Other” and navigating to the folder of interest. For our purposes here, assume we click on “Documents”.
+3. Click “make permanent” and “auto-mount” and then click “Ok”.
+4. Reboot the machine by going to applications button on the left of the top toolbart, clicking on “Log Out”, and choosing “Restart” in the window that pops up.
+5. Once the VM is running again, click on the “Shared” folder on the desktop. You should see the folder “sf_Documents” (or whatever the folder name you selected was, in place of “Documents”). You can drag and drop files to manipulate them.
+6. Alternatively, from the Terminal, you can also see the directory by doing “cd ~/Desktop/shared/sf_Documents” and then “ls” will show you the files. Be careful: unless you selected “read only” at the same time as “make permanent”, any changes to the shared folder on the VM affects the folder in the real world, namely your computer.
+
+**Your keyboard may be weird**
+
+If you're use to a Mac, cmd+C will no longer work. Use CTRL+C instead.
 
 
 
