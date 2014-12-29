@@ -324,51 +324,46 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 If you quickly need the path of a file or directory, you can also copy the file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file or directory will appear. 
 
-> #### FIXME
->
-> If `pwd` displays `/users/thing`, what will `ls ../backup` display?
-> 
-> 1.  `../backup: No such file or directory`
-> 2.  `2012-12-01 2013-01-08 2013-01-27`
-> 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
-> 4.  `original pnas_final pnas_sub`
+## Exercises
 
-> #### FIXME
->
-> If `pwd` displays `/users/backup`,
-> and `-r` tells `ls` to display things in reverse order,
-> what command will display:
-> 
-> ~~~
-> pnas-sub/ pnas-final/ original/
-> ~~~
-> 
-> 1.  `ls pwd`
-> 2.  `ls -r -F`
-> 3.  `ls -r -F /users/backup`
-> 4.  Either \#2 or \#3 above, but not \#1.
+#### Challenge 1
 
-> #### FIXME
->
-> What does the command `cd` without a directory name do?
-> 
-> 1.  It has no effect.
-> 2.  It changes the working directory to `/`.
-> 3.  It changes the working directory to the user's home directory.
-> 4.  It produces an error message.
+If `pwd` displays `/users/thing`, what will `ls ../backup` display?
 
-> #### FIXME
->
-> What does the command `ls` do when used with the -s arguments?
-> 
+1.  `../backup: No such file or directory`
+2.  `2012-12-01 2013-01-08 2013-01-27`
+3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
+4.  `original pnas_final pnas_sub`
 
-> #### FIXME
->
-> If the command `ls -a` works, and `ls -F` works, what do you think will 
-> happen if you enter `ls -a -F`? What about `ls -aF`
->
+#### Challenge 2
 
- 
+If `pwd` displays `/users/backup`, and `-r` tells `ls` to display things in reverse order, what command will display:
+~~~
+pnas-sub/ pnas-final/ original/
+~~~
+
+1.  `ls pwd`
+2.  `ls -r -F`
+3.  `ls -r -F /users/backup`
+4.  Either \#2 or \#3 above, but not \#1.
+
+#### Challenge 3
+
+What does the command `cd` without a directory name do?
+
+1.  It has no effect.
+2.  It changes the working directory to `/`.
+3.  It changes the working directory to the user's home directory.
+4.  It produces an error message.
+
+#### Challenge 4
+
+What does the command `ls` do when used with the -s arguments?
+
+#### Challenge 5
+
+If the command `ls -a` works, and `ls -F` works, what do you think will happen if you enter `ls -a -F`? What about `ls -aF`
+
 
 ## Summary and Cheat Sheets
 
