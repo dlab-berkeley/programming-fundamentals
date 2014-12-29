@@ -31,7 +31,7 @@ The command's output is the ID of the current user, i.e., it shows us who the sh
 $ whoami
 ~~~
 ~~~ {.output}
-nelle
+oski
 ~~~
 
 More specifically, when we type `whoami` the shell:
