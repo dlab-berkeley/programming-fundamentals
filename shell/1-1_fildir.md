@@ -369,13 +369,13 @@ If the command `ls -a` works, and `ls -F` works, what do you think will happen i
 
 ### Commands
 
-#### `pwd`
+#### 1. `pwd`
 
 **Sumary**: Prints working directory.
 
 **Syntax**: `pwd`
 
-#### `ls`
+#### 2. `ls`
 
 **Sumary**: Lists the contents of a directory.
 
@@ -394,7 +394,7 @@ If the command `ls -a` works, and `ls -F` works, what do you think will happen i
 
 You can combine them, so for example `ls -a -p -t` is valid, and `ls -apt is also valid, and shorter.
 
-#### `cd`
+#### 3. `cd`
 
 **Summary**: Change working directory
 
