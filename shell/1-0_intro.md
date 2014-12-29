@@ -1,5 +1,4 @@
 ---
-layout: page
 title: The Unix Shell
 subtitle: Introducing the Shell
 minutes: 5
@@ -11,30 +10,54 @@ minutes: 5
 > *   Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
 > *   Explain when and why command-line interfaces should be used instead of graphical interfaces.
 
-Nelle Nemo, a marine biologist, has just returned from a six-month survey of the [North Pacific Gyre](http://en.wikipedia.org/wiki/North_Pacific_Gyre), where she has been sampling gelatinous marine life in the [Great Pacific Garbage Patch](http://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch). She has 300 samples in all, and now needs to:
+Rochelle Terman, a Political Scientists, wants to do analysis of some New York Times she downloaded from [LexisNexis](http://www.lexisnexis.com/hottopics/lnacademic/). LexisNexis only lets her download up to 500 articles at a time, but she wants to analyize several years of coverage. So she downloads several text files, eaching containing approximatly 500 articles, along with metadata for each article (date, desk, author, length, subject, etc).
 
-1.  Run each sample through an assay machine
-    that will measure the relative abundance of 300 different proteins.
-    The machine's output for a single sample is
-    a file with one line for each protein.
-2.  Calculate statistics for each of the proteins separately
-    using a program her supervisor wrote called `goostat`.
-3.  Compare the statistics for each protein
-    with corresponding statistics for each other protein
-    using a program one of the other graduate students wrote called `goodiff`.
-4.  Write up.
-    Her supervisor would really like her to do this by the end of the month
-    so that her paper can appear in an upcoming special issue of *Aquatic Goo Letters*.
+Each text file looks something like this:
 
-It takes about half an hour for the assay machine to process each sample.
-The good news is, it only takes two minutes to set each one up. Since her lab has eight assay machines that she can use in parallel, this step will "only" take about two weeks.
+> 1 of 500 DOCUMENTS
+> 
+> The New York Times
+> September 25, 2011 Sunday
+> Correction Appended
+> Late Edition - Final
+> 
+> Monitoring Rights In Chechen Region, A Month at a Time
+> BYLINE: By SETH MYDANS
+> SECTION: Section A; Column 0; Foreign Desk; Pg. 8
+> LENGTH: 1150 words
+> 
+> GROZNY, Russia -- They never go out alone, and when they are in their small
+> apartment here in the capital of Chechnya, a flat screen on the wall 
+> displays a continuous feed from security cameras in the hall and stairway 
+> outside...
+> 
+> 2 of 500 DOCUMENTS
+> 
+> The New York Times Blogs
+> (The Lede)
+> October 14, 2011 Friday
+> 
+> Human Rights Group Welcomes Obama's Decision to Send Troops to Uganda
+> 
+> BYLINE: ROBERT MACKEY
+> 
+> LENGTH: 465 words
+> 
+> As my colleagues Thom Shanker and Rick Gladstone report, "President Obama 
+> said Friday that he had ordered the deployment of 100 armed military 
+> advisers to ... 
 
-The bad news is that if she has to run `goostat` and `goodiff` by hand,
-she'll have to enter filenames and click "OK" 45,150 times (300 runs of `goostat`, plus 300x299/2 runs of `goodiff`). At 30 seconds each,
-that will take more than two weeks. Not only would she miss her paper deadline,
-the chances of her typing all of those commands right are practically zero.
+Now she wants to turn those big text files into a spreadsheet, each each row being an article, and columns for the text and metadata.
 
-The next few lessons will explore what she should do instead. More specifically, they explain how she can use a command shell to automate the repetitive steps in her processing pipeline so that her computer can work 24 hours a day while she writes her paper. As a bonus, once she has put a processing pipeline together, she will be able to use it again whenever she collects more data.
+This requires her to:
+
+1.  Combine all the bulk downloads into one file.
+2.  Copy and paste each field (BYLINE, LENTH, text, etc) into its own column.
+3.  Analyze, publish, get a great tenure track job, and retire early.
+
+The problem is, Rochelle has procrastinated for the last year and now has to get this project done ASAP. If she completes steps 1-2 by hand, it will take it approximately a gazillian years.
+
+The next few lessons will show Rochelle how do this task in a jiffy, using the Shell on her computer, and the help of some friendly collaborators who put their code online. 
 
 ## What and Why
 

@@ -283,46 +283,52 @@ As you can see, it also displays another special directory that's just called `.
 > If you ever want to get to the home directory immediately, you can use the 
 > shortcut `~`. For example, type `cd ~` and you'll get back home in a jiffy. 
 > `~` will also stand in for your home directory in paths, so for instance 
-> `~/data` is the same as `/home/oski/data`
+> `~/data` is the same as `/home/oski/data`. This only works if it is the 
+> first character in the path: `here/there/~/elsewhere` is not 
+> `/home/oski/elsewhere`.
 
 
 ### Rochelle's Pipeline: Organizing Files
 
-Knowing just this much about files and directories, Rochelle is ready to organize the files that the protein assay machine will create. First, she creates a directory called `north-pacific-gyre` (to remind herself where the data came from). Inside that, she creates a directory called `2012-07-03`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
+Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she creates a directory called `new-york-times` (to remind herself where the data came from). Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
-> Nelle names her directories "year-month-day", with leading zeroes for months 
-> and days, because the shell displays file and directory names in 
+> Rochelle names her directories "year-month-day", with leading zeroes for 
+> months and days, because the shell displays file and directory names in 
 > alphabetical order. If she used month names, December would come before July;
 > if she didn't use leading zeroes, November ('11') would come before July 
 > ('7').
 
-Each of her physical samples is labelled according to her lab's convention
-with a unique ten-character ID, such as "NENE01729A". This is what she used in her collection log to record the location, time, depth, and other characteristics of the sample, so she decides to use it as part of each data file's name. Since the assay machine's output is plain text, she will call her files `NENE01729A.txt`, `NENE01812A.txt`, and so on. All 1520 files will go into the same directory.
+Each of her text files labelled according to the parameteres leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2011.txt`, `human-rights-2012.txt`, and so on. All files will go into the same directory.
 
 If she is in her home directory, Nelle can see what files she has using the command:
 
 ~~~ {.input}
-$ ls north-pacific-gyre/2012-07-03/
+$ ls new-york-times/2015-01-01
 ~~~
 
 This is a lot to type, but she can let the shell do most of the work. If she types:
 
 ~~~ {.input}
-$ ls nor
+$ ls new
 ~~~
 
 and then presses tab, the shell automatically completes the directory name for her:
 
 ~~~ {.input}
-$ ls north-pacific-gyre/
+$ ls new-york-times
 ~~~
 
-If she presses tab again, Bash will add `2012-07-03/` to the command, since it's the only possible completion. Pressing tab again does nothing,
-since there are 1520 possibilities; pressing tab twice brings up a list of all the files, and so on.
+If she presses tab again, Bash will add `2015-01-01/` to the command, since it's the only possible completion. Pressing tab again does nothing,
+since there are multiple possibilities; pressing tab twice brings up a list of all the files, and so on.
 
 This is called **tab completion**, and we will see it in many other tools as we go on.
 
-If you quickly need the path of a file or directory, you can also copy the file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file or directory will appear. 
+> ####  Quick File Paths
+> 
+> If you quickly need the path of a file or directory, you can also copy the 
+> file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste 
+> it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file 
+> or directory will appear. 
 
 ## Exercises
 
