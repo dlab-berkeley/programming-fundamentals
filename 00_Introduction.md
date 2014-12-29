@@ -16,28 +16,33 @@ Now here's the reality:
 > and many things never work at all. When scientists try to get help, 
 > they are inundated with unhelpful information, and give up.
 
-This sorry state of affairs persists for four reasons:
+This sorry state of affairs persists for three reasons:
 
-*   *No room, no time.*
+1.   *No room, no time.*
     Everybody's schedule is full—there's simply not space to add more
     about computing without dropping something else.
-*   *The blind leading the blind.*
+
+2.   *The blind leading the blind.*
     The infrastructure doesn't exist to help scholars develop the skills they need. Senior researchers can't teach the next generation how to do things
     that they don't know how to do themselves. 
-*   *Autodidact Chauvinism.*
+
+3.   *Autodidact Chauvinism.*
     Since there are no classrooms, scholars are pressured to teach themselves. But self-learning is time consuming and nearly impossible without a base level of knowledge.
 
 ### Why Bother?
 
 Why learn to program?
 
-*   *Practical Efficiency.*
+1.   *Practical Efficiency.*
     Even though it takes some time at first, learning how to program can save you an enormous amount of time doing basic tasks that you would otherwise do by hand, once you get the hang of it.
-*   *New Tools.*
+
+2.   *New Tools.*
     Some things are impossible, or nearly impossible to do by hand. Computers open the door for new tools and methods, but many require programming skills.
-*   *New Data.*
+
+3.   *New Data.*
     The Internet is a wealth of data, waiting to be analyzed! Whether its collecting Twitter data, working with the Congress API, or scraping websites, programming knowledge is a must.
-*   *Better Science.*
+
+4.   *Better Science.*
     (Quality) programming can open the door to better transparency, reproducibility, and collaboration in the Social Sciences.
 
 ### Learning Objectives
@@ -70,6 +75,7 @@ My name is Rochelle Terman and I'm a Ph.D. Candidate in Political Science.
 * My dissertation is on human rights. 
 * I won't be able to answer all your questions.
 * No one will.
+* But especially me.
 * Because programming is one endless Google Search.
 
 ### Acknowledgments
