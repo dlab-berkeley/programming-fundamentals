@@ -382,6 +382,7 @@ If the command `ls -a` works, and `ls -F` works, what do you think will happen i
 **Syntax**: `ls [OPTION] ARGUMENT]`
 
 | flag | description |
+| ---- | ----------- |
 | -l | long format, displaying Unix file types, permissions, number of hard links, owner, group, size, last-modified date and filename |
 | -f | do not sort. Useful for directories containing large numbers of files. |
 | -F | appends a character revealing the nature of a file, for example, * for an executable, or / for a directory. Regular files have no suffix.|
