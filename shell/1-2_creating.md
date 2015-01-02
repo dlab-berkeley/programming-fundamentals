@@ -60,7 +60,7 @@ $ cd thesis
 $ nano draft.txt
 ~~~
 
-> ## Which Editor? {.callout}
+> #### Which Editor?
 > 
 > When we say, "`nano` is a text editor," we really do mean "text": it can
 > only work with plain character data, not tables, images, or any other
@@ -105,7 +105,7 @@ This command removes files ("rm" is short for "remove"). If we run `ls` again,it
 $ ls
 ~~~
 
-> ## Deleting Is Forever {.callout}
+> #### Deleting Is Forever
 > 
 > Unix doesn't have a trash bin: when we delete files, they are unhooked
 > from the file system so that their storage space on disk can be
@@ -163,7 +163,7 @@ The directory is now empty, so `rmdir` can delete it:
 $ rmdir thesis
 ~~~
 
-> ## With Great Power Comes Great Responsibility {.callout}
+> #### With Great Power Comes Great Responsibility
 > 
 > Removing the files in a directory just so that we can remove the
 > directory quickly becomes tedious. Instead, we can use `rm` with the
@@ -257,63 +257,63 @@ thesis/quotations.txt
 
 ## Exercises
 
-> #### Challenge 1
-> 
-> What is the output of the closing `ls` command in the sequence shown below?
-> 
-> ~~~
-> $ pwd
-> /home/jamie/data
-> $ ls
-> proteins.dat
-> $ mkdir recombine
-> $ mv proteins.dat recombine
-> $ cp recombine/proteins.dat ../proteins-saved.dat
-> $ ls
-> ~~~
+#### Challenge 1
+ 
+What is the output of the closing `ls` command in the sequence shown below?
+ 
+~~~
+$ pwd
+/home/jamie/data
+$ ls
+proteins.dat
+$ mkdir recombine
+$ mv proteins.dat recombine
+$ cp recombine/proteins.dat ../proteins-saved.dat
+$ ls
+~~~
 
-> #### Challenge 2
->
-> Suppose that:
-> 
-> ~~~
-> $ ls -F
-> analyzed/  fructose.dat    raw/   sucrose.dat
-> ~~~
-> 
-> What command(s) could you run so that the commands below will produce the 
-> output shown?
-> 
-> ~~~
-> $ ls
-> analyzed   raw
-> $ ls analyzed
-> fructose.dat    sucrose.dat
-> ~~~
+#### Challenge 2
 
-> #### Challenge 3
->
-> What does `cp` do when given several filenames and a directory name, as in:
-> 
-> ~~~
-> $ mkdir backup
-> $ cp thesis/citations.txt thesis/quotations.txt backup
-> ~~~
-> 
-> What does `cp` do when given three or more filenames, as in:
-> 
-> ~~~
-> $ ls -F
-> intro.txt    methods.txt    survey.txt
-> $ cp intro.txt methods.txt survey.txt
-> ~~~
+Suppose that:
+ 
+~~~
+$ ls -F
+analyzed/  fructose.dat    raw/   sucrose.dat
+~~~
+ 
+What command(s) could you run so that the commands below will produce the 
+output shown?
+ 
+~~~
+$ ls
+analyzed   raw
+$ ls analyzed
+fructose.dat    sucrose.dat
+~~~
 
-> #### Challenge 4
->
-> The command `ls -R` lists the contents of directories recursively,
-> i.e., lists their sub-directories, sub-sub-directories, and so on
-> in alphabetical order at each level.
-> 
-> The command `ls -t` lists things by time of last change,
-> with most recently changed files or directories first.
-> In what order does `ls -R -t` display things?
+#### Challenge 3
+
+What does `cp` do when given several filenames and a directory name, as in:
+
+~~~
+$ mkdir backup
+$ cp thesis/citations.txt thesis/quotations.txt backup
+~~~
+
+What does `cp` do when given three or more filenames, as in:
+
+~~~
+$ ls -F
+intro.txt    methods.txt    survey.txt
+$ cp intro.txt methods.txt survey.txt
+~~~
+
+#### Challenge 4
+
+The command `ls -R` lists the contents of directories recursively,
+i.e., lists their sub-directories, sub-sub-directories, and so on
+in alphabetical order at each level.
+
+The command `ls -t` lists things by time of last change,
+with most recently changed files or directories first.
+In what order does `ls -R -t` display things?
