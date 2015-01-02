@@ -82,7 +82,7 @@ $ nano draft.txt
 
 Let's type in a few lines of text, then use Control-O to write our data to disk:
 
-<img src="fig/nano-screenshot.png" alt="Nano in Action" />
+![nano](https://swcarpentry.github.io/shell-novice/fig/nano-screenshot.png)
 
 Once our file is saved, we can use Control-X to quit the editor and return to the shell. (Unix documentation often uses the shorthand `^A` to mean "control-A".) `nano` doesn't leave any output on the screen after it exits, but `ls` now shows that we have created a file called `draft.txt`:
 
