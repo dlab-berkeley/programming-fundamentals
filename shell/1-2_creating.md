@@ -24,9 +24,11 @@ $ pwd
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       Downloads/  Pictures/  setup_ipython_notebook.sh*
-Desktop/    file.txt   Public/    Templates/
-Documents/  Music/      R/         Videos/
+data/       Music/                     setup_ipython_notebook.sh*
+Desktop/    Pictures/                  Templates/
+Documents/  programming-fundamentals/  Videos/
+Downloads/  Public/
+file.txt    R/
 ~~~
 
 Let's create a new directory called `thesis` using the command `mkdir thesis` (which has no output):
@@ -41,10 +43,11 @@ As you might (or might not) guess from its name, `mkdir` means "make directory".
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       file.txt   R/                          Videos/
-Desktop/    Music/     setup_ipython_notebook.sh*
-Documents/  Pictures/  Templates/
-Downloads/  Public/    thesis/
+data/       Music/                     setup_ipython_notebook.sh*
+Desktop/    Pictures/                  Templates/
+Documents/  programming-fundamentals/  thesis/
+Downloads/  Public/                    Videos/
+file.txt    R/
 ~~~
 
 However, there's nothing in it yet:
