@@ -371,12 +371,12 @@ analyzed/  fructose.dat    raw/   sucrose.dat
 What command(s) could you run so that the commands below will produce the 
 output shown?
  
-~~~
+```shell
 $ ls
 analyzed   raw
 $ ls analyzed
 fructose.dat    sucrose.dat
-~~~
+```
 
 #### Challenge 3
 
