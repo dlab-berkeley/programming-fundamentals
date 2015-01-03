@@ -251,8 +251,7 @@ To prove that we made a copy, let's delete the `quotes.txt` file in the current 
 $ ls quotes.txt thesis/quotations.txt
 ~~~
 ~~~ {.error}
-ls: cannot access quotes.txt: No such file or directory
-thesis/quotations.txt
+ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 ~~~
 
 ## Exercises
@@ -317,3 +316,13 @@ in alphabetical order at each level.
 The command `ls -t` lists things by time of last change,
 with most recently changed files or directories first.
 In what order does `ls -R -t` display things?
+
+## Summary and Cheat Sheets
+
+### Commands
+
+#### 1. `mkdir`
+
+#### 2. `mv`
+
+#### 3. `cp`
