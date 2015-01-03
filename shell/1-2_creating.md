@@ -282,8 +282,50 @@ $ ls ~/new-york-times/2015-01-01
 human-rights-2000.TXT
 ~~~
 
-Huzzah! But does Rochelle really have to time in a command for each file she wants to move? Is there an easier way? Off to the next lesson...
+Huzzah! But does Rochelle really have to time in a command for each file she wants to move? No, there's an easier way! Instead of giving an input for each file, Rochelle can write `cp *.TXT`.  The `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files
 
+> ## Wildcards {.callout}
+> 
+> `*` is a **wildcard**. It matches zero or more
+> characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and so on.
+> On the other hand, `p*.pdb` only matches `pentane.pdb` and
+> `propane.pdb`, because the 'p' at the front only matches itself.
+> 
+> `?` is also a wildcard, but it only matches a single character. This
+> means that `p?.pdb` matches `pi.pdb` or `p5.pdb`, but not `propane.pdb`.
+> We can use any number of wildcards at a time: for example, `p*.p?*`
+> matches anything that starts with a 'p' and ends with '.', 'p', and at
+> least one more character (since the '?' has to match one character, and
+> the final '\*' can match any number of characters). Thus, `p*.p?*` would
+> match `preferred.practice`, and even `p.pi` (since the first '\*' can
+> match no characters at all), but not `quality.practice` (doesn't start
+> with 'p') or `preferred.p` (there isn't at least one character after the
+> '.p').
+> 
+> When the shell sees a wildcard, it expands the wildcard to create a
+> list of matching filenames *before* running the command that was
+> asked for. As an exception, if a wildcard expression does not match
+> any file, Bash will pass the expression as a parameter to the command
+> as it is. For example typing `ls *.pdf` in the new-york-times directory
+> (which contains only files with names ending with `.TXT`) results in
+> an error message that there is no file called `*.pdf`.
+> However, generally commands like `wc` and `ls` see the lists of
+> file names matching these expressions, but not the wildcards
+> themselves. It is the shell, not the other programs, that deals with
+> expanding wildcards, and this another example of orthogonal design.
+
+
+~~~ {.input}
+$ cp *.TXT ~/new-york-times/2015-01-01
+$ ls ~/new-york-times/2015-01-01
+~~~
+~~~ {.output}
+human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT
+human-rights-2001.TXT  human-rights-2006.TXT  human-rights-2011.TXT
+human-rights-2002.TXT  human-rights-2007.TXT  human-rights-2012.TXT
+human-rights-2003.TXT  human-rights-2008.TXT
+human-rights-2004.TXT  human-rights-2009.TXT
+~~~
 
 ## Exercises
 
