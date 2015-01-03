@@ -284,6 +284,18 @@ human-rights-2000.TXT
 
 Huzzah! But does Rochelle really have to time in a command for each file she wants to move? No, there's an easier way! Instead of giving an input for each file, Rochelle can write `cp *.TXT`.  The `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files
 
+~~~ {.input}
+$ cp *.TXT ~/data/new-york-times/2015-01-01
+$ ls ~/data/new-york-times/2015-01-01
+~~~
+~~~ {.output}
+human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT
+human-rights-2001.TXT  human-rights-2006.TXT  human-rights-2011.TXT
+human-rights-2002.TXT  human-rights-2007.TXT  human-rights-2012.TXT
+human-rights-2003.TXT  human-rights-2008.TXT
+human-rights-2004.TXT  human-rights-2009.TXT
+~~~
+
 > ## Wildcards {.callout}
 > 
 > `*` is a **wildcard**. It matches zero or more
@@ -314,18 +326,6 @@ Huzzah! But does Rochelle really have to time in a command for each file she wan
 > themselves. It is the shell, not the other programs, that deals with
 > expanding wildcards, and this another example of orthogonal design.
 
-
-~~~ {.input}
-$ cp *.TXT ~/data/new-york-times/2015-01-01
-$ ls ~/data/new-york-times/2015-01-01
-~~~
-~~~ {.output}
-human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT
-human-rights-2001.TXT  human-rights-2006.TXT  human-rights-2011.TXT
-human-rights-2002.TXT  human-rights-2007.TXT  human-rights-2012.TXT
-human-rights-2003.TXT  human-rights-2008.TXT
-human-rights-2004.TXT  human-rights-2009.TXT
-~~~
 
 ## Exercises
 
