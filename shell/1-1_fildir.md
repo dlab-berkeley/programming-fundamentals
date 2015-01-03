@@ -148,7 +148,7 @@ we want a listing of something other than our current working directory:
 $ ls -F data
 ~~~
 ~~~ {.output}
-articles.txt  bar.txt  foo.txt  logs/  recipes/  smile.txt
+articles/  articles.txt  bar.txt  foo.txt  recipes/
 ~~~
 
 The output shows us that there are four text files and two sub-sub-directories.Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
@@ -211,7 +211,7 @@ $ pwd
 $ ls -F
 ~~~
 ~~~ {.output}
-articles.txt  bar.txt  foo.txt  logs/  recipes/  smile.txt
+articles/  articles.txt  bar.txt  foo.txt  recipes/
 ~~~
 
 We now know how to go down the directory tree: how do we go up? We could use an absolute path:
