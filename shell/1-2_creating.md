@@ -354,6 +354,24 @@ In what order does `ls -R -t` display things?
 
 #### 1. `mkdir`
 
+**Summary**: Makes directories.
+
+**Syntax**: `mkdir [OPTION] [DIRECTORY]`
+
+**Flags**: See [here](http://linux.about.com/library/cmd/blcmdl1_mkdir.htm) for common options.
+
 #### 2. `mv`
 
+**Summary**: Move or rename files.
+
+**Flags**: See [here](http://linux.about.com/library/cmd/blcmdl1_mv.htm) for common options.
+
+**Syntax**: `mv [OPTION] SOURCE DIRECTORY`
+
 #### 3. `cp`
+
+**Summary**: Copies files and directories.
+
+**Syntax**: cp [OPTION] SOURCE DIRECTORY
+
+**Flags**: See [here](http://linux.about.com/od/commands/l/blcmdl1_cp.htm) for common options.

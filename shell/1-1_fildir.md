@@ -379,13 +379,13 @@ If the command `ls -a` works, and `ls -F` works, what do you think will happen i
 
 #### 1. `pwd`
 
-**Sumary**: Prints working directory.
+**Summary**: Prints working directory.
 
 **Syntax**: `pwd`
 
 #### 2. `ls`
 
-**Sumary**: Lists the contents of a directory.
+**Summary**: Lists the contents of a directory.
 
 **Syntax**: `ls [OPTION] ARGUMENT]`
 
