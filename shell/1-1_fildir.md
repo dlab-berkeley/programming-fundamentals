@@ -265,7 +265,7 @@ file.txt       R                   .xsession-errors.old
 .gitconfig     .rstudio-desktop
 ~~~
 
-`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/users/nelle`, refers to the `/users` directory).
+`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/oski`, refers to the `/users` directory).
 
 > #### Hidden Files: For Your Own Protection
 > 
@@ -300,7 +300,7 @@ Knowing just this much about files and directories, Rochelle is ready to organiz
 
 Each of her text files labelled according to the parameteres leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2011.txt`, `human-rights-2012.txt`, and so on. All files will go into the same directory.
 
-If she is in her home directory, Nelle can see what files she has using the command:
+If she is in her home directory, Rochelle can see what files she has using the command:
 
 ~~~ {.input}
 $ ls new-york-times/2015-01-01
