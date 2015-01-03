@@ -256,7 +256,7 @@ ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 
 ### Rochelle's Pipeline: Moving Files
 
-In the last step, Rochelle created a directory `~/new-york-times/2015-01-01`. Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
+In the last step, Rochelle created a directory `~/data/new-york-times/2015-01-01`. Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
 
 The text files that she downloaded are, unsurprisingly, in the directory `/home/oski/Downloads`
 
@@ -275,8 +275,8 @@ human-rights-2004.TXT  human-rights-2009.TXT
 Rochelle wants to move them into the directory she created in the last lesson.
 
 ~~~ {.input}
-$ cp human-rights-2000.TXT ~/new-york-times/2015-01-01
-$ ls ~/new-york-times/2015-01-01
+$ cp human-rights-2000.TXT ~/data/new-york-times/2015-01-01
+$ ls ~/data/new-york-times/2015-01-01
 ~~~
 ~~~ {.output}
 human-rights-2000.TXT
@@ -316,8 +316,8 @@ Huzzah! But does Rochelle really have to time in a command for each file she wan
 
 
 ~~~ {.input}
-$ cp *.TXT ~/new-york-times/2015-01-01
-$ ls ~/new-york-times/2015-01-01
+$ cp *.TXT ~/data/new-york-times/2015-01-01
+$ ls ~/data/new-york-times/2015-01-01
 ~~~
 ~~~ {.output}
 human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT

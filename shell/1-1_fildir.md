@@ -290,7 +290,7 @@ As you can see, it also displays another special directory that's just called `.
 
 ### Rochelle's Pipeline: Organizing Files
 
-Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she creates a directory called `new-york-times` (to remind herself where the data came from). Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
+Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
 > Rochelle names her directories "year-month-day", with leading zeroes for 
 > months and days, because the shell displays file and directory names in 
@@ -303,19 +303,19 @@ Each of her text files labelled according to the parameteres leading to her Lexi
 If she is in her home directory, Rochelle can see what files she has using the command:
 
 ~~~ {.input}
-$ ls new-york-times/2015-01-01
+$ ls data/new-york-times/2015-01-01
 ~~~
 
 This is a lot to type, but she can let the shell do most of the work. If she types:
 
 ~~~ {.input}
-$ ls new
+$ ls data/new
 ~~~
 
 and then presses tab, the shell automatically completes the directory name for her:
 
 ~~~ {.input}
-$ ls new-york-times
+$ ls data/new-york-times
 ~~~
 
 If she presses tab again, Bash will add `2015-01-01/` to the command, since it's the only possible completion. Pressing tab again does nothing,
