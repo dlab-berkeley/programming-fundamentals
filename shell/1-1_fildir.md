@@ -343,7 +343,6 @@ Pressing tab again does nothing, since there are multiple possibilities. Pressin
 
 This is called **tab completion**, and we will see it in many other tools as we go on.
 
-Rochelle's directory is still empty, because her files are in `~/Downloads`. Sure she can drag 'n drop the files between directories. But she's a shell hacker now, so she's going to move files via the command line, shown in the next lesson.
 
 > ####  Quick File Paths
 > 
