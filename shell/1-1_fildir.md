@@ -294,7 +294,7 @@ As you can see, it also displays another special directory that's just called `.
 
 ### Rochelle's Pipeline: Getting Ready
 
-Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. But first she has to figure out where her data is stored.
+In order to start her text analysis project, Rochelle first has to figure out where her data is stored.
 
 Everything Rochelle needs for her text project is in the `data` directory of the git repository (i.e. the directory) `programming-fundamentals`. So Rochelle will migrate there.
 
