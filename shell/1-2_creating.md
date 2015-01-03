@@ -254,6 +254,37 @@ $ ls quotes.txt thesis/quotations.txt
 ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 ~~~
 
+### Rochelle's Pipeline: Moving Files
+
+In the last step, Rochelle created a directory `~/new-york-times/2015-01-01`. Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
+
+The text files that she downloaded are, unsurprisingly, in the directory `/home/oski/Downloads`
+
+~~~ {.input}
+$ cd /home/oski/Downloads
+$ ls
+~~~
+~~~ {.output}
+human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT
+human-rights-2001.TXT  human-rights-2006.TXT  human-rights-2011.TXT
+human-rights-2002.TXT  human-rights-2007.TXT  human-rights-2012.TXT
+human-rights-2003.TXT  human-rights-2008.TXT
+human-rights-2004.TXT  human-rights-2009.TXT
+~~~
+
+Rochelle wants to move them into the directory she created in the last lesson.
+
+~~~ {.input}
+$ cp human-rights-2000.TXT ~/new-york-times/2015-01-01
+$ ls ~/new-york-times/2015-01-01
+~~~
+~~~ {.output}
+human-rights-2000.TXT
+~~~
+
+Huzzah! But does Rochelle really have to time in a command for each file she wants to move? Is there an easier way? Off to the next lesson...
+
+
 ## Exercises
 
 #### Challenge 1
