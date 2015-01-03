@@ -254,29 +254,42 @@ $ ls quotes.txt thesis/quotations.txt
 ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 ~~~
 
-### Rochelle's Pipeline: Moving Files
+### Rochelle's Pipeline: Organizing and Moving Files
 
-In the last step, Rochelle created a directory `~/data/new-york-times/2015-01-01`. Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
+Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she `cd's` into the `programming-fundamentals` directory. From there, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the texts. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
-The text files that she downloaded are, unsurprisingly, in the directory `/home/oski/Downloads`
+> Rochelle names her directories "year-month-day", with leading zeroes for 
+> months and days, because the shell displays file and directory names in 
+> alphabetical order. If she used month names, December would come before July;
+> if she didn't use leading zeroes, November ('11') would come before July 
+> ('7').
 
 ~~~ {.input}
-$ cd /home/oski/Downloads
+$ cd ~/programming-fundamentals/data
+$ mkdir new-york-times
+$ mkdir new-york-times/2015-01-01
+~~~
+
+Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
+
+The text files that she downloaded are, unsurprisingly, in the directory `downloads`
+
+~~~ {.input}
+$ cd downloads
 $ ls
 ~~~
 ~~~ {.output}
-human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT
-human-rights-2001.TXT  human-rights-2006.TXT  human-rights-2011.TXT
-human-rights-2002.TXT  human-rights-2007.TXT  human-rights-2012.TXT
-human-rights-2003.TXT  human-rights-2008.TXT
-human-rights-2004.TXT  human-rights-2009.TXT
+human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
+human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
+human-rights-2002.TXT  human-rights-2006.TXT
+human-rights-2003.TXT  human-rights-2007.TXT
 ~~~
 
-Rochelle wants to move them into the directory she created in the last lesson.
+Rochelle wants to move them into the directory she just created.
 
 ~~~ {.input}
-$ cp human-rights-2000.TXT ~/data/new-york-times/2015-01-01
-$ ls ~/data/new-york-times/2015-01-01
+$ cp human-rights-2000.TXT ../new-york-times/2015-01-01
+$ ls ../new-york-times/2015-01-01
 ~~~
 ~~~ {.output}
 human-rights-2000.TXT
@@ -285,15 +298,14 @@ human-rights-2000.TXT
 Huzzah! But does Rochelle really have to time in a command for each file she wants to move? No, there's an easier way! Instead of giving an input for each file, Rochelle can write `cp *.TXT`.  The `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files
 
 ~~~ {.input}
-$ cp *.TXT ~/data/new-york-times/2015-01-01
-$ ls ~/data/new-york-times/2015-01-01
+$ cp *.TXT ../new-york-times/2015-01-01
+$ ls ../new-york-times/2015-01-01
 ~~~
 ~~~ {.output}
-human-rights-2000.TXT  human-rights-2005.TXT  human-rights-2010.TXT
-human-rights-2001.TXT  human-rights-2006.TXT  human-rights-2011.TXT
-human-rights-2002.TXT  human-rights-2007.TXT  human-rights-2012.TXT
-human-rights-2003.TXT  human-rights-2008.TXT
-human-rights-2004.TXT  human-rights-2009.TXT
+human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
+human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
+human-rights-2002.TXT  human-rights-2006.TXT
+human-rights-2003.TXT  human-rights-2007.TXT
 ~~~
 
 > ## Wildcards {.callout}
@@ -417,3 +429,7 @@ In what order does `ls -R -t` display things?
 **Syntax**: cp [OPTION] SOURCE DIRECTORY
 
 **Flags**: See [here](http://linux.about.com/od/commands/l/blcmdl1_cp.htm) for common options.
+
+### Shortcuts
+
+#### 1. `Wildcards`

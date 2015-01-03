@@ -89,16 +89,16 @@ We know that our current working directory `/home/oski` is stored inside `/home`
 > it refers to the root directory. When it appears *inside* a name,
 > it's just a separator.
 
-Let's see what's in Oski's home directory by running `ls`,
-which stands for "listing":
+Let's see what's in Rochelle's home directory by running `ls`, which stands for "listing":
 
 ~~~ {.input}
 $ ls
 ~~~
 ~~~ {.output}
-data       Downloads  Pictures  setup_ipython_notebook.sh
-Desktop    file.txt  Public    Templates
-Documents  Music      R         Videos
+data       file.txt                  Public                     Videos
+Desktop    Music                     R
+Documents  Pictures                  setup_ipython_notebook.sh
+Downloads  programming-fundamentals  Templates
 ~~~
 
 `ls` prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns.
@@ -109,13 +109,15 @@ We can make its output more comprehensible by using the **flag** `-F`, which tel
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       Downloads/  Pictures/  setup_ipython_notebook.sh*
-Desktop/    file.txt   Public/    Templates/
-Documents/  Music/      R/         Videos/
+data/       Music/                     setup_ipython_notebook.sh*
+Desktop/    Pictures/                  Templates/
+Documents/  programming-fundamentals/  Videos/
+Downloads/  Public/
+file.txt    R/
 ~~~
 
 Here,
-we can see that `/home/home` contains nine **sub-directories**.
+we can see that `/home/oski` contains 11 **sub-directories**.
 The names that don't have trailing slashes, like `file.txt` are plain old files.
 
 And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
@@ -187,8 +189,10 @@ $ pwd
 $ ls
 ~~~
 ~~~ {.output}
-data     Documents  file.text  Pictures  R                          Templates
-Desktop  Downloads  Music      Public    setup_ipython_notebook.sh  Videos
+data       file.txt                  Public                     Videos
+Desktop    Music                     R
+Documents  Pictures                  setup_ipython_notebook.sh
+Downloads  programming-fundamentals  Templates
 ~~~
 
 We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
@@ -248,21 +252,21 @@ The special directory `..` doesn't usually show up when we run `ls`. If we want 
 $ ls -a
 ~~~
 ~~~ {.output}
-.              .gnome              setup_ipython_notebook.sh
-..             .ICEauthority       .subversion
-.bash_history  .ipynb_checkpoints  Templates
-.bash_logout   .ipython            .thumbnails
-.bashrc        .local              .vboxclient-clipboard.pid
-.cache         .mozilla            .vboxclient-display.pid
-.config        Music               .vboxclient-draganddrop.pid
-data           Pictures            .vboxclient-seamless.pid
-.dbus          .pip                .vbox_version
-Desktop        .pki                Videos
-Documents      .profile            .Xauthority
-Downloads      Public              .xsession-errors
-file.txt       R                   .xsession-errors.old
-.gconf         .Rhistory
-.gitconfig     .rstudio-desktop
+.              .gnome                    .rstudio-desktop
+..             .ICEauthority             setup_ipython_notebook.sh
+.bash_history  .ipynb_checkpoints        .subversion
+.bash_logout   .ipython                  Templates
+.bashrc        .local                    .thumbnails
+.cache         .mozilla                  .vboxclient-clipboard.pid
+.config        Music                     .vboxclient-display.pid
+data           Pictures                  .vboxclient-draganddrop.pid
+.dbus          .pip                      .vboxclient-seamless.pid
+Desktop        .pki                      .vbox_version
+Documents      .profile                  Videos
+Downloads      programming-fundamentals  .Xauthority
+file.txt       Public                    .xsession-errors
+.gconf         R                         .xsession-errors.old
+.gitconfig     .Rhistory
 ~~~
 
 `-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/oski`, refers to the `/users` directory).
@@ -288,38 +292,54 @@ As you can see, it also displays another special directory that's just called `.
 > `/home/oski/elsewhere`.
 
 
-### Rochelle's Pipeline: Organizing Files
+### Rochelle's Pipeline: Getting Ready
 
-Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the samples. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
+Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. But first she has to figure out where her data is stored.
 
-> Rochelle names her directories "year-month-day", with leading zeroes for 
-> months and days, because the shell displays file and directory names in 
-> alphabetical order. If she used month names, December would come before July;
-> if she didn't use leading zeroes, November ('11') would come before July 
-> ('7').
+Everything Rochelle needs for her text project is in the `data` directory of the git repository (i.e. the directory) `programming-fundamentals`. So Rochelle will migrate there.
 
-Each of her text files labelled according to the parameteres leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2011.txt`, `human-rights-2012.txt`, and so on. All files will go into the same directory.
+
+~~~ {.input}
+$ cd ~/programming-fundamentals/data
+$ ls
+~~~
+~~~ {.output}
+articles  downloads 
+~~~
+
+Each of Rochelle's text files is labelled according to the parameteres leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2001.txt`, `human-rights-2002.txt`, and so on. All files are in currently in the `downloads` directory.
+
+~~~ {.input}
+$ cd downloads
+$ ls
+~~~
+~~~ {.output}
+human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
+human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
+human-rights-2002.TXT  human-rights-2006.TXT
+human-rights-2003.TXT  human-rights-2007.TXT
+~~~
 
 If she is in her home directory, Rochelle can see what files she has using the command:
 
 ~~~ {.input}
-$ ls data/new-york-times/2015-01-01
+$ cd ~
+$ ls programming-fundamentals/data/downloads
 ~~~
 
 This is a lot to type, but she can let the shell do most of the work. If she types:
 
 ~~~ {.input}
-$ ls data/new
+$ ls prog
 ~~~
 
 and then presses tab, the shell automatically completes the directory name for her:
 
 ~~~ {.input}
-$ ls data/new-york-times
+$ ls programming-fundamentals/
 ~~~
 
-If she presses tab again, Bash will add `2015-01-01/` to the command, since it's the only possible completion. Pressing tab again does nothing,
-since there are multiple possibilities; pressing tab twice brings up a list of all the files, and so on.
+Pressing tab again does nothing, since there are multiple possibilities. Pressing tab twice brings up a list of all the files and directories, and so on.
 
 This is called **tab completion**, and we will see it in many other tools as we go on.
 
