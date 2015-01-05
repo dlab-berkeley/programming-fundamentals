@@ -10,7 +10,7 @@ minutes: 5
 > *   Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
 > *   Explain when and why command-line interfaces should be used instead of graphical interfaces.
 
-Rochelle Terman, a Political Scientists, wants to do analysis of some New York Times she downloaded from [LexisNexis](http://www.lexisnexis.com/hottopics/lnacademic/). LexisNexis only lets her download up to 500 articles at a time, but she wants to analyize several years of coverage. So she downloads several text files, eaching containing approximatly 500 articles, along with metadata for each article (date, desk, author, length, subject, etc).
+Rochelle Terman, a Political Scientist, wants to do analysis of some New York Times she downloaded from [LexisNexis](http://www.lexisnexis.com/hottopics/lnacademic/). LexisNexis only lets her download up to 500 articles at a time, but she wants to analyize several years of coverage. So she downloads several text files, eaching containing no more than 500 articles, along with metadata for each article (date, desk, author, length, subject, etc).
 
 Each text file looks something like this:
 
@@ -52,10 +52,10 @@ Now she wants to turn those big text files into a spreadsheet, each each row bei
 This requires her to:
 
 1.  Combine all the bulk downloads into one file.
-2.  Copy and paste each field (BYLINE, LENTH, text, etc) into its own column.
+2.  Parse each field (BYLINE, LENTH, text, etc) into its own column.
 3.  Analyze, publish, get a great tenure track job, and retire early.
 
-The problem is, Rochelle has procrastinated for the last year and now has to get this project done ASAP. If she completes steps 1-2 by hand, it will take it approximately a gazillian years.
+The problem is, Rochelle has procrastinated for the last year and now has to get this project done ASAP. If she completes steps 1-2 by hand, it will take her approximately a gazillian years.
 
 The next few lessons will show Rochelle how do this task in a jiffy, using the Shell on her computer, and the help of some friendly collaborators who share their code online. 
 
