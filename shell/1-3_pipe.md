@@ -170,16 +170,15 @@ This simple idea is why Unix has been so successful. Instead of creating enormou
 The key is that any program that reads lines of text from standard input
 and writes lines of text to standard output can be combined with every other program that behaves this way as well. You can *and should* write your programs this way so that you and other people can put those programs into pipes to multiply their power.
 
-## Redirecting Input {.callout}
-
-As well as using `>` to redirect a program's output, we can use `<` to
-redirect its input, i.e., to read from a file instead of from standard
-input. For example, instead of writing `wc africa1.tx`, we could write
-`wc < africa1.txt`. In the first case, `wc` gets a command line
-parameter telling it what file to open. In the second, `wc` doesn't have
-any command line parameters, so it reads from standard input, but we
-have told the shell to send the contents of `africa1.txt` to `wc`'s
-standard input.
+> #### Redirecting Input
+> As well as using `>` to redirect a program's output, we can use `<` to
+> redirect its input, i.e., to read from a file instead of from standard
+> input. For example, instead of writing `wc africa1.tx`, we could write
+> `wc < africa1.txt`. In the first case, `wc` gets a command line
+> parameter telling it what file to open. In the second, `wc` doesn't have
+> any command line parameters, so it reads from standard input, but we
+> have told the shell to send the contents of `africa1.txt` to `wc`'s
+> standard input.
 
 ### Rochelle's Pipeline: Concatenating Files.
 
