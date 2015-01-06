@@ -64,7 +64,7 @@ By using the dollar sign we are telling the shell interpreter to treat `filename
 Finally, the command that's actually being run is our old friend `wc`,
 so this loop prints out the word count of each data file in turn.
 
-> ## Follow the Prompt {.callout}
+> #### Follow the Prompt
 >
 > The shell prompt changes from `$` to `>` and back again as we were
 > typing in our loop. The second prompt, `>`, is different to remind
@@ -133,7 +133,7 @@ done
 
 because then the first time through the loop, when `$filename` expanded to `africa1.txt`, the shell would try to run `africa1.txt` as a program. Finally, the `tail` and `wc` combination computes the word count of the last line of each file.
 
-> ## Spaces in Names {.callout}
+> #### Spaces in Names
 > 
 > Filename expansion in loops is another reason you should not use spaces in 
 > filenames. Suppose our data files are named:
@@ -232,13 +232,7 @@ mv africa2.txt original-africa2.txt
 > redisplay the loop, back-arrow to get to the word `echo`, delete it, and
 > then press "enter" to run the loop with the actual `mv` commands. This
 > isn't foolproof, but it's a handy way to see what's going to happen when
-> you're still learning how loops work.
-
-> #### Beginning and End 
->
-> We can move to the beginning of a line in the shell by typing `^A`
-> (which means Control-A)
-> and to the end using `^E`.
+> you're still learning how loops work..
 
 
 Another way to repeat previous work is to use the `history` command to get a list of the last few hundred commands that have been executed, and then to use `!123` (where "123" is replaced by the command number) to repeat one of those commands. For example, if Rochelle types this:
@@ -253,7 +247,7 @@ $ history | tail -5
 
 then she can re-run `cat africa1` simply by typing `!475`.
 
-## FIXME {.challenge}
+#### Challenge 1
 
 Suppose that `ls` initially displays:
 
@@ -270,7 +264,7 @@ do
 done
 ~~~
 
-#### Challenge 1
+#### Challenge 2
 
 What is the effect of this loop?
 
@@ -290,7 +284,7 @@ done
     `xylose.dat`, and copies `sucrose.dat` to create `xylose.dat`.
 4.  None of the above.
 
-#### Challenge 2
+#### Challenge 3
 >
 The `expr` does simple arithmetic using command-line parameters:
 
@@ -313,7 +307,7 @@ do
 done
 ~~~
 
-#### Challenge 3
+#### Challenge 4
 
 Describe in words what the following loop does.
 
