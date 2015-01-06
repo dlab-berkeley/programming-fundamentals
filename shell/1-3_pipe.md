@@ -54,7 +54,7 @@ $ wc -l africa*.txt
       2 africa98.txt
       2 africa99.txt
       2 africa9.txt
-   272 total
+    272 total
 ~~~
 
 So we see that each article has only 2 lines. How can this be, if the number of words vary so widely? Open a file and try to guess why.
