@@ -1,5 +1,4 @@
 ---
-layout: page
 title: The Unix Shell
 subtitle: Pipes and Filters
 minutes: 15
@@ -31,13 +30,12 @@ $ wc africa*.txt
 ~~~
 ~~~ {.output}
       ...
-      2     102     612 africa95.txt
-      2    1577    9636 africa96.txt
-      2     516    3222 africa97.txt
-      2     654    4181 africa98.txt
-      2     598    3752 africa99.txt
-      2     592    3603 africa9.txt
-      272  71106 443311 total
+       1     101     608 africa95.txt
+       1    1576    9632 africa96.txt
+       1     515    3218 africa97.txt
+       1     653    4177 africa98.txt
+       1     597    3748 africa99.txt
+     136   70982  442767 total
 ~~~
 
 
@@ -48,16 +46,16 @@ $ wc -l africa*.txt
 ~~~
 ~~~ {.output}
       ...
-      2 africa95.txt
-      2 africa96.txt
-      2 africa97.txt
-      2 africa98.txt
-      2 africa99.txt
-      2 africa9.txt
-    272 total
+       1 africa94.txt
+       1 africa95.txt
+       1 africa96.txt
+       1 africa97.txt
+       1 africa98.txt
+       1 africa99.txt
+     136 total
 ~~~
 
-So we see that each article has only 2 lines. How can this be, if the number of words vary so widely? Open a file and try to guess why.
+So we see that each article has only 1 lines. How can this be, if the number of words vary so widely? Open a file and try to guess why.
 
 We can also use `-w` to get only the number of words, or `-c` to get only the number of characters.
 
@@ -88,12 +86,12 @@ $ cat lengths
 ~~~
 ~~~ {.output}
     ...
-   102 africa95.txt
-  1577 africa96.txt
-   516 africa97.txt
-   654 africa98.txt
-   598 africa99.txt
-   592 africa9.txt
+   101 africa95.txt
+  1576 africa96.txt
+   515 africa97.txt
+   653 africa98.txt
+   597 africa99.txt
+   591 africa9.txt
 ~~~
 
 Now let's use the `sort` command to sort its contents. We will also use the -n flag to specify that the sort is  numerical instead of alphabetical. This does *not* change the file; instead, it sends the sorted result to the screen:
@@ -103,11 +101,11 @@ $ sort -n lengths
 ~~~
 ~~~ {.output}
    ...
-  1144 africa134.txt
-  1156 africa43.txt
-  1228 africa25.txt
-  1330 africa24.txt
-  1577 africa96.txt
+  1143 africa134.txt
+  1155 africa43.txt
+  1227 africa25.txt
+  1329 africa24.txt
+  1576 africa96.txt
 ~~~
 
 We can put the sorted list of lines in another temporary file called `sorted-lengths` by putting `sorted-lengths` after the command, just as we used `lengths` to put the output of `wc` into `lengths`. Once we've done that,
@@ -118,7 +116,7 @@ $ sort -n lengths > sorted-lengths
 $ head -1 sorted-lengths
 ~~~
 ~~~ {.output}
-   71 africa49.txt
+   70 africa49.txt
 ~~~
 
 Using the parameter `-1` with `head` tells it that we only want the first line of the file; `-20` would get the first 20, and so on. Since `sorted-lengths` contains the lengths of our files ordered from least to greatest, the output of `head` must be the file with the fewest lines.
@@ -129,7 +127,7 @@ If you think this is confusing, you're in good company: even once you understand
 $ sort -n lengths | head -1
 ~~~
 ~~~ {.output}
-   71 africa49.txt
+   70 africa49.txt
 ~~~
 
 The vertical bar between the two commands is called a **pipe**. It tells the shell that we want to use the output of the command on the left as the input to the command on the right. The computer might create a temporary file if it needs to, or copy data from one program to the other in memory, or something else entirely; we don't have to know or care.
@@ -140,7 +138,7 @@ We can use another pipe to send the output of `wc` directly to `sort`, which the
 $ wc -w africa*.txt | sort -n | head -1
 ~~~
 ~~~ {.output}
-  71 africa49.txt
+  70 africa49.txt
 ~~~
 
 This is exactly like a mathematician nesting functions like *log(3x)*

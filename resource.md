@@ -32,6 +32,12 @@ subtitle: Reference
     and doesn't guarantee anything,
     but is normally used to indicate the type of data in the file.
 *   Most commands take options (flags) which begin with a '-'.
+*   `~` stands for the users's home directory. Use it at the beginning of a path, like `~/Desktop/programming-fundamentals`
+*   If you type enough letters of your command or argument, then you can press tab to have it automatically completed. 
+	Double tab displays all the available options.
+*	Up Arrow displays last commant in the commant line.
+*	Copy a file/directory in the GUI and paste them into the command line to give the file/directory's full path.
+
 
 ## [Creating Things](02-create.html)
 
@@ -44,6 +50,7 @@ subtitle: Reference
 *   Unix documentation uses '^A' to mean "control-A".
 *   The shell does not have a trash bin: once something is deleted, it's really gone.
 *   Nano is a very simple text editor --- please use something else for real work.
+*   `*` is a wildcard. It matches zero or more characters
 
 ## [Pipes and Filters](03-pipefilter.html)
 
