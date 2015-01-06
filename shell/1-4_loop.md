@@ -285,7 +285,7 @@ done
 4.  None of the above.
 
 #### Challenge 3
->
+
 The `expr` does simple arithmetic using command-line parameters:
 
 ~~~
