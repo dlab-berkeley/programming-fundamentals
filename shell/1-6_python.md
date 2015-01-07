@@ -236,7 +236,7 @@ Did you forget about Rochelle's text analysis project? She had to:
 2.  Parse the articles by putting each article into a row, and each field (BYLINE, LENTH, text, etc) into its own column.
 3.  Analyze, publish, get a great tenure track job, and retire early.
 
-So far she's done #1. 
+So far she's done #1. The file all.txt is in the programming-fundamentals/data/new-york-times/2015-01-01 directory, and contains all of the text files.
 
 How does she do #2? That seems tough. She could take Dav Clark's Python Intensive course and learn how to program a script that would do it for her. Or she could get somebody else to write the code for her.
 
@@ -249,17 +249,16 @@ Rochelle reads Neal Caren's website to make sure that she's allowed to use his s
 Rochelle then downloads the script and takes a quick look at it. The opening comments give s sample usage:
 ~~~
 sample usage:
-$ python split_ln.py T*.txt
-Processing The_New_York_Times_TP_2012_1.txt
-Processing The_New_York_Times_TP_2012_2.txt
-Done
-
 $ python split_ln.py ap_tp_201201.txt
 Processing ap_tp_201201.txt
 Done
 ~~~
 
-So Rochelle tries it out. First the has to put the python script in the same directory as her text files.
+So Rochelle tries it out. First  has to put the python script in the same directory as her text files. Then she can run the script on all.txt using Python's normal mode.
+
+#### Challenge
+
+Run Rochelle's final task above. What output did you get? Did it work? Why or why not? (Hint: Read Neal Caren's webpage explaining possible glitches.)
 
 Other fun text analysis programs in python:
 
