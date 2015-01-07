@@ -18,11 +18,21 @@ Wildcards and tab completion are two ways to reduce typing (and typing mistakes)
 
 Let's go back to our programming-fundamentals/data/articles directory, where we have over 1000 text articles on different regions of the world.
 
-Let's say we'd like to rename the existing ones to `original-africa1.txt` and `original-africa2.txt`.
+Let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
 
-We can't use:
+First we can make a directory and copy our files:
 
 ~~~ {.input}
+$ cd ~/programming-fundamentals/data/articles
+$ mkdir backup
+$ cp *.txt backup
+$ ls backup
+~~~
+
+So far so good. But when we try to rename the files, we can't use:
+
+~~~ {.input}
+$ cd backup
 $ mv *.txt original-*.txt
 ~~~
 

@@ -28,7 +28,8 @@ UNIX is an operating system which was first developed in the 1960s, and has been
 Unix has several fundamental differences compared with Windows:
 
 * More rigorous security
-* Extremely powerful command-line tools • Very stable
+* Extremely powerful command-line tools 
+* Very stable
 * Entirely different directory structure
 
 #### Unix v. Apple OSX
@@ -85,11 +86,7 @@ We'll also be talking more about files + directories.
 
 #### Virtual Machines
 
-> A **virtual machine (VM)** is an operating system OS or application
-> environment that is installed on software which imitates dedicated hardware. 
-> The end user has the same experience on a virtual machine as they would have 
-> on dedicated hardware ([citation](http://searchservervirtualization.
-> techtarget.com/definition/virtual-machine))
+A **virtual machine (VM)** is an operating system OS or application environment that is installed on software which imitates dedicated hardware. The end user has the same experience on a virtual machine as they would have on dedicated hardware ([citation](http://searchservervirtualization.techtarget.com/definition/virtual-machine))
 
 So a virtual machine is like using somebody else's computer on your very own laptop!
 
@@ -129,7 +126,7 @@ One useful thing will be to share folders between the VM and the host machine so
 
 **Your keyboard may be weird**
 
-If you're use to a Mac, cmd+C will no longer work. Use CTRL+C instead.
+If you're use to a Mac, CMD+C will no longer work. Use CTRL+C instead.
 
 ## Exercises
 
