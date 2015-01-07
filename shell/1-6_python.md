@@ -1,15 +1,16 @@
 ---
 title: The Unix Shell
-subtitle: Python and Other Programs
+subtitle: Python and Beyond
 minutes: 15
 ---
 > ## Learning Objectives
 >
-> *   Explain how the shell relates to other programs.
+> *   Explain how the shell relates to other programs like Python.
 > *   Open a Python interpreter from the shell.
 > *   Run a Python script from the shell.
 > *   Explain the importance of IDE's and program-specific tools.
 > *   Find which version of Python is used by the interpreter.
+> *   Explain what Python modules and packages are
 > *   Install Python packages from the shell.
 
 Why are we doing all this shell stuff? After all, anyone who wants to rename several thousand data files can easily do so interactively in the Python interpreter, and anyone who's doing serious data analysis is probably going to do most of their work inside the IPython Notebook or R Studio. In fact, many of you are here to prepare for programming in Python or R. So why teach the shell?
@@ -131,7 +132,6 @@ One of the key features of Python is that the actual core language is fairly sma
 > * Installs easily without lots of dependencies (or has detailed installation instructions)
 > * Actively developed
 
-
 ## Package installation
 
 BCE already comes with many of the packages you need. To see if you have a package installed, simply go to into a Python interpreter and enter:
@@ -228,3 +228,40 @@ IPython is included in BCE. To start a notebook, simply type `ipython notebook` 
 > user to implement IDE like functionality for as broad a range of languages 
 > or syntaxes as plugin writers care to cover.
 
+## Rochelle's Pipeline
+
+Did you forget about Rochelle's text analysis project? She had to:
+
+1.  Combine all the bulk downloads from LexisNexis into one file.
+2.  Parse the articles by putting each article into a row, and each field (BYLINE, LENTH, text, etc) into its own column.
+3.  Analyze, publish, get a great tenure track job, and retire early.
+
+So far she's done #1. 
+
+How does she do #2? That seems tough. She could take Dav Clark's Python Intensive course and learn how to program a script that would do it for her. Or she could get somebody else to write the code for her.
+
+Rochelle's pretty lazy, so she's going for option #2.
+
+She goes into her web browser and googles `python lexisnexis`. Sure enough, the first results is [Neal Caren's website](http://nealcaren.web.unc.edu/cleaning-up-lexisnexis-files/). Neal Caren in an assistant professor of Sociology at the University of North Carolina, Chapel Hill. He wrote a small Python [script](http://www.unc.edu/~ncaren/haphazard/split_ln.py) that converts a plain text file into a comma-separated values (CSV) file - exactly what Rochelle's needs!
+
+Rochelle reads Neal Caren's website to make sure that she's allowed to use his script. Since Neal put the code but doesn't give a licenee, Rochelle is going to assume a standard open source license: use, but credit.
+
+Rochelle then downloads the script and takes a quick look at it. The opening comments give s sample usage:
+~~~
+sample usage:
+$ python split_ln.py T*.txt
+Processing The_New_York_Times_TP_2012_1.txt
+Processing The_New_York_Times_TP_2012_2.txt
+Done
+
+$ python split_ln.py ap_tp_201201.txt
+Processing ap_tp_201201.txt
+Done
+~~~
+
+So Rochelle tries it out. First the has to put the python script in the same directory as her text files.
+
+Other fun text analysis programs in python:
+
+* [Another LexisNexis parser with more options](https://github.com/alexstorer/lexisparse)
+* [Python wrapper for the New York Times article API](https://github.com/evansherlock/nytimesarticle)
