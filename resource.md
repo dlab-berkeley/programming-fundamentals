@@ -2,7 +2,7 @@
 title: Programming Fundamentals
 subtitle: Reference
 ---
-## [Introducing the Shell](1-0_intro.md)
+## [Introducing the Shell](1-0_shell.md)
 
 *   A shell is a program whose primary purpose is to read commands and run other programs.
 *   The shell's main advantages are its high action-to-keystroke ratio,
@@ -11,7 +11,7 @@ subtitle: Reference
 *   The shell's main disadvantages are its primarily textual nature
     and how cryptic its commands and operation can be.
 
-## [Files and Directories](01-filedir.html)
+## [Files and Directories](1-1_filedir.md)
 
 *   The file system is responsible for managing information on the disk.
 *   Information is stored in files, which are stored in directories (folders).
@@ -39,7 +39,7 @@ subtitle: Reference
 *	Copy a file/directory in the GUI and paste them into the command line to give the file/directory's full path.
 
 
-## [Creating Things](02-create.html)
+## [Creating Things](1-2-create.md)
 
 *   `cp old new` copies a file.
 *   `mkdir path` creates a new directory.
@@ -52,7 +52,7 @@ subtitle: Reference
 *   Nano is a very simple text editor --- please use something else for real work.
 *   `*` is a wildcard. It matches zero or more characters
 
-## [Pipes and Filters](03-pipefilter.html)
+## [Pipes and Filters](1-3_pipe.me)
 
 *   `cat` displays the contents of its inputs.
 *   `head` displays the first few lines of its input.
@@ -63,7 +63,7 @@ subtitle: Reference
 *   `first | second` is a pipeline: the output of the first command is used as the input to the second.
 *   The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
 
-## [Loops](04-loop.html)
+## [Loops](1_4-loop.md)
 
 *   `history` displays recent commands, and `!number` to repeat a command by number.
 *   A `for` loop repeats commands once for every thing in a list.
@@ -74,7 +74,7 @@ subtitle: Reference
 *   Use the up-arrow key to scroll up through previous commands to edit and repeat them.
 *   Use `history` to display recent commands, and `!number` to repeat a command by number.
 
-## [Shell Scripts](05-script.html)
+## [Shell Scripts](1-5-script.md)
 
 *   Save commands in files (usually called shell scripts) for re-use.
 *   `bash filename` runs the commands saved in a file.
@@ -94,7 +94,7 @@ subtitle: Reference
 *   `$(command)` inserts a command's output in place.
 *   `man command` displays the manual page for a given command.
 
-## Python and Beyond
+## [Python and Beyond](1-6_python.md)
 
 *   An interpreter is a program that reads and executes code. 
 *   `which [program]` gives you the version of a program, and, by extension, whether you have it installed.
