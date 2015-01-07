@@ -59,9 +59,7 @@ The problem is, Rochelle has procrastinated for the last year and now has to get
 
 The next few lessons will show Rochelle how do this task in a jiffy, using the Shell on her computer, and the help of some friendly collaborators who share their code online. 
 
-## What and Why
-
-#### Computer-Human Interfaces
+### Computer-Human Interfaces
 
 At a high level, computers do four things:
 
@@ -74,7 +72,7 @@ They can do the last of these in many different ways, including direct brain-com
 
 Going back even further, the only way to interact with early computers was to rewire them. But in between, from the 1950s to the 1980s, most people used line printers. These devices only allowed input and output of the letters, numbers, and punctuation found on a standard keyboard, so programming languages and interfaces had to be designed around that constraint.
 
-#### The Command Line
+### The Command Line
 
 This kind of interface is called a **command-line interface**, or CLI,
 to distinguish it from the **graphical user interface**, or GUI, that most people now use.
@@ -82,7 +80,7 @@ to distinguish it from the **graphical user interface**, or GUI, that most peopl
 The heart of a CLI is a **read-evaluate-print loop**, or REPL: when the user types a command and then presses the enter (or return) key, the computer reads it, executes it, and prints its output. The user then types another command,
 and so on until the user logs off.
 
-#### The Shell
+### The Shell
 
 This description makes it sound as though the user sends commands directly to the computer, and the computer sends output directly to the user. In fact,
 there is usually a program in between called a **command shell**.
@@ -93,11 +91,11 @@ Note, the reason why the shell is called *the shell*: it encloses the operating 
 
 A shell is a program like any other. What's special about it is that its job is to run other programs rather than to do calculations itself. The commands are themselves programs: when they terminate, the shell gives the user another prompt ($ on our systems).
 
-#### Bash
+### Bash
 
 The most popular Unix shell is **Bash**, the Bourne Again Shell (so-called because it's derived from a shell written by Stephen Bourne --- this is what passes for wit among programmers). Bash is the default shell on most modern implementations of **Unix**, and in most packages that provide Unix-like tools for Windows.
 
-#### Why Use a Shell
+### Why Use a Shell
 
 Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long),
 their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. 

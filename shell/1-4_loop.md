@@ -51,6 +51,8 @@ mv: target `original-*.txt' is not a directory
 This is because there are no files matching the wildcard `original-*.txt`.
 In this case, Bash passes the unexpanded wildcard as a parameter to the `mv` command.
 
+### Loops
+
 Instead, we can use a **loop** to do some operation once for each thing in a list. Here's a simple example that displays the first three lines of each file in turn:
 
 
@@ -66,6 +68,8 @@ $ for filename in africa1.text africa2.txt
 ~~~
 
 When the shell sees the keyword `for`, it knows it is supposed to repeat a command (or group of commands) once for each thing in a list. In this case, the list is the two filenames.
+
+### Variables
 
 Each time through the loop, the name of the thing currently being operated on is assigned to the **variable** called `filename`. Inside the loop, we get the variable's value by putting `$` in front of it: `$filename` is `africa1.txt` the first time through the loop, `africa2.txt` the second, and so on.
 
@@ -99,6 +103,8 @@ $ for temperature in africa1.text africa2.txt
 ~~~
 
 it would work exactly the same way. *Don't do this.* Programs are only useful if people can understand them, so meaningless names (like `x`) or misleading names (like `temperature`) increase the odds that the program won't do what its readers think it does.
+
+### More Loops
 
 Here's a slightly more complicated loop:
 
@@ -196,6 +202,8 @@ because then the first time through the loop, when `$filename` expanded to `afri
 > but it's simpler just to avoid using spaces (or other special characters) in 
 > filenames.
 
+### A Loopy Solution
+
 Going back to our original file renaming problem, we can solve it using this loop:
 
 ~~~ {.input}
@@ -244,6 +252,7 @@ mv africa2.txt original-africa2.txt
 > isn't foolproof, but it's a handy way to see what's going to happen when
 > you're still learning how loops work..
 
+### History
 
 Another way to repeat previous work is to use the `history` command to get a list of the last few hundred commands that have been executed, and then to use `!123` (where "123" is replaced by the command number) to repeat one of those commands. For example, if Rochelle types this:
 
@@ -256,6 +265,8 @@ $ history | tail -5
 ~~~
 
 then she can re-run `cat africa1` simply by typing `!475`.
+
+## Exercises
 
 #### Challenge 1
 

@@ -3,15 +3,16 @@ title: The Unix Shell
 subtitle: Pipes and Filters
 minutes: 15
 ---
-## Learning Objectives
->
-*   Redirect a command's output to a file.
-*   Process a file instead of keyboard input using redirection.
-*   Construct command pipelines with two or more stages.
-*   Explain what usually happens if a program or pipeline isn't given any input to process.
-*   Explain Unix's "small pieces, loosely joined" philosophy.
+> ## Learning Objectives
+> *   Redirect a command's output to a file.
+> *   Process a file instead of keyboard input using redirection.
+> *   Construct command pipelines with two or more stages.
+> *   Explain what usually happens if a program or pipeline isn't given any input to process.
+> *   Explain Unix's "small pieces, loosely joined" philosophy.
 
 Now that we know a few basic commands, we can finally look at the shell's most powerful feature: the ease with which it lets us combine existing programs in new ways.
+
+### Counting
 
 We'll start with a directory called `data/articles` that contains text files of news articles. They are organized by the region they cover. So africa1.txt is the first article about Africa, africa2.txt the second and so on.
 
@@ -59,7 +60,9 @@ So we see that each article has only 1 lines. How can this be, if the number of 
 
 We can also use `-w` to get only the number of words, or `-c` to get only the number of characters.
 
-Which of these files is shortest? It's an easy question to answer when there are only six files, but what if there were 6000?
+Which of these files is shortest? It's an easy question to answer when there are only a few files, but what if there were 6000?
+
+### Redirecting and Printing
 
 Our first step toward a solution is to run the command:
 
@@ -94,6 +97,8 @@ $ cat lengths
    591 africa9.txt
 ~~~
 
+### Sorting
+
 Now let's use the `sort` command to sort its contents. We will also use the -n flag to specify that the sort is  numerical instead of alphabetical. This does *not* change the file; instead, it sends the sorted result to the screen:
 
 ~~~ {.input}
@@ -120,6 +125,8 @@ $ head -1 sorted-lengths
 ~~~
 
 Using the parameter `-1` with `head` tells it that we only want the first line of the file; `-20` would get the first 20, and so on. Since `sorted-lengths` contains the lengths of our files ordered from least to greatest, the output of `head` must be the file with the fewest lines.
+
+### Pipes
 
 If you think this is confusing, you're in good company: even once you understand what `wc`, `sort`, and `head` do, all those intermediate files make it hard to follow what's going on. We can make it easier to understand by running `sort` and `head` together:
 
@@ -155,6 +162,8 @@ $ ls -1 | wc -l
 
 This uses `wc` to do a count of the number of lines (`-l`) in the output of `ls -1`.
 
+### Processes, Inputs, Outputs, and Filters
+
 Here's what actually happens behind the scenes when we create a pipe. When a computer runs a program --- any program --- it creates a **process** in memory to hold the program's software and its current state. Every process has an input channel called **standard input**. (By this point, you may be surprised that the name is so memorable, but don't worry: most Unix programmers call it "stdin". Every process also has a default output channel called **standard output** (or "stdout").
 
 The shell is actually just another program. Under normal circumstances, whatever we type on the keyboard is sent to the shell on its standard input, and whatever it produces on standard output is displayed on our screen. When we tell the shell to run a program, it creates a new process and temporarily sends whatever we type on our keyboard to that process's standard input, and whatever the process sends to standard output to the screen.
@@ -178,7 +187,7 @@ and writes lines of text to standard output can be combined with every other pro
 > have told the shell to send the contents of `africa1.txt` to `wc`'s
 > standard input.
 
-### Rochelle's Pipeline: Concatenating Files.
+## Rochelle's Pipeline: Concatenating Files.
 
 Rochelle has her bulk text downloads in the `new-york-times/2015-01-01` directory described earlier.
 

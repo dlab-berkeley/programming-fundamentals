@@ -1,5 +1,4 @@
 ---
-layout: page
 title: The Unix Shell
 subtitle: Creating Things
 minutes: 15
@@ -10,6 +9,9 @@ minutes: 15
 > *   Create files in that hierarchy using an editor or by copying and renaming existing files.
 > *   Display the contents of a directory using the command line.
 > *   Delete specified files and/or directories.
+
+
+### Creating Things
 
 We now know how to explore files and directories, but how do we create them in the first place? Let's go back to Rochelle's home directory, `/home/oski`,
 and use `ls -F` to see what it contains:
@@ -56,6 +58,9 @@ However, there's nothing in it yet:
 $ ls -F thesis
 ~~~
 
+
+### Text Editors
+
 Let's change our working directory to `thesis` using `cd`, then run a text editor called Nano to create a file called `draft.txt`:
 
 ~~~ {.input}
@@ -95,6 +100,8 @@ $ ls
 ~~~ {.output}
 draft.txt
 ~~~
+
+### Removing
 
 Let's tidy up by running `rm draft.txt`:
 
@@ -181,6 +188,8 @@ $ rmdir thesis
 > them, and so on. It's very handy, but can do a lot of damage if used
 > without care.
 
+### Moving
+
 Let's create that directory and file one more time. (Note that this time we're running `nano` with the path `thesis/draft.txt`, rather than going into the `thesis` directory and running `nano` on `draft.txt` there.)
 
 ~~~ {.input}
@@ -215,7 +224,7 @@ $ ls thesis
 quotes.txt
 ~~~
 
-Just for the sake of inconsistency, `mv` also works on directories --- there is no separate `mvdir` command.
+Just for the sake of inconsistency, `mv` also works on directories -- there is no separate `mvdir` command.
 
 Let's move `quotes.txt` into the current working directory. We use `mv` once again, but this time we'll just use the name of a directory as the second parameter to tell `mv` that we want to keep the filename, but put the file somewhere new. (This is why the command is called "move".) In this case, the directory name we use is the special directory name `.` that we mentioned earlier.
 
@@ -238,6 +247,9 @@ $ ls quotes.txt
 quotes.txt
 ~~~
 
+
+### Copying
+
 The `cp` command works very much like `mv`, except it copies a file instead of moving it. We can check that it did the right thing using `ls` with two paths as parameters --- like most Unix commands, `ls` can be given thousands of paths at once:
 
 ~~~ {.input}
@@ -257,7 +269,7 @@ $ ls quotes.txt thesis/quotations.txt
 ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 ~~~
 
-### Rochelle's Pipeline: Organizing and Moving Files
+## Rochelle's Pipeline: Organizing and Moving Files
 
 Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she `cd's` into the `programming-fundamentals` directory. From there, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the texts. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
@@ -405,3 +417,34 @@ The command `ls -t` lists things by time of last change,
 with most recently changed files or directories first.
 In what order does `ls -R -t` display things?
 
+## Summary and Cheat Sheets
+
+### Commands
+
+#### 1. `mkdir`
+
+**Summary**: Makes directories.
+
+**Syntax**: `mkdir [OPTION] [DIRECTORY]`
+
+**Flags**: See [here](http://linux.about.com/library/cmd/blcmdl1_mkdir.htm) for common options.
+
+#### 2. `mv`
+
+**Summary**: Move or rename files.
+
+**Flags**: See [here](http://linux.about.com/library/cmd/blcmdl1_mv.htm) for common options.
+
+**Syntax**: `mv [OPTION] SOURCE DIRECTORY`
+
+#### 3. `cp`
+
+**Summary**: Copies files and directories.
+
+**Syntax**: cp [OPTION] SOURCE DIRECTORY
+
+**Flags**: See [here](http://linux.about.com/od/commands/l/blcmdl1_cp.htm) for common options.
+
+### Shortcuts
+
+#### 1. `Wildcards`

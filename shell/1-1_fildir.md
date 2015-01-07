@@ -41,6 +41,8 @@ More specifically, when we type `whoami` the shell:
 3.  displays that program's output, then
 4.  displays a new prompt to tell us that it's ready for more commands.
 
+### Home Directories
+
 Next, let's find out where we are by running a command called `pwd` (which stands for "print working directory").
 
 At any moment, our **current working directory** is our current default directory, i.e., the directory that the computer assumes we want to run commands in  unless we explicitly specify something else.
@@ -88,6 +90,8 @@ We know that our current working directory `/home/oski` is stored inside `/home`
 > When it appears at the front of a file or directory name,
 > it refers to the root directory. When it appears *inside* a name,
 > it's just a separator.
+
+### Listing
 
 Let's see what's in Rochelle's home directory by running `ls`, which stands for "listing":
 
@@ -195,6 +199,8 @@ Documents  Pictures                  setup_ipython_notebook.sh
 Downloads  programming-fundamentals  Templates
 ~~~
 
+### Moving Around
+
 We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
 
 ~~~ {.input}
@@ -292,7 +298,7 @@ As you can see, it also displays another special directory that's just called `.
 > `/home/oski/elsewhere`.
 
 
-### Rochelle's Pipeline: Getting Ready
+## Rochelle's Pipeline: Getting Ready
 
 In order to start her text analysis project, Rochelle first has to figure out where her data is stored.
 
