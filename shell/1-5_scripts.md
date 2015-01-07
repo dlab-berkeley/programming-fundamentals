@@ -1,5 +1,4 @@
 ---
-layout: page
 title: The Unix Shell
 subtitle: Shell Scripts
 minutes: 15
@@ -8,7 +7,8 @@ minutes: 15
 >
 > *   Write a shell script that runs a command or series of commands for a fixed set of files.
 > *   Run a shell script from the command line.
-> *   Run a python script from the command line.
+> *   Write a shell script from shell's history.
+> *   Explain the importance of comments in scripts.
 
 
 We are finally ready to see what makes the shell such a powerful programming environment. We are going to take the commands we repeat frequently and save them in files so that we can re-run all those operations again later by typing a single command.
