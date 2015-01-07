@@ -2,7 +2,7 @@
 title: Programming Fundamentals
 subtitle: Reference
 ---
-## [Introducing the Shell](1-0_intro.html)
+## [Introducing the Shell](1-0_intro.md)
 
 *   A shell is a program whose primary purpose is to read commands and run other programs.
 *   The shell's main advantages are its high action-to-keystroke ratio,
@@ -32,7 +32,7 @@ subtitle: Reference
     and doesn't guarantee anything,
     but is normally used to indicate the type of data in the file.
 *   Most commands take options (flags) which begin with a '-'.
-*   `~` stands for the users's home directory. Use it at the beginning of a path, like `~/Desktop/programming-fundamentals`
+*   `~` stands for the users's home directory. Use it at the beginning of a path, like `~/path/to/file`
 *   If you type enough letters of your command or argument, then you can press tab to have it automatically completed. 
 	Double tab displays all the available options.
 *	Up Arrow displays last commant in the commant line.
@@ -80,10 +80,11 @@ subtitle: Reference
 *   `bash filename` runs the commands saved in a file.
 *   `$*` refers to all of a shell script's command-line parameters.
 *   `$1`, `$2`, etc., refer to specified command-line parameters.
+*   `$@` refer to all command-line parameters. Especially helpful for wildcards.
 *   Place variables in quotes if the values might have spaces in them.
 *   Letting users decide what files to process is more flexible and more consistent with built-in Unix commands.
 
-## [Finding Things](06-find.html)
+## Finding Things: (Not covered, but helpful)
 
 *   `find` finds files with specific properties that match patterns.
 *   `grep` selects lines in files that match patterns.
@@ -92,6 +93,20 @@ subtitle: Reference
 *   `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
 *   `$(command)` inserts a command's output in place.
 *   `man command` displays the manual page for a given command.
+
+## Python and Beyond
+
+*   An interpreter is a program that reads and executes code. 
+*   `which [program]` gives you the version of a program, and, by extension, whether you have it installed.
+*   Run Python in interactive mode in bash by typing `python`.
+*   Run Python in normal mode in bash by typing `python [scrip.py]`
+*   `quit()` gets you back into bash.
+*   A module is a python script that has helpful functions n such.
+*   A package is a collection of python modules.
+*   `pip install [package]` is the easiest way to install new packages
+*   BCE comes with most of the packages you need already installed.
+*   try `sudo` in the beginning of a bash command when you face permissions problems.
+*   Use an IDE like PyCharm to develop your Python code.
 
 ## Glossary
 
