@@ -11,7 +11,7 @@ minutes: 5
 > *   Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
 > *   Explain when and why command-line interfaces should be used instead of graphical interfaces.
 
-Rochelle Terman, a Recovering Political Scientist in Training, wants to do analysis of some New York Times she downloaded from [LexisNexis](http://www.lexisnexis.com/hottopics/lnacademic/). LexisNexis only lets her download up to 500 articles at a time, but she wants to analyize several years of coverage. So she downloads several text files, eaching containing no more than 500 articles, along with metadata for each article (date, desk, author, length, subject, etc).
+Rochelle Terman, a Recovering Political Scientist in Training, wants to do analysis of some New York Times she downloaded from [LexisNexis](http://www.lexisnexis.com/hottopics/lnacademic/). LexisNexis only lets her download up to 500 articles at a time, but she wants to analyze several years of coverage. So she downloads several text files, each containing no more than 500 articles, along with metadata for each article (date, desk, author, length, subject, etc).
 
 Each text file looks something like this:
 
@@ -107,4 +107,4 @@ In addition, the command line is often the easiest way to interact with remote m
 
 ---
 
-{Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/00-intro.html)}
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/00-intro.html)

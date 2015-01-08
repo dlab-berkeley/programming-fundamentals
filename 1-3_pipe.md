@@ -355,3 +355,7 @@ bear
 What other command(s) could be added to this in a pipeline to find
 out what animals the file contains (without any duplicates in their
 names)?
+
+---
+
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/03-pipefilter.html)

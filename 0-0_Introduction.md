@@ -19,7 +19,7 @@ Now here's the reality:
 This sorry state of affairs persists for three reasons:
 
 1.   *No room, no time.*
-    Everybody's schedule is full—there's simply not space to add more
+    Everybody's schedule is full —- there's simply not space to add more
     about computing without dropping something else.
 
 2.   *The blind leading the blind.*

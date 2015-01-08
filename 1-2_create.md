@@ -417,34 +417,6 @@ The command `ls -t` lists things by time of last change,
 with most recently changed files or directories first.
 In what order does `ls -R -t` display things?
 
-## Summary and Cheat Sheets
+---
 
-### Commands
-
-#### 1. `mkdir`
-
-**Summary**: Makes directories.
-
-**Syntax**: `mkdir [OPTION] [DIRECTORY]`
-
-**Flags**: See [here](http://linux.about.com/library/cmd/blcmdl1_mkdir.htm) for common options.
-
-#### 2. `mv`
-
-**Summary**: Move or rename files.
-
-**Flags**: See [here](http://linux.about.com/library/cmd/blcmdl1_mv.htm) for common options.
-
-**Syntax**: `mv [OPTION] SOURCE DIRECTORY`
-
-#### 3. `cp`
-
-**Summary**: Copies files and directories.
-
-**Syntax**: cp [OPTION] SOURCE DIRECTORY
-
-**Flags**: See [here](http://linux.about.com/od/commands/l/blcmdl1_cp.htm) for common options.
-
-### Shortcuts
-
-#### 1. `Wildcards`
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/02-create.html)

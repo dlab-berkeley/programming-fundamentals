@@ -7,7 +7,7 @@ subtitle: Reference
 
 *   An operating system is a suite of programs which make the computer work.
 *   UNIX is an very popular operating system, used on Macs and bunch of others.
-*   UNIX has a kernel, file system, and programms.
+*   UNIX has a kernel, file system, and programs.
 *   Linux is an open source Unix-like system
 *   A virtual machine is like using somebody else's computer on your very own laptop
 *   The Berkeley Common Environment (BCE) is a standardized VM using Linux
@@ -45,10 +45,10 @@ subtitle: Reference
     and doesn't guarantee anything,
     but is normally used to indicate the type of data in the file.
 *   Most commands take options (flags) which begin with a '-'.
-*   `~` stands for the users's home directory. Use it at the beginning of a path, like `~/path/to/file`
+*   `~` stands for the user's home directory. Use it at the beginning of a path, like `~/path/to/file`
 *   If you type enough letters of your command or argument, then you can press tab to have it automatically completed. 
 	Double tab displays all the available options.
-*	Up Arrow displays last commant in the commant line.
+*	Up Arrow displays last command in the command line.
 *	Copy a file/directory in the GUI and paste them into the command line to give the file/directory's full path.
 
 
@@ -106,6 +106,7 @@ subtitle: Reference
 *   `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
 *   `$(command)` inserts a command's output in place.
 *   `man command` displays the manual page for a given command.
+*   Find the whole lesson [here](http://software-carpentry.org/v5/novice/shell/06-find.html)
 
 ## [Python and Beyond](1-6_python.md)
 

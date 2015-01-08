@@ -48,7 +48,7 @@ $ bash group.sh
 
 Sure enough, our script's output is exactly what we would get if we ran that pipeline directly. It concatenated all of the africa files and then counted the number of lines, which is 136 (one line for each article).
 
-> ## Text vs. Whatever {.callout}
+> ## Text vs. Whatever
 >
 > We usually call programs like Microsoft Word or LibreOffice Writer "text
 > editors", but we need to be a bit more careful when it comes to
@@ -267,3 +267,7 @@ done
 # Script 3
 echo $@.dat
 ~~~
+
+---
+
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/05-script.html)

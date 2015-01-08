@@ -179,7 +179,7 @@ access.log    backup/    hardware.cfg
 network.cfg
 ~~~
 
-The leading `/` tells the computer to follow the path from the root of the filesystem, so it always refers to exactly one directory, no matter where we are when we run the command.
+The leading `/` tells the computer to follow the path from the root of the file system, so it always refers to exactly one directory, no matter where we are when we run the command.
 
 What if we want to change our current working directory? Before we do this, `pwd` shows us that we're in `/home/oski`, and `ls` without any arguments shows us that directory's contents:
 
@@ -313,7 +313,7 @@ $ ls
 articles  downloads 
 ~~~
 
-Each of Rochelle's text files is labelled according to the parameteres leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2001.txt`, `human-rights-2002.txt`, and so on. All files are in currently in the `downloads` directory.
+Each of Rochelle's text files is labeled according to the parameters leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2001.txt`, `human-rights-2002.txt`, and so on. All files are in currently in the `downloads` directory.
 
 ~~~ {.input}
 $ cd downloads
@@ -396,3 +396,8 @@ What does the command `ls` do when used with the -s arguments?
 #### Challenge 5
 
 If the command `ls -a` works, and `ls -F` works, what do you think will happen if you enter `ls -a -F`? What about `ls -aF`
+
+
+---
+
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/01-filedir.html)

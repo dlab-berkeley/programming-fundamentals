@@ -225,7 +225,7 @@ The second time, the command is:
 mv africa2.txt original-africa2.txt
 ~~~
 
-> #### Measure Twice, Run Once {.callout}
+> #### Measure Twice, Run Once
 > 
 > A loop is a way to do many things at once --- or to make many mistakes at
 > once if it does the wrong thing. One way to check what a loop *would* do
@@ -327,3 +327,7 @@ do
     done
 done
 ~~~
+
+---
+
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/04-loop.html)

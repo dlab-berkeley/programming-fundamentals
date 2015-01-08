@@ -80,7 +80,7 @@ Notice that the terminal window will go back to bash, giving you a `$` prompt.
 > not work on Python 3. This is one of the motivations behind BCE -
 > to standardize software versions for teaching, etc.
 > 
-> To see which version of Python you have, enter the commant `which python` in 
+> To see which version of Python you have, enter the command `which python` in 
 > bash. You can use the `which` command with other programs, too.
 
 ### Running Python in Shell: Normal Mode
@@ -185,7 +185,7 @@ $ More information is available in the Installing Python Modules page.
 
 For more on packages and modules, including what to do if you have multiple Python's on your computer: 
 
-* [official documentation](https://docs.python.org/2/tutorial/modules.html)
+* [official documentationn](https://docs.python.org/2/tutorial/modules.html)
 * [another helpful resource](https://python4astronomers.github.io/installation/packages.html)
 
 ### IDEs and other Tools
@@ -198,7 +198,7 @@ There are many Python IDE's. You can see a comparison [here](https://en.wikipedi
 
 > #### Don't forget me quit yet
 > 
-> Even if you use an IDE, you'll be hardpressed to avoid the shell the rest
+> Even if you use an IDE, you'll be hard pressed to avoid the shell the rest
 > of your life. When it comes to package installation, `pip install` via
 > the shell is still the easiest way. 
 
@@ -244,9 +244,10 @@ Rochelle's pretty lazy, so she's going for option #2.
 
 She goes into her web browser and googles `python lexisnexis`. Sure enough, the first results is [Neal Caren's website](http://nealcaren.web.unc.edu/cleaning-up-lexisnexis-files/). Neal Caren in an assistant professor of Sociology at the University of North Carolina, Chapel Hill. He wrote a small Python [script](http://www.unc.edu/~ncaren/haphazard/split_ln.py) that converts a plain text file into a comma-separated values (CSV) file - exactly what Rochelle's needs!
 
-Rochelle reads Neal Caren's website to make sure that she's allowed to use his script. Since Neal put the code but doesn't give a licenee, Rochelle is going to assume a standard open source license: use, but credit.
+Rochelle reads Neal Caren's website to make sure that she's allowed to use his script. Since Neal put the code but doesn't give a license, Rochelle is going to assume a standard open source license: use, but credit.
 
-Rochelle then downloads the script and takes a quick look at it. The opening comments give s sample usage:
+Rochelle then downloads the script and takes a quick look at it. The opening comments gives sample usage:
+
 ~~~
 sample usage:
 $ python split_ln.py ap_tp_201201.txt
