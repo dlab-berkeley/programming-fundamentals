@@ -4,8 +4,6 @@ subtitle: Introducing the Shell
 minutes: 5
 ---
 
-adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/00-intro.html)
-
 # The Unix Shell: Introducing the Shell
 
 > ## Learning Objectives
@@ -106,3 +104,5 @@ their names are frequently cryptic, and their output is lines of text rather tha
 On the other hand, the shell allows us to combine existing tools in powerful ways with only a few keystrokes and to set up pipelines to handle large volumes of data automatically.
 
 In addition, the command line is often the easiest way to interact with remote machines. As clusters and cloud computing become more popular for scientific data crunching, being able to drive them is becoming a necessary skill.
+
+{Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/00-intro.html)}
