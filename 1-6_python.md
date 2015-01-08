@@ -196,7 +196,7 @@ An interpreter is embedded in a number of larger programs that allow people to d
 
 There are many Python IDE's. You can see a comparison [here](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#Python)
 
-> #### Don't forget me quit yet
+> #### Don't forget me quite yet
 > 
 > Even if you use an IDE, you'll be hard pressed to avoid the shell the rest
 > of your life. When it comes to package installation, `pip install` via
