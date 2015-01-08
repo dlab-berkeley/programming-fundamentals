@@ -2,6 +2,7 @@
 title: The Unix Shell
 subtitle: Introducing the Shell
 minutes: 5
+adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/00-intro.html)
 ---
 # The Unix Shell: Introducing the Shell
 

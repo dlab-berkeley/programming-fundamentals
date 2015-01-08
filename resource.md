@@ -2,6 +2,19 @@
 title: Programming Fundamentals
 subtitle: Reference
 ---
+
+## [BCE](0-1_BCE.md)
+
+*   An operating system is a suite of programs which make the computer work.
+*   UNIX is an very popular operating system, used on Macs and bunch of others.
+*   UNIX has a kernel, file system, and programms.
+*   Linux is an open source Unix-like system
+*   A virtual machine is like using somebody else's computer on your very own laptop
+*   The Berkeley Common Environment (BCE) is a standardized VM using Linux
+*   BCE comes with Python, R, and a bunch of other cool stuff to do your science.
+*   You can share files between your laptop and your BCE.
+*   BCE will take some time getting use to, especially the keyboard if you're using a Mac.
+
 ## [Introducing the Shell](1-0_shell.md)
 
 *   A shell is a program whose primary purpose is to read commands and run other programs.
