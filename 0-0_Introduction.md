@@ -59,7 +59,7 @@ Specifically, by the end of this 3 hours course, I want everyone here be able to
 * Use shall/bash/terminal without fear
 * Know and use essential Unix commands
 * Write your own script that automates tasks
-* Run somebody elses's script on your own data
+* Run somebody else's script on your own data
 * Manage your own software and collaborate with others on GitHub
 * Master basic Git workflow
 * Install packages, modules, and other software from the command line
