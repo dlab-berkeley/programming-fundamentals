@@ -64,6 +64,7 @@ subtitle: Reference
 *   The shell does not have a trash bin: once something is deleted, it's really gone.
 *   Nano is a very simple text editor --- please use something else for real work.
 *   `*` is a wildcard. It matches zero or more characters
+*   Naming/structuring your files and directories in a systematic way is important. 
 
 ## [Pipes and Filters](1-3_pipe.me)
 
@@ -121,6 +122,8 @@ subtitle: Reference
 *   BCE comes with most of the packages you need already installed.
 *   try `sudo` in the beginning of a bash command when you face permissions problems.
 *   Use an IDE like PyCharm to develop your Python code.
+
+## [Getting Help](1-6_python.md)
 
 ## Glossary
 
