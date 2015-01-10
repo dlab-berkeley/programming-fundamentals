@@ -81,12 +81,12 @@ $ nano draft.txt
 > [Gedit](http://projects.gnome.org/gedit/), which is on BCE. 
 > On Windows, you may wish to use [Notepad++](http://notepad-plus-plus.org/).
 > 
-> No matter what editor you use, you will need to know where it searches
-> for and saves files. If you start it from the shell, it will (probably)
-> use your current working directory as its default location. If you use
-> your computer's start menu, it may want to save files in your desktop or
-> documents directory instead. You can change this by navigating to
-> another directory the first time you "Save As..."
+> Text editors are not limited to .txt files. Code is also text - so any
+> file with an extension like .py (for python) .sh (for shell) can also be 
+> edited in a text editor. So can files containing markup, like .html (for 
+> HTML) or .md (for markdown). Markup is a way to format text (bold, lists,
+> links, etc) using simple syntax.
+
 
 Let's type in a few lines of text, then use Control-O to write our data to disk:
 

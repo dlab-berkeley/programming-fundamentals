@@ -123,7 +123,11 @@ subtitle: Reference
 *   try `sudo` in the beginning of a bash command when you face permissions problems.
 *   Use an IDE like PyCharm to develop your Python code.
 
-## [Getting Help](1-6_python.md)
+## [Getting Help](2-0_help.md)
+*   Don't learn specific programming languages; learn *how to program*
+*   Most of your programming will be spent debugging, looking things up on the internet, and testing. 
+*   Google errors!
+*   
 
 ## Glossary
 

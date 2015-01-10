@@ -135,8 +135,7 @@ And note that there is a space between `ls` and `-F`: without it, the shell thin
 > of files apart. The second part of such a name is called the
 > **filename extension**, and indicates what type of data the file holds: 
 > `.txt` signals a plain text file, `.pdf` indicates a PDF document, `.cfg` is 
-> a configuration file full of parameters
-> for some program or other, and so on.
+> a configuration file full of parameters for some program or other, and so on.
 >
 > This is just a convention, albeit an important one. Files contain
 > bytes: it's up to us and our programs to interpret those bytes

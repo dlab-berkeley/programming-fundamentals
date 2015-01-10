@@ -4,7 +4,7 @@ subtitle: OSs, VMs, and BCE
 minutes: 10
 ---
 
-# Getting Help: Google, Stack Exchange, and Beyond
+# Programming: An never-ending google search.
 
 ### What it means to "know how to program"
 
@@ -19,15 +19,19 @@ That being said, programming languages differ from one anther in the following w
 4. **Object-oriented:** "objects" are data + functions. Some programming languages are object-oriented (e.g. Python) and some aren't (e.g. C).
 5. **Many more**: Here's a [list](https://en.wikipedia.org/wiki/List_of_programming_languages_by_type) of all the types of programming languages out there.
 
-So what should your first programming language be? That is, what programming language should you use to learn *how to program*?
+So what should your first programming language be? That is, what programming language should you use to learn *how to program*? At the end of the day, the answer depends on what you want to get out of programming. Many people recommend Python because its fun, easy, and multi-purpose. Here's an [article](http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665) that can offer more advice.
 
-At the end of the day, the answer depends on what you want to get out of programming. Many people recommend Python because its fun, easy, and multi-purpose. Here's an [article](http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665) that can offer more advice.
+Regardless of what you choose, you will probably grow 'comfortable' in one language while learning the basic concepts and skills that allow you to 'hack' your way into other languages.  
 
-Regardless of what you choose, you will probably grow 'comfortable' in one language while learning the basic concepts and skills that allow you to learn other languages more easily. 
+Thus "knowing how to program" means learning how to *think* like a programmer, not necessarily knowing all the language-specific commands off the top of your head. **Don't learn specific programming languages; learn how to program.**
 
-This means that most of your programming life will be spent looking things up on the internet -- whether it's program-specific syntax, documentation for packages, useful functions, etc. 
+### What programming is like
 
-**"Knowing how to program" means learning how to *think* like a programmer, not necessarily knowing all the language-specific commands off the top of your head.**
+![xkcd](https://sslimgs.xkcd.com/comics/wisdom_of_the_ancients.pngs)
+
+Here's the sad reality: When you're programming, 80% or more of you time will be spent debugging, looking stuff up (like program-specific syntax, documentation for packages, useful functions, etc.), or testing. This may only apply to beginner or intermediate programmers, but I doubt it.
+
+If you're a good programmer, you're a good detective!
 
 ### Debugging
 
@@ -44,8 +48,9 @@ This means that most of your programming life will be spent looking things up on
 * Remove user- and data-specific information first!
 * See if you can find examples that do and don’t produce the error
 
-### Helpful Sites
+### Helpful Resources
 
 * Stack Overflow 
 * Stack Exchange
+* the D-Lab!
 
