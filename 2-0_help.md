@@ -13,6 +13,7 @@ Most programmers can program in more than one language. That's because they know
 In other words, programming is an extendible skill. Basic programming concepts -- conditionals, for loops, functions -- can be found in almost any programming language. 
 
 That being said, programming languages differ from one anther in the following ways:
+
 1. **Syntax**: whether to add a semicolon at the end of each line, etc.
 2. **Usage**: javascript is for building websites, R is for statistics, Python is general purpose, etc.
 3. **Level**: how close are you to the hardware. 'C' is often considered to be the lowest (or one of the lowest) level languages.
