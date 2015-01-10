@@ -1,6 +1,6 @@
 ---
 title: Getting Help
-subtitle: OSs, VMs, and BCE
+subtitle: An never-ending google search
 minutes: 10
 ---
 
