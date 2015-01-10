@@ -1,3 +1,9 @@
+---
+title: Berkeley Common Environment
+subtitle: OSs, VMs, and BCE
+minutes: 10
+---
+
 # Operating Systems & the Berkeley Common Environment
 
 > ## Learning objectives

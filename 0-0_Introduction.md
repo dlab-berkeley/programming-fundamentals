@@ -1,3 +1,9 @@
+---
+title: Programming Fundamentals
+subtitle: Introductions
+minutes: 10
+---
+
 # Introduction
 
 ### Motivation
