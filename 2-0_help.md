@@ -28,7 +28,7 @@ Thus "knowing how to program" means learning how to *think* like a programmer, n
 
 ### What programming is like
 
-![xkcd](https://sslimgs.xkcd.com/comics/wisdom_of_the_ancients.pngs)
+![xkcd](http://sslimgs.xkcd.com/comics/wisdom_of_the_ancients.png)
 
 Here's the sad reality: When you're programming, 80% or more of you time will be spent debugging, looking stuff up (like program-specific syntax, documentation for packages, useful functions, etc.), or testing. This may only apply to beginner or intermediate programmers, but I doubt it.
 
