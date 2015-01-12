@@ -170,7 +170,7 @@ Here's what actually happens behind the scenes when we create a pipe. When a com
 
 The shell is actually just another program. Under normal circumstances, whatever we type on the keyboard is sent to the shell on its standard input, and whatever it produces on standard output is displayed on our screen. When we tell the shell to run a program, it creates a new process and temporarily sends whatever we type on our keyboard to that process's standard input, and whatever the process sends to standard output to the screen.
 
-Here's what happens when we run `wc -w africa*.txt lengths`. The shell starts by telling the computer to create a new process to run the `wc` program. Since we've provided some filenames as parameters, `wc` reads from them instead of from standard input. And since we've used `>` to redirect output to a file, the shell connects the process's standard output to that file.
+Here's what happens when we run `wc -w africa*.txt > lengths`. The shell starts by telling the computer to create a new process to run the `wc` program. Since we've provided some filenames as parameters, `wc` reads from them instead of from standard input. And since we've used `>` to redirect output to a file, the shell connects the process's standard output to that file.
 
 If we run `wc -w africa*.txt | sort -n` instead, the shell creates two processes (one for each process in the pipe) so that `wc` and `sort` run simultaneously. The standard output of `wc` is fed directly to the standard input of `sort`; since there's no redirection with `>`, `sort`'s output goes to the screen. And if we run `wc -w africa*.txt | sort -n | head -1`, we get three processes with data flowing from the files, through `wc` to `sort`, and from `sort` through `head` to the screen.
 
@@ -182,7 +182,7 @@ and writes lines of text to standard output can be combined with every other pro
 > #### Redirecting Input
 > As well as using `>` to redirect a program's output, we can use `<` to
 > redirect its input, i.e., to read from a file instead of from standard
-> input. For example, instead of writing `wc africa1.tx`, we could write
+> input. For example, instead of writing `wc africa1.txt`, we could write
 > `wc < africa1.txt`. In the first case, `wc` gets a command line
 > parameter telling it what file to open. In the second, `wc` doesn't have
 > any command line parameters, so it reads from standard input, but we
