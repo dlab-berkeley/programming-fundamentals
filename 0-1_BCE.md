@@ -113,7 +113,7 @@ Why use BCE?
 * Good for teaching - when you tell a student that a program behaves a certain way, it does!
 * Good for research collaboration - now all of your collaborators can run your code without complex installation instructions.
 
-Install BCE using the instructions found [here](http://collaboratool.berkeley.edu/using-virtualbox.html)
+[Install BCE using the instructions found here](http://ucberkeley.github.io/bce-documentation/laptop-installation.html)
 
 #### Using BCE
 
