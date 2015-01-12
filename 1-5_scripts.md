@@ -3,6 +3,8 @@ title: The Unix Shell
 subtitle: Shell Scripts
 minutes: 15
 ---
+# The Unix Shell: Scripts
+
 > ## Learning Objectives
 >
 > *   Write a shell script that runs a command or series of commands for a fixed set of files.

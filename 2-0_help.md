@@ -6,6 +6,14 @@ minutes: 10
 
 # Programming: An never-ending google search.
 
+> ## Learning Objectives
+>
+> *   Explain the difference between knowing a programming language knowing how to program.
+> *   Explain how programming languages can differ.
+> *   Give useful debugging tips.
+> *   Offer helpful resource websites.
+> *   Explain how to google an error.
+
 ### What it means to "know how to program"
 
 Most programmers can program in more than one language. That's because they know *how to program* generally, as opposed to "knowing" Python, R, Ruby, or whatever. 

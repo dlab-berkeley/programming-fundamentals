@@ -4,6 +4,8 @@ subtitle: Files & Directories
 minutes: 5
 ---
 
+# The Unix Shell: Files and Directories
+
 > ## Learning Objectives
 >
 > *   Explain the similarities and differences between a file and a directory.
