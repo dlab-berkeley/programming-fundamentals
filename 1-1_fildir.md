@@ -205,7 +205,7 @@ Downloads  programming-fundamentals  Templates
 We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
 
 ~~~ {.input}
-$ cd data
+$ cd programming-fundamentals
 ~~~
 
 `cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/data`.
@@ -216,13 +216,15 @@ If we run `ls` without arguments now, it lists the contents of `/home/oski/data`
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/data
+/home/oski/programming-fundametnals
 ~~~
 ~~~ {.input}
 $ ls -F
 ~~~
 ~~~ {.output}
-articles/  articles.txt  bar.txt  foo.txt  recipes/
+0-0_Introduction.md  1-1_fildir.md  1-4_loop.md     2-0_help.md  madlib.py
+0-1_BCE.md           1-2_create.md  1-5_scripts.md  data/        README.md
+1-0_shell.md         1-3_pipe.md    1-6_python.md   LICENSE      resource.md
 ~~~
 
 We now know how to go down the directory tree: how do we go up? We could use an absolute path:
