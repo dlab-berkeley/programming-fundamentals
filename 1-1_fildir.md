@@ -364,23 +364,25 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 #### Challenge 1
 
-If `pwd` displays `/users/thing`, what will `ls ../backup` display?
+If `pwd` displays `/home/oski/programming-fundamentals`, what will `ls ../documents` display?
 
-1.  `../backup: No such file or directory`
-2.  `2012-12-01 2013-01-08 2013-01-27`
-3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
-4.  `original pnas_final pnas_sub`
+1.  `../documents: No such file or directory`
+2.  `bce-help.desktop  Shared`
+3.  `bce-help.desktop/  Shared/`
+4.  no output.
 
 #### Challenge 2
 
-If `pwd` displays `/users/backup`, and `-r` tells `ls` to display things in reverse order, what command will display:
+If `pwd` displays `/home/oski`, and `-r` tells `ls` to display things in reverse order, what command will display:
 ~~~
-pnas-sub/ pnas-final/ original/
+Videos/                     Public/                    Music/      Documents/
+Templates/                  programming-fundamentals/  file.txt    Desktop/
+setup_ipython_notebook.sh*  Pictures/                  Downloads/  data/
 ~~~
 
 1.  `ls pwd`
 2.  `ls -r -F`
-3.  `ls -r -F /users/backup`
+3.  `ls -rF `
 4.  Either \#2 or \#3 above, but not \#1.
 
 #### Challenge 3
@@ -395,10 +397,6 @@ What does the command `cd` without a directory name do?
 #### Challenge 4
 
 What does the command `ls` do when used with the -s arguments?
-
-#### Challenge 5
-
-If the command `ls -a` works, and `ls -F` works, what do you think will happen if you enter `ls -a -F`? What about `ls -aF`
 
 
 ---
