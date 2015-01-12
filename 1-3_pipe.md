@@ -330,7 +330,7 @@ A file called `animals.txt` contains the following data:
 What text passes through each of the pipes and the final redirect in the pipeline below?
 
 ~~~
-cat animals.txt | head -5 | tail -3 | sort -r final.txt
+cat animals.txt | head -5 | tail -3 | sort -r > final.txt
 ~~~
 
 #### Challenge 5
