@@ -367,10 +367,10 @@ What is the output of the closing `ls` command in the sequence shown below?
 $ pwd
 /home/jamie/data
 $ ls
-proteins.dat
+data.csv
 $ mkdir recombine
-$ mv proteins.dat recombine
-$ cp recombine/proteins.dat ../proteins-saved.dat
+$ mv data.csv recombine
+$ cp recombine/data.csv ../data-saved.csv
 $ ls
 ~~~
 
@@ -380,7 +380,7 @@ Suppose that:
  
 ~~~
 $ ls -F
-analyzed/  fructose.dat    raw/   sucrose.dat
+analyzed/  nyt.csv    raw/   guardian.csv
 ~~~
  
 What command(s) could you run so that the commands below will produce the 
@@ -390,7 +390,7 @@ output shown?
 $ ls
 analyzed   raw
 $ ls analyzed
-fructose.dat    sucrose.dat
+nyt.csv   guardian.csv
 ~~~
 
 #### Challenge 3
