@@ -11,7 +11,7 @@ sum_a = 0
 for a in [1, 2, 3]:
     sum_a += a
 
-print(a)
+print(sum_a)
 
 # Functions add even more complexity
 
