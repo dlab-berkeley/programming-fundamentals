@@ -1,5 +1,7 @@
 __author__ = 'oski'
 
+from functions import *
+
 # Statements like this are easy to follow
 
 a = 1
@@ -14,14 +16,6 @@ for a in [1, 2, 3]:
 print(sum_a)
 
 # Functions add even more complexity
-
-def add_these(a, b):
-    c = a + b * 2
-    return c
-
-def multiply_these(a, b):
-    c = a * b + 2
-    return c
 
 pairs = [(1, 2), (3, 4), (5, 6)]
 complex_result = 0
