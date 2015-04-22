@@ -10,7 +10,7 @@ for(a in c(1, 2, 3)) {
   sum_a <- sum_a + a
 }
 
-print(a)
+print(sum_a)
 
 # Functions add even more complexity
 
