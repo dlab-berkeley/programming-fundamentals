@@ -1,0 +1,8 @@
+from sys import argv
+import requests
+
+response = requests.get(argv[1])
+local_copy = open('local_copy.html', 'w')
+local_copy.write(response.text)
+local_copy.close()
+

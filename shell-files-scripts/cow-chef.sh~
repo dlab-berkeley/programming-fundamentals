@@ -1,0 +1,2 @@
+echo $1 | chef | cowsay
+echo $2 | b1ff | cowsay
