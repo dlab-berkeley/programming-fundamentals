@@ -1,6 +1,6 @@
 ---
 title: Getting Help
-subtitle: An never-ending google search
+subtitle: A never-ending google search
 minutes: 10
 ---
 

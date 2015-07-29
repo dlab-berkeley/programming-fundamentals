@@ -56,7 +56,7 @@ In this case, Bash passes the unexpanded wildcard as a parameter to the `mv` com
 
 ### Loops
 
-Instead, we can use a **loop** to do some operation once for each thing in a list. Here's a simple example that displays the first three lines of each file in turn:
+Instead, we can use a **loop** to do some operation once for each thing in a list. Here's a simple example that displays the word counts of each file in turn:
 
 
 ~~~ {.input}
@@ -101,7 +101,7 @@ or:
 ~~~ {.input}
 $ for temperature in africa1.text africa2.txt
  do
-    wc -w $filename
+    wc -w $temperature
  done
 ~~~
 

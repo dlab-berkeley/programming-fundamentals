@@ -151,7 +151,7 @@ $ wc -w africa*.txt | sort -n | head -1
 ~~~
 
 This is exactly like a mathematician nesting functions like *log(3x)*
-and saying "the log of three times *x*". In our case, the calculation is "head of sort of line count of `africa*.txt`".
+and saying "the log of three times *x*". In our case, the calculation is "head of sort of word count of `africa*.txt`".
 
 We can use this logic in many different combinations. For instance, to see how many files are in this directory, we can command:
 
