@@ -101,7 +101,7 @@ or:
 ~~~ {.input}
 $ for temperature in africa1.text africa2.txt
  do
-    wc -w $filename
+    wc -w $temperature
  done
 ~~~
 
