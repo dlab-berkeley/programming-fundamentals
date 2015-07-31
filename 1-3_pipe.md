@@ -216,7 +216,7 @@ $ wc -l *.TXT
 Now she wants to concatenate (or merge) all of these text files into one big text file that she can later use to parse into a CSV.
 
 ~~~ {.input}
-$ cat *.TXT all.TXT
+$ cat *.TXT > all.TXT
 $ wc -l *.TXT
 ~~~
 ~~~ {.output}
