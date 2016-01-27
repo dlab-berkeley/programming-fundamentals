@@ -1,19 +1,14 @@
-programming-fundamentals
-------------------------
 
-I'd like to collect here the bare basics for navigating the pitfalls of doing
-work in python. At some point, perhaps expanding to R.
+An intro to the basics that instructors often assume you know, but that you probably never had good instruction on! After this course, you should be able to more easily start learning to program (e.g., in R or python), follow instructions and documentation online (e.g. StackExchange), and communicate better with your collaborators who are programming.
 
-Specifically, dealing with multiple interpreters, environments, package
-versions, and so on. Specific constructs would include:
+By the end of this course, students should be able to:
 
- - `PATH`
- - `which`
- - absolute paths
- - Why `./program` (not bare `program`)
- - `#!interpreter` syntax
- - Python environments (`conda`, `virtualenv`/`venv`)
+*   Understand basic programming terminologies, structures, and workflows
+*   Get comfortable with the Berkeley Common Environment
+*   Use shall/bash/terminal without fear
+*   Know and use essential Unix commands
+*   Write your own script that automates tasks
+*   Run somebody else's script on your own data
+*   Install packages, modules, and other software from the command line
+*   Read StackExchange, online documentation, or other instructions and know what the heck they're talking about
 
-I realize there's probably material in the Software Carpentry repo on this, but
-as was once the case with WSGI frameworks, it seems easier to write my own than
-to find those materials. I welcome a pointer, however!
