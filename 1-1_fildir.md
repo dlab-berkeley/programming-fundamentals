@@ -59,7 +59,7 @@ $ pwd
 ~~~
 
 > #### Alphabet Soup
-> 
+>
 > If the command to find out who we are is `whoami`, the command to find
 > out where we are ought to be called `whereami`, so why is it `pwd`
 > instead? The usual answer is that in the early 1970s, when Unix was
@@ -69,10 +69,10 @@ $ pwd
 > actually a win for usability. The reality is that commands were added to
 > Unix one by one, without any master plan, by people who were immersed in
 > its jargon. The result is as inconsistent as the roolz uv Inglish
-> speling, but we're stuck with it now. 
-> 
-> The good news is: because these basic commands were so integral to the 
-> development of early Unix, they have stuck around, and appear (in some form) 
+> speling, but we're stuck with it now.
+>
+> The good news is: because these basic commands were so integral to the
+> development of early Unix, they have stuck around, and appear (in some form)
 > in almost all programming languages.
 
 To understand what a "home directory" is, let's have a look at how the file system as a whole is organized. At the top is the **root directory** that holds everything else.
@@ -81,7 +81,7 @@ We refer to it using a slash character `/` on its own; this is the leading slash
 
 Inside that directory are several other directories: `bin` (which is where some built-in programs are stored), `data` (holding miscellaneous data files) `etc` (where local configuration files are stored), `tmp` (for temporary files that don't need to be stored long-term), and so on.
 
-> If you're working on a Mac, the file structure will look similar, but not 
+> If you're working on a Mac, the file structure will look similar, but not
 > identical. The following image shows a file system graph for the typical Mac.
 
 ![File Directory](https://swcarpentry.github.io/shell-novice/fig/home-directories.svg)
@@ -129,14 +129,14 @@ The names that don't have trailing slashes, like `file.txt` are plain old files.
 And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
 
 > #### What's In A Name?
-> 
+>
 > You may have noticed that all of our's files' names are "something dot
 > something". This is just a convention: we can call a file `file` or
 > almost anything else we want. However, most people use two-part names
 > most of the time to help them (and their programs) tell different kinds
 > of files apart. The second part of such a name is called the
-> **filename extension**, and indicates what type of data the file holds: 
-> `.txt` signals a plain text file, `.pdf` indicates a PDF document, `.cfg` is 
+> **filename extension**, and indicates what type of data the file holds:
+> `.txt` signals a plain text file, `.pdf` indicates a PDF document, `.cfg` is
 > a configuration file full of parameters for some program or other, and so on.
 >
 > This is just a convention, albeit an important one. Files contain
@@ -216,7 +216,7 @@ If we run `ls` without arguments now, it lists the contents of `/home/oski/data`
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/programming-fundametnals
+/home/oski/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ ls -F
@@ -281,9 +281,9 @@ file.txt       Public                    .xsession-errors
 `-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/oski`, refers to the `/users` directory).
 
 > #### Hidden Files: For Your Own Protection
-> 
-> As you can see, a bunch of other items just appeared when we enter `ls -a`. 
-> These files and directories begin with `.` followed by a name. These are 
+>
+> As you can see, a bunch of other items just appeared when we enter `ls -a`.
+> These files and directories begin with `.` followed by a name. These are
 > usually files and directories that hold important programmatic information,
 > not usually edited by the casual computer user. They are kept hidden so that
 > users don't accidentally delete or edit them without knowing what they're
@@ -292,12 +292,12 @@ file.txt       Public                    .xsession-errors
 As you can see, it also displays another special directory that's just called `.`, which means "the current working directory". It may seem redundant to have a name for it, but we'll see some uses for it soon.
 
 > #### Phone Home
-> 
-> If you ever want to get to the home directory immediately, you can use the 
-> shortcut `~`. For example, type `cd ~` and you'll get back home in a jiffy. 
-> `~` will also stand in for your home directory in paths, so for instance 
-> `~/data` is the same as `/home/oski/data`. This only works if it is the 
-> first character in the path: `here/there/~/elsewhere` is not 
+>
+> If you ever want to get to the home directory immediately, you can use the
+> shortcut `~`. For example, type `cd ~` and you'll get back home in a jiffy.
+> `~` will also stand in for your home directory in paths, so for instance
+> `~/data` is the same as `/home/oski/data`. This only works if it is the
+> first character in the path: `here/there/~/elsewhere` is not
 > `/home/oski/elsewhere`.
 
 
@@ -313,7 +313,7 @@ $ cd ~/programming-fundamentals/data
 $ ls
 ~~~
 ~~~ {.output}
-articles  downloads 
+articles  downloads
 ~~~
 
 Each of Rochelle's text files is labeled according to the parameters leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2001.txt`, `human-rights-2002.txt`, and so on. All files are in currently in the `downloads` directory.
@@ -354,11 +354,11 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 
 > ####  Quick File Paths
-> 
-> If you quickly need the path of a file or directory, you can also copy the 
-> file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste 
-> it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file 
-> or directory will appear. 
+>
+> If you quickly need the path of a file or directory, you can also copy the
+> file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste
+> it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file
+> or directory will appear.
 
 ## Exercises
 
