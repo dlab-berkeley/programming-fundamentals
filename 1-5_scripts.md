@@ -31,11 +31,11 @@ cat africa*.txt | wc -l
 
 This is a variation on command we created earlier: It concatenates all of the africa files into one large text files containing all africa articles.
 
-Remember, we are *not* running it as a command just yet: we are putting the commands in a file. 
+Remember, we are *not* running it as a command just yet: we are putting the commands in a file.
 
 ### Running a script
 
-Once we have saved the file, we can ask the shell to execute the commands it contains. 
+Once we have saved the file, we can ask the shell to execute the commands it contains.
 
 First we have to tell the shell what program the script is in. If we want to run a Python script, we would enter in `python` first. If R, then `r` and so on.
 
@@ -78,7 +78,7 @@ cat "$@" | wc -l
 Inside a shell script, `$1` means "the first filename (or other parameter) on the command line". `$2` means the second and so on. But in this case, we can't use `$1`, `$2`, and so on because we don't know how many files there are.
 Instead, we use the special variable `$@`, which means, "All of the command-line parameters to the shell script." So (`"$@"` is equivalent to `"$1"` `"$2"` ...)
 
-We put `$@` inside double-quotes to handle the case of parameters containing spaces. 
+We put `$@` inside double-quotes to handle the case of parameters containing spaces.
 
 ~~~ {.input}
 $ bash group.sh africa*.txt
@@ -139,7 +139,7 @@ $ cat group.sh
 ~~~ {.output}
 # Concatenates a group of files and returns the total number of lines.
 # Usage: group.sh files
-cat "$@" 
+cat "$@"
 ~~~
 
 Now we can use the `>` trick to output our result.
@@ -200,52 +200,19 @@ This style of work allows people to recycle what they discover about their data 
 
 #### Challenge 1
 
-Leah has several hundred data files, each of which is formatted like this:
-
-~~~
-2013-11-05,deer,5
-2013-11-05,rabbit,22
-2013-11-05,raccoon,7
-2013-11-06,rabbit,19
-2013-11-06,deer,2
-2013-11-06,fox,1
-2013-11-07,rabbit,18
-2013-11-07,bear,1
-~~~
-
-Write a shell script called `species.sh` that takes any number of
-filenames as command-line parameters, and uses `cut`, `sort`, and
-`uniq` to print a list of the unique species appearing in each of
-those files separately.
-
-#### Challenge 2
-
 Write a shell script called `longest.sh` that takes the name of a
 directory and a filename extension as its parameters, and prints
-out the name of the file with the most lines in that directory
-with that extension. For example:
+out the number of lines and name of the file with the most lines in
+that directory with that extension. For example:
 
 ~~~
-$ bash longest.sh /tmp/data pdb
+> bash my_files/longest.sh /tmp/data pdb
 ~~~
 
 would print the name of the `.pdb` file in `/tmp/data` that has
 the most lines.
 
-#### Challenge 3
-
-If you run the command:
-
-~~~
-history | tail -5 recent.sh
-~~~
-
-the last command in the file is the `history` command itself, i.e.,
-the shell has added `history` to the command log before actually
-running it. In fact, the shell *always* adds commands to the log
-before running them. Why do you think it does this?
-
-#### Challenge 4
+#### Challenge 2
 
 Joel's `data` directory contains three files: `fructose.dat`,
 `glucose.dat`, and `sucrose.dat`. Explain what a script called
@@ -268,6 +235,16 @@ done
 ~~~
 # Script 3
 echo $@.dat
+~~~
+
+#### Challenge 3
+
+What happens if you rename `example.sh` to `example.R`?
+
+When you feel you have met these challenges successfully, cd into test/ and type
+
+~~~ {.input}
+. 1-5_test.sh
 ~~~
 
 ---

@@ -72,7 +72,7 @@ $ nano draft.txt
 ~~~
 
 > #### Which Editor?
-> 
+>
 > When we say, "`nano` is a text editor," we really do mean "text": it can
 > only work with plain character data, not tables, images, or any other
 > human-friendly media. We use it in examples because almost anyone can
@@ -81,12 +81,12 @@ $ nano draft.txt
 > many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
 > [Vim](http://www.vim.org/) (both of which are completely unintuitive,
 > even by Unix standards), or a graphical editor such as
-> [Gedit](http://projects.gnome.org/gedit/), which is on BCE. 
+> [Gedit](http://projects.gnome.org/gedit/), which is on BCE.
 > On Windows, you may wish to use [Notepad++](http://notepad-plus-plus.org/).
-> 
+>
 > Text editors are not limited to .txt files. Code is also text - so any
-> file with an extension like .py (for python) .sh (for shell) can also be 
-> edited in a text editor. So can files containing markup, like .html (for 
+> file with an extension like .py (for python) .sh (for shell) can also be
+> edited in a text editor. So can files containing markup, like .html (for
 > HTML) or .md (for markdown). Markup is a way to format text (bold, lists,
 > links, etc) using simple syntax.
 
@@ -119,7 +119,7 @@ $ ls
 ~~~
 
 > #### Deleting Is Forever
-> 
+>
 > Unix doesn't have a trash bin: when we delete files, they are unhooked
 > from the file system so that their storage space on disk can be
 > recycled. Tools for finding and recovering deleted files do exist, but
@@ -177,15 +177,15 @@ $ rmdir thesis
 ~~~
 
 > #### With Great Power Comes Great Responsibility
-> 
+>
 > Removing the files in a directory just so that we can remove the
 > directory quickly becomes tedious. Instead, we can use `rm` with the
 > `-r` flag (which stands for "recursive"):
-> 
+>
 > ~~~
 > $ rm -r thesis
 > ~~~
-> 
+>
 > This removes everything in the directory, then the directory itself. If
 > the directory contains sub-directories, `rm -r` does the same thing to
 > them, and so on. It's very handy, but can do a lot of damage if used
@@ -276,10 +276,10 @@ ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 
 Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she `cd's` into the `programming-fundamentals` directory. From there, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the texts. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
-> Rochelle names her directories "year-month-day", with leading zeroes for 
-> months and days, because the shell displays file and directory names in 
+> Rochelle names her directories "year-month-day", with leading zeroes for
+> months and days, because the shell displays file and directory names in
 > alphabetical order. If she used month names, December would come before July;
-> if she didn't use leading zeroes, November ('11') would come before July 
+> if she didn't use leading zeroes, November ('11') would come before July
 > ('7').
 
 ~~~ {.input}
@@ -327,12 +327,12 @@ human-rights-2003.TXT  human-rights-2007.TXT
 ~~~
 
 > ## Wildcards {.callout}
-> 
+>
 > `*` is a **wildcard**. It matches zero or more
 > characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and so on.
 > On the other hand, `p*.pdb` only matches `pentane.pdb` and
 > `propane.pdb`, because the 'p' at the front only matches itself.
-> 
+>
 > `?` is also a wildcard, but it only matches a single character. This
 > means that `p?.pdb` matches `pi.pdb` or `p5.pdb`, but not `propane.pdb`.
 > We can use any number of wildcards at a time: for example, `p*.p?*`
@@ -343,7 +343,7 @@ human-rights-2003.TXT  human-rights-2007.TXT
 > match no characters at all), but not `quality.practice` (doesn't start
 > with 'p') or `preferred.p` (there isn't at least one character after the
 > '.p').
-> 
+>
 > When the shell sees a wildcard, it expands the wildcard to create a
 > list of matching filenames *before* running the command that was
 > asked for. As an exception, if a wildcard expression does not match
@@ -360,66 +360,39 @@ human-rights-2003.TXT  human-rights-2007.TXT
 ## Exercises
 
 #### Challenge 1
- 
-What is the output of the closing `ls` command in the sequence shown below?
- 
-~~~
-$ pwd
-/home/jamie/data
-$ ls
-data.csv
-$ mkdir recombine
-$ mv data.csv recombine
-$ cp recombine/data.csv ../data-saved.csv
-$ ls
-~~~
+
+ If you haven't already, cd into the workshop repo. Create a directory called "my_files".
 
 #### Challenge 2
 
-Suppose that:
- 
-~~~
-$ ls -F
-analyzed/  nyt.csv    raw/   guardian.csv
-~~~
- 
-What command(s) could you run so that the commands below will produce the 
-output shown?
- 
-~~~
-$ ls
-analyzed   raw
-$ ls analyzed
-nyt.csv   guardian.csv
-~~~
+Within that directory, create a file called "script.sh"
 
 #### Challenge 3
 
-What does `cp` do when given several filenames and a directory name, as in:
-
-~~~
-$ mkdir backup
-$ cp thesis/citations.txt thesis/quotations.txt backup
-~~~
-
-What does `cp` do when given three or more filenames, as in:
-
-~~~
-$ ls -F
-intro.txt    methods.txt    survey.txt
-$ cp intro.txt methods.txt survey.txt
-~~~
+Copy script.sh into my_files/backup/
 
 #### Challenge 4
 
-The command `ls -R` lists the contents of directories recursively,
-i.e., lists their sub-directories, sub-sub-directories, and so on
-in alphabetical order at each level.
+The command `ls -t` returns a listing arranged by time of last edit. Add this command to script.sh.
 
-The command `ls -t` lists things by time of last change,
-with most recently changed files or directories first.
-In what order does `ls -R -t` display things?
+When you feel you have met these challenges successfully, cd into test/ and type
 
+~~~ {.input}
+. 1-2_test.sh
+~~~
+
+into the command line. If you were successful, the output will look like this:
+
+~~~ {.output}
+Challenge 1
+...passed
+Challenge 2
+...passed
+Challenge 3
+...passed
+Challenge 4
+...passed
+~~~
 ---
 
 Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/02-create.html)

@@ -153,34 +153,34 @@ done
 because then the first time through the loop, when `$filename` expanded to `africa1.txt`, the shell would try to run `africa1.txt` as a program. Finally, the `tail` and `wc` combination computes the word count of the last line of each file.
 
 > #### Spaces in Names
-> 
-> Filename expansion in loops is another reason you should not use spaces in 
+>
+> Filename expansion in loops is another reason you should not use spaces in
 > filenames. Suppose our data files are named:
-> 
+>
 > ~~~
 > basilisk.dat
 > red dragon.dat
 > unicorn.dat
 > ~~~
-> 
+>
 > If we try to process them using:
-> 
+>
 > ~~~
 > for filename in *.dat
 > do
 >     head -100 $filename | tail -20
 > done
 > ~~~
-> 
+>
 > then the shell will expand `*.dat` to create:
-> 
+>
 > ~~~
 > basilisk.dat red dragon.dat unicorn.dat
 > ~~~
-> 
-> With older versions of Bash, or most other shells, `filename` will then be 
+>
+> With older versions of Bash, or most other shells, `filename` will then be
 > assigned the following values in turn:
-> 
+>
 > ~~~
 > basilisk.dat
 > red
@@ -189,12 +189,12 @@ because then the first time through the loop, when `$filename` expanded to `afri
 > ~~~
 >
 > That's a problem: `head` can't read files called `red` and `dragon.dat`
-> because they don't exist, and won't be asked to read the file 
+> because they don't exist, and won't be asked to read the file
 > `red dragon.dat`.
-> 
+>
 > We can make our script a little bit more robust
 > by **quoting** our use of the variable:
-> 
+>
 > ~~~
 > for filename in *.dat
 > do
@@ -202,7 +202,7 @@ because then the first time through the loop, when `$filename` expanded to `afri
 > done
 > ~~~
 >
-> but it's simpler just to avoid using spaces (or other special characters) in 
+> but it's simpler just to avoid using spaces (or other special characters) in
 > filenames.
 
 ### A Loopy Solution
@@ -229,26 +229,26 @@ mv africa2.txt original-africa2.txt
 ~~~
 
 > #### Measure Twice, Run Once
-> 
+>
 > A loop is a way to do many things at once --- or to make many mistakes at
 > once if it does the wrong thing. One way to check what a loop *would* do
 > is to echo the commands it would run instead of actually running them.
 > For example, we could write our file renaming loop like this:
-> 
+>
 > ~~~
 > for filename in *.txt
 > do
 >     echo mv $filename original-$filename
 > done
 > ~~~
-> 
+>
 > Instead of running `mv`, this loop runs `echo`, which prints out:
-> 
+>
 > ~~~
 > mv africa1.txt original-africa1.txt
 > mv africa2.txt original-africa2.txt
 > ~~~
-> 
+>
 > *without* actually running those commands. We can then use up-arrow to
 > redisplay the loop, back-arrow to get to the word `echo`, delete it, and
 > then press "enter" to run the loop with the actual `mv` commands. This
@@ -271,66 +271,61 @@ then she can re-run `cat africa1` simply by typing `!475`.
 
 ## Exercises
 
-#### Challenge 1
+### Challenge 1
 
-Suppose that `ls` initially displays:
-
-~~~
-fructose.dat    glucose.dat   sucrose.dat
-~~~
-
-What is the output of:
-
-~~~
-for datafile in *.dat
-do
-    ls *.dat
-done
-~~~
+We've been using bash to print a lot of things to the screen. Write a script
+that prints the count number of each kind of animal in data/animals.txt, and
+save it in my_files/script.sh (hint: use `uniq`, but that won't be enough!).
 
 #### Challenge 2
 
-What is the effect of this loop?
+Write a shell script called `longest.sh` that takes the name of a directory and
+a filename extension as its parameters, and prints out the number of lines and
+name of the file with the most lines in that directory with that extension. For
+example:
 
 ~~~
-for sugar in fructose.dat glucose.dat sucrose.dat
-do
-    echo $sugar
-    cat $sugar xylose.dat
-done
+> bash my_files/longest.sh /tmp/data pdb
 ~~~
 
-1.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
-    copies `sucrose.dat` to create `xylose.dat`.
-2.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
-    concatenates all three files to create `xylose.dat`.
-3.  Prints `fructose.dat`, `glucose.dat`, `sucrose.dat`, and
-    `xylose.dat`, and copies `sucrose.dat` to create `xylose.dat`.
-4.  None of the above.
+would print the name of the `.pdb` file in `/tmp/data` that has
+the most lines.
 
 #### Challenge 3
 
-The `expr` does simple arithmetic using command-line parameters:
+Joel's `data` directory contains three files: `fructose.dat`, `glucose.dat`,
+and `sucrose.dat`. Explain what a script called `example.sh` would do when run
+as `bash example.sh *.dat` if it contained the following lines:
 
 ~~~
-$ expr 3 + 5
-8
-$ expr 30 / 5 - 2
-4
+# Script 1
+echo *.*
 ~~~
 
-Given this, what is the output of:
-
 ~~~
-for left in 2 3
+# Script 2
+for filename in $1 $2 $3
 do
-    for right in $left
-    do
-        expr $left + $right
-    done
+    cat $filename
 done
+~~~
+
+~~~
+# Script 3
+echo $@.dat
+~~~
+
+#### Challenge 4
+
+What happens if you rename `example.sh` to `example.R`?
+
+When you feel you have met these challenges successfully, cd into test/ and
+type
+
+~~~ {.input}
+. 1-5_test.sh
 ~~~
 
 ---
 
-Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/04-loop.html)
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/05-script.html)
