@@ -90,7 +90,7 @@ so this loop prints out the word count of each data file in turn.
 We have called the variable in this loop `filename` in order to make its purpose clearer to human readers. The shell itself doesn't care what the variable is called; if we wrote this loop as:
 
 ~~~ {.input}
-$ for x in africa1.text africa2.txt
+$ for x in africa1.txt africa2.txt
  do
     wc -w $x
  done
