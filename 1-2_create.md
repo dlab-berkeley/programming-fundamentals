@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Creating Things
-minutes: 15
+minutes: 20
 ---
 
 # The Unix Shell: Creating Things
@@ -16,24 +16,24 @@ minutes: 15
 
 ### Creating Things
 
-We now know how to explore files and directories, but how do we create them in the first place? Let's go back to Rochelle's home directory, `/home/oski`,
+We now know how to explore files and directories, but how do we create them in the first place? Let's go back to `programming-fundamentals`, `/home/oski/Desktop/programming-fundamentals`,
 and use `ls -F` to see what it contains:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski
+/home/oski/Desktop/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       Music/                     setup_ipython_notebook.sh*
-Desktop/    Pictures/                  Templates/
-Documents/  programming-fundamentals/  Videos/
-Downloads/  Public/
-file.txt    R/
+0-0_Introduction.md    	1-2_create.md  		README.md
+0-1_BCE.md     		      1-3_pipe.md    		data/
+0-2_help.md    		      1-4_loop.md    		resource.md
+1-0_shell.md   		      1-5_scripts.md 		test/
+1-1_fildir.md  		      LICENSE
 ~~~
 
 Let's create a new directory called `thesis` using the command `mkdir thesis` (which has no output):
@@ -48,11 +48,11 @@ As you might (or might not) guess from its name, `mkdir` means "make directory".
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       Music/                     setup_ipython_notebook.sh*
-Desktop/    Pictures/                  Templates/
-Documents/  programming-fundamentals/  thesis/
-Downloads/  Public/                    Videos/
-file.txt    R/
+0-0_Introduction.md    	1-2_create.md  		README.md
+0-1_BCE.md     		      1-3_pipe.md    		data/
+0-2_help.md    		      1-4_loop.md    		resource.md
+1-0_shell.md   		      1-5_scripts.md 		test/
+1-1_fildir.md  		      LICENSE           thesis/
 ~~~
 
 However, there's nothing in it yet:
@@ -126,13 +126,13 @@ $ ls
 > there's no guarantee they'll work in any particular situation, since the
 > computer may recycle the file's disk space right away.
 
-Let's re-create that file and then move up one directory to `/home/oski` using `cd ..`:
+Let's re-create that file and then move up one directory to `/home/oski/Desktop/programming-fundamentals` using `cd ..`:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/thesis
+/home/oski/Desktop/programming-fundamentals/thesis
 ~~~
 ~~~ {.input}
 $ nano draft.txt
@@ -199,7 +199,7 @@ Let's create that directory and file one more time. (Note that this time we're r
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski
+/home/oski/Desktop/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ mkdir thesis
@@ -361,7 +361,7 @@ human-rights-2003.TXT  human-rights-2007.TXT
 
 #### Challenge 1
 
- If you haven't already, cd into the workshop repo. Create a directory called "my_files".
+`cd` into the workshop repo. Create a directory called "my_files".
 
 #### Challenge 2
 

@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Shell Scripts
-minutes: 15
+minutes: 20
 ---
 # The Unix Shell: Scripts
 
@@ -29,7 +29,7 @@ $ nano group.sh
 cat africa*.txt | wc -l
 ~~~
 
-This is a variation on command we created earlier: It concatenates all of the africa files into one large text files containing all africa articles.
+This is a variation on command we created earlier: It concatenates all of the africa files into one large text file containing all africa articles.
 
 Remember, we are *not* running it as a command just yet: we are putting the commands in a file.
 
@@ -191,6 +191,16 @@ After a moment's work in an editor to remove the serial numbers on the commands,
 > cat all-asia.txt
 > history | tail -5 | colrm 1 7
 > ~~~
+>
+> In order to get a range in your history, simply combine head and tail
+> arguments, e.g.:
+>
+> ~~~
+> $ history | tail -15 | head -5 | colrm 1 7 > new_script.sh
+> ~~~
+>
+> would place the five commands from 15 commands before into a new_script.sh
+> file without the serial numbers.
 
 In practice, most people develop shell scripts by running commands at the shell prompt a few times to make sure they're doing the right thing, then saving them in a file for re-use.
 

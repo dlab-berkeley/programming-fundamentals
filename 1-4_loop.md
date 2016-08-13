@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Loops
-minutes: 15
+minutes: 20
 ---
 
 # The Unix Shell: Loops and Repeating Things
@@ -19,7 +19,7 @@ Wildcards and tab completion are two ways to reduce typing (and typing mistakes)
 
 Let's go back to our programming-fundamentals/data/articles directory, where we have over 1000 text articles on different regions of the world.
 
-Let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
+Before merging, let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
 
 First we can make a directory and copy our files:
 

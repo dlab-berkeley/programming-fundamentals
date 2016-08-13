@@ -4,7 +4,7 @@ subtitle: A never-ending google search
 minutes: 10
 ---
 
-# Programming: An never-ending google search.
+# Programming: A never-ending google search.
 
 > ## Learning Objectives
 >
@@ -16,9 +16,9 @@ minutes: 10
 
 ### What it means to "know how to program"
 
-Most programmers can program in more than one language. That's because they know *how to program* generally, as opposed to "knowing" Python, R, Ruby, or whatever. 
+Most programmers can program in more than one language. That's because they know *how to program* generally, as opposed to "knowing" Python, R, Ruby, or whatever.
 
-In other words, programming is an extendible skill. Basic programming concepts -- conditionals, for loops, functions -- can be found in almost any programming language. 
+In other words, programming is an extendible skill. Basic programming concepts -- conditionals, for loops, functions -- can be found in almost any programming language.
 
 That being said, programming languages differ from one another in the following ways:
 
@@ -59,7 +59,6 @@ If you're a good programmer, you're a good detective!
 
 ### Helpful Resources
 
-* Stack Overflow 
-* Stack Exchange
-* the D-Lab!
-
+* [Stack Overflow](http://stackoverflow.com)
+* [Stack Exchange](http://stackexchange.com)
+* the [D-Lab](http://dlab.berkeley.edu)!

@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Files & Directories
-minutes: 5
+minutes: 20
 ---
 
 # The Unix Shell: Files and Directories
@@ -200,23 +200,41 @@ Documents  Pictures                  setup_ipython_notebook.sh
 Downloads  programming-fundamentals  Templates
 ~~~
 
+### Downloading the Github Repository
+
+We are now going to download the materials we'll use for the rest of the class. You can `cd` into your `Desktop`. We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in. To `cd` into `Desktop` we simply type:
+
+~~~
+$ cd Desktop
+~~~
+
+If you are using Windows and have downloaded Git Bash, or you know you have Git installed, you can get the materials by typing:
+
+~~~
+$ git clone https://github.com/dlab-berkeley/programming-fundamentals.git
+~~~
+
+Alternatively, go to the [repository](https://github.com/dlab-berkeley/programming-fundamentals) in your browser and download the zip file to your desktop.
+
+Once you `cd` into your `Desktop` and type `ls` you should now see the `programming-fundamentals` folder appear in your listing.
+
 ### Moving Around
 
-We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
+Let's go inside that directory:
 
 ~~~ {.input}
 $ cd programming-fundamentals
 ~~~
 
-`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/data`.
+`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/Desktop/programming-fundamentals`.
 
-If we run `ls` without arguments now, it lists the contents of `/home/oski/data`, because that's where we now are:
+If we run `ls` without arguments now, it lists the contents of `/home/oski/Desktop/programming-fundamentals`, because that's where we now are:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/programming-fundamentals
+/home/oski/Desktop/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ ls -F
@@ -296,7 +314,7 @@ As you can see, it also displays another special directory that's just called `.
 > If you ever want to get to the home directory immediately, you can use the
 > shortcut `~`. For example, type `cd ~` and you'll get back home in a jiffy.
 > `~` will also stand in for your home directory in paths, so for instance
-> `~/data` is the same as `/home/oski/data`. This only works if it is the
+> `~/Desktop` is the same as `/home/oski/Desktop`. This only works if it is the
 > first character in the path: `here/there/~/elsewhere` is not
 > `/home/oski/elsewhere`.
 
@@ -309,7 +327,7 @@ Everything Rochelle needs for her text project is in the `data` directory of the
 
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data
+$ cd ~/Desktop/programming-fundamentals/data
 $ ls
 ~~~
 ~~~ {.output}
@@ -364,20 +382,25 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 #### Challenge 1
 
-If `pwd` displays `/home/oski/programming-fundamentals`, what will `ls ../documents` display?
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals/data/articles`, what will `ls ../downloads` display?
 
-1.  `../documents: No such file or directory`
-2.  `bce-help.desktop  Shared`
-3.  `bce-help.desktop/  Shared/`
-4.  no output.
+1.  `no output`
+2.  `human-rights-2000.TXT  	human-rights-2004.TXT  	human-rights-2008.TXT
+     human-rights-2001.TXT  	human-rights-2005.TXT  	human-rights-2009.TXT
+     human-rights-2002.TXT  	human-rights-2006.TXT  	split_ln.py
+     human-rights-2003.TXT  	human-rights-2007.TXT`
+3.  `animals.txt    	articles       	downloads`
+4.  `error`
 
 #### Challenge 2
 
-If `pwd` displays `/home/oski`, and `-r` tells `ls` to display things in reverse order, what command will display:
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals`, and `-r` tells `ls` to display things in reverse order, what command will display:
 ~~~
-Videos/                     Public/                    Music/      Documents/
-Templates/                  programming-fundamentals/  file.txt    Desktop/
-setup_ipython_notebook.sh*  Pictures/                  Downloads/  data/
+test/  			      1-5_scripts.md 		1-0_shell.md
+resource.md    		1-4_loop.md    		0-2_help.md
+data/  			      1-3_pipe.md    		0-1_BCE.md
+README.md      		1-2_create.md  		0-0_Introduction.md
+LICENSE			      1-1_fildir.md
 ~~~
 
 1.  `ls pwd`
