@@ -248,7 +248,7 @@ $ ls -F
 We now know how to go down the directory tree: how do we go up? We could use an absolute path:
 
 ~~~ {.input}
-$ cd /home/oski/
+$ cd /home/oski/Desktop
 ~~~
 
 but it's almost always simpler to use `cd ..` to go up one level:
@@ -257,20 +257,20 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/data
+/home/oski/Desktop
 ~~~
 ~~~ {.input}
 $ cd ..
 ~~~
 
 `..` is a special directory name meaning "the directory containing this one",
-or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/home/oski/`:
+or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/home/oski/Desktop`:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/
+/home/oski/Desktop
 ~~~
 
 The special directory `..` doesn't usually show up when we run `ls`. If we want to display it, we can give `ls` the `-a` flag:
@@ -296,7 +296,7 @@ file.txt       Public                    .xsession-errors
 .gitconfig     .Rhistory
 ~~~
 
-`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/oski`, refers to the `/users` directory).
+`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..`.
 
 > #### Hidden Files: For Your Own Protection
 >
