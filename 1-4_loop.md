@@ -269,61 +269,66 @@ then she can re-run `cat africa1` simply by typing `!475`.
 
 ## Exercises
 
-### Challenge 1
+#### Challenge 1
 
-We've been using bash to print a lot of things to the screen. Write a script
-that prints the count number of each kind of animal in data/animals.txt, and
-save it in my_files/script.sh (hint: use `uniq`, but that won't be enough!).
-
-#### Challenge 2
-
-Write a shell script called `longest.sh` that takes the name of a directory and
-a filename extension as its parameters, and prints out the number of lines and
-name of the file with the most lines in that directory with that extension. For
-example:
+Suppose that `ls` initially displays:
 
 ~~~
-> bash my_files/longest.sh /tmp/data pdb
+fructose.dat    glucose.dat   sucrose.dat
 ~~~
 
-would print the name of the `.pdb` file in `/tmp/data` that has
-the most lines.
-
-#### Challenge 3
-
-Joel's `data` directory contains three files: `fructose.dat`, `glucose.dat`,
-and `sucrose.dat`. Explain what a script called `example.sh` would do when run
-as `bash example.sh *.dat` if it contained the following lines:
+What is the output of:
 
 ~~~
-# Script 1
-echo *.*
-~~~
-
-~~~
-# Script 2
-for filename in $1 $2 $3
+for datafile in *.dat
 do
-    cat $filename
+    ls *.dat
 done
 ~~~
 
+#### Challenge 2
+
+What is the effect of this loop?
+
 ~~~
-# Script 3
-echo $@.dat
+for sugar in fructose.dat glucose.dat sucrose.dat
+do
+    echo $sugar
+    cat $sugar xylose.dat
+done
 ~~~
 
-#### Challenge 4
+1.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
+    copies `sucrose.dat` to create `xylose.dat`.
+2.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
+    concatenates all three files to create `xylose.dat`.
+3.  Prints `fructose.dat`, `glucose.dat`, `sucrose.dat`, and
+    `xylose.dat`, and copies `sucrose.dat` to create `xylose.dat`.
+4.  None of the above.
 
-What happens if you rename `example.sh` to `example.R`?
+#### Challenge 3
 
-When you feel you have met these challenges successfully, cd into test/ and
-type
+The `expr` does simple arithmetic using command-line parameters:
 
-~~~ {.input}
-. 1-5_test.sh
+~~~
+$ expr 3 + 5
+8
+$ expr 30 / 5 - 2
+4
+~~~
+
+Given this, what is the output of:
+
+~~~
+for left in 2 3
+do
+    for right in $left
+    do
+        expr $left + $right
+    done
+done
 ~~~
 
 ---
 
-Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/05-script.html)
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/04-loop.html)
