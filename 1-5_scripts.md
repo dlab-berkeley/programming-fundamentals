@@ -210,7 +210,7 @@ This style of work allows people to recycle what they discover about their data 
 
 #### Challenge 1
 
-Write a shell script called `longest.sh` that takes the name of a
+Write a shell script called `longest.sh` in `my_files/` that takes the name of a
 directory and a filename extension as its parameters, and prints
 out the number of lines and name of the file with the most lines in
 that directory with that extension. For example:
@@ -225,17 +225,17 @@ the most lines.
 #### Challenge 2
 
 Joel's `data` directory contains three files: `fructose.dat`,
-`glucose.dat`, and `sucrose.dat`. Explain what a script called
-`example.sh` would do when run as `bash example.sh *.dat` if it
+`glucose.dat`, and `sucrose.dat`. Each of the `.dat` files contains only the word `sugar`. Explain what a script called
+`example.sh` (also in the directory!) would do when run as `bash example.sh *.dat` if it
 contained the following lines:
 
 ~~~
-# Script 1
+# Script a
 echo *.*
 ~~~
 
 ~~~
-# Script 2
+# Script b
 for filename in $1 $2 $3
 do
     cat $filename
@@ -243,9 +243,11 @@ done
 ~~~
 
 ~~~
-# Script 3
+# Script c
 echo $@.dat
 ~~~
+
+Now test your theory and redirect the output to `my_files/challenge_2a.txt`, `my_files/challenge_2b.txt`, and `my_files/challenge_2c.txt` respectively.
 
 #### Challenge 3
 

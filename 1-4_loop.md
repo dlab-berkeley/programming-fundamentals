@@ -286,27 +286,21 @@ do
 done
 ~~~
 
-Save the answer in `programming-fundamentals/my_files/challenge_1.txt`.
+Now test your theory and redirect your answer to `programming-fundamentals/my_files/challenge_1.txt`!
 
 #### Challenge 2
 
-What is the effect of this loop?
+What is the effect of this loop if each .dat file contains only the word `sugar`?
 
 ~~~
 for sugar in fructose.dat glucose.dat sucrose.dat
 do
     echo $sugar
-    cat $sugar xylose.dat
+    cat $sugar > xylose.dat
 done
 ~~~
 
-1.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
-    copies `sucrose.dat` to create `xylose.dat`.
-2.  Prints `fructose.dat`, `glucose.dat`, and `sucrose.dat`, and
-    concatenates all three files to create `xylose.dat`.
-3.  Prints `fructose.dat`, `glucose.dat`, `sucrose.dat`, and
-    `xylose.dat`, and copies `sucrose.dat` to create `xylose.dat`.
-4.  None of the above.
+Now test your theory and redirect the output to `programming-fundamentals/my_files/challenge_2.txt`, use `nano` to edit the file and append the contents of `xylose.dat` to your `challenge_2.txt`.
 
 #### Challenge 3
 
@@ -331,7 +325,7 @@ do
 done
 ~~~
 
-Save the answer in `programming-fundamentals/my_files/challenge_3.txt`.
+Now test your theory and redirect your answer to `programming-fundamentals/my_files/challenge_3.txt`!
 
 `cd` into `test`, and type `. 1-4_test.sh` once you've completed the challenges.
 
