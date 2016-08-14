@@ -101,10 +101,10 @@ Let's see what's in Rochelle's home directory by running `ls`, which stands for 
 $ ls
 ~~~
 ~~~ {.output}
-data       file.txt                  Public                     Videos
-Desktop    Music                     R
-Documents  Pictures                  setup_ipython_notebook.sh
-Downloads  programming-fundamentals  Templates
+Applications    Documents     Library    textfile.txt
+bin             Downloads     Movies
+Box Sync 	    Dropbox       Pictures
+Desktop         Google Drive  Public
 ~~~
 
 `ls` prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns.
@@ -115,16 +115,15 @@ We can make its output more comprehensible by using the **flag** `-F`, which tel
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       Music/                     setup_ipython_notebook.sh*
-Desktop/    Pictures/                  Templates/
-Documents/  programming-fundamentals/  Videos/
-Downloads/  Public/
-file.txt    R/
+Applications/	Documents/ 		Library/ 	textfile.txt
+bin/			Downloads/ 		Movies/
+Box Sync/ 	    Dropbox/        Pictures/
+Desktop/   	    Google Drive/   Public/
 ~~~
 
 Here,
-we can see that `/home/oski` contains 11 **sub-directories**.
-The names that don't have trailing slashes, like `file.txt` are plain old files.
+we can see that home contains 12 **sub-directories**.
+The names that don't have trailing slashes, such as textfile.txt are plain old files.
 
 And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
 
@@ -148,19 +147,19 @@ And note that there is a space between `ls` and `-F`: without it, the shell thin
 > cause the operating system to try to open it with a music player
 > when someone double-clicks it.
 
-Now let's take a look at what's in Rochelle's `data` directory by running `ls -F data`, i.e., the command `ls` with the **arguments** `-F` and `data`. The second argument --- the one *without* a leading dash --- tells `ls` that
+Now let's take a look at what's in Rochelle's `Movies` directory by running `ls -F Movies`, i.e., the command `ls` with the **arguments** `-F` and `bin`. The second argument --- the one *without* a leading dash --- tells `ls` that
 we want a listing of something other than our current working directory:
 
 ~~~ {.input}
-$ ls -F data
+$ ls -F Movies
 ~~~
 ~~~ {.output}
-articles/  articles.txt  bar.txt  foo.txt  recipes/
+Comedy/		Thriller/		Action/		movie_file.mov
 ~~~
 
-The output shows us that there are four text files and two sub-sub-directories.Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
+The output shows us that there is one file and three sub-sub folders. Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
-Notice, by the way that we spelled the directory name `data`. It doesn't have a trailing slash: that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart. And it doesn't begin with a slash because it's a **relative path**, i.e., it tells `ls` how to find something from where we are, rather than from the root of the file system.
+Notice, by the way that we spelled the directory name `Movies`. It doesn't have a trailing slash: that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart. And it doesn't begin with a slash because it's a **relative path**, i.e., it tells `ls` how to find something from where we are, rather than from the root of the file system.
 
 > #### Parameters vs. Arguments
 >
@@ -169,16 +168,24 @@ Notice, by the way that we spelled the directory name `data`. It doesn't have a 
 > In practice, however, most people use them interchangeably or inconsistently,
 > so we will too.
 
-If we run `ls -F /data` (*with* a leading slash) we get a different answer,
-because `/data` is an **absolute path**:
+To understand this try running `ls -F bin` and `ls -F /bin` (*with* a leading slash). You see we get different answers,
+because `/bin` is an **absolute path**. You also conveniently see all the available bash commands:
 
 ~~~ {.input}
-$ ls -F /data
+$ ls -F /bin
 ~~~
 ~~~ {.output}
-access.log    backup/    hardware.cfg
-network.cfg
+[*     		df*    			launchctl*  pwd*   		tcsh*
+bash*  		domainname*    	link*  		rcp*   		test*
+cat*   		echo*  			ln*    		rm*    		unlink*
+chmod* 		ed*    			ls*    		rmdir* 		wait4path*
+cp*    		expr*  			mkdir* 		sh*    		zsh*
+csh*   		hostname*      	mv*    		sleep*
+date*  		kill*  			pax*   		stty*
+dd*    		ksh*   			ps*    		sync*
 ~~~
+
+Remember that explanation of how these commands call little programs to work with another? The programs are right here!
 
 The leading `/` tells the computer to follow the path from the root of the file system, so it always refers to exactly one directory, no matter where we are when we run the command.
 
@@ -194,10 +201,10 @@ $ pwd
 $ ls
 ~~~
 ~~~ {.output}
-data       file.txt                  Public                     Videos
-Desktop    Music                     R
-Documents  Pictures                  setup_ipython_notebook.sh
-Downloads  programming-fundamentals  Templates
+Applications	Documents 		Library		textfile.txt
+bin 			Downloads 		Movies
+Box Sync 		Dropbox         Pictures
+Desktop   		Google Drive    Public
 ~~~
 
 ### Downloading the Github Repository
@@ -257,7 +264,7 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/Desktop
+/home/oski/Desktop/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ cd ..
@@ -278,25 +285,8 @@ The special directory `..` doesn't usually show up when we run `ls`. If we want 
 ~~~ {.input}
 $ ls -a
 ~~~
-~~~ {.output}
-.              .gnome                    .rstudio-desktop
-..             .ICEauthority             setup_ipython_notebook.sh
-.bash_history  .ipynb_checkpoints        .subversion
-.bash_logout   .ipython                  Templates
-.bashrc        .local                    .thumbnails
-.cache         .mozilla                  .vboxclient-clipboard.pid
-.config        Music                     .vboxclient-display.pid
-data           Pictures                  .vboxclient-draganddrop.pid
-.dbus          .pip                      .vboxclient-seamless.pid
-Desktop        .pki                      .vbox_version
-Documents      .profile                  Videos
-Downloads      programming-fundamentals  .Xauthority
-file.txt       Public                    .xsession-errors
-.gconf         R                         .xsession-errors.old
-.gitconfig     .Rhistory
-~~~
 
-`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..`.
+This will then list all the files on our Desktop. `-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..`.
 
 > #### Hidden Files: For Your Own Protection
 >
@@ -395,11 +385,12 @@ If `pwd` displays `/home/oski/Desktop/programming-fundamentals/data/articles`, w
 #### Challenge 2
 
 If `pwd` displays `/home/oski/Desktop/programming-fundamentals`, and `-r` tells `ls` to display things in reverse order, what command will display:
+
 ~~~
 test/  			      1-5_scripts.md 		1-0_shell.md
-resource.md    		1-4_loop.md    		0-2_help.md
+resource.md    		  1-4_loop.md    		0-2_help.md
 data/  			      1-3_pipe.md    		0-1_BCE.md
-README.md      		1-2_create.md  		0-0_Introduction.md
+README.md      		  1-2_create.md  		0-0_Introduction.md
 LICENSE			      1-1_fildir.md
 ~~~
 
