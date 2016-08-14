@@ -286,6 +286,8 @@ do
 done
 ~~~
 
+Save the answer in `programming-fundamentals/my_files/challenge_1.txt`.
+
 #### Challenge 2
 
 What is the effect of this loop?
@@ -328,6 +330,10 @@ do
     done
 done
 ~~~
+
+Save the answer in `programming-fundamentals/my_files/challenge_3.txt`.
+
+`cd` into `test`, and type `. 1-4_test.sh` once you've completed the challenges.
 
 ---
 
