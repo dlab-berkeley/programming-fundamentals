@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Files & Directories
-minutes: 5
+minutes: 20
 ---
 
 # The Unix Shell: Files and Directories
@@ -101,10 +101,10 @@ Let's see what's in Rochelle's home directory by running `ls`, which stands for 
 $ ls
 ~~~
 ~~~ {.output}
-data       file.txt                  Public                     Videos
-Desktop    Music                     R
-Documents  Pictures                  setup_ipython_notebook.sh
-Downloads  programming-fundamentals  Templates
+Applications    Documents     Library    textfile.txt
+bin             Downloads     Movies
+Box Sync 	    Dropbox       Pictures
+Desktop         Google Drive  Public
 ~~~
 
 `ls` prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns.
@@ -115,16 +115,15 @@ We can make its output more comprehensible by using the **flag** `-F`, which tel
 $ ls -F
 ~~~
 ~~~ {.output}
-data/       Music/                     setup_ipython_notebook.sh*
-Desktop/    Pictures/                  Templates/
-Documents/  programming-fundamentals/  Videos/
-Downloads/  Public/
-file.txt    R/
+Applications/	Documents/ 		Library/ 	textfile.txt
+bin/			Downloads/ 		Movies/
+Box Sync/ 	    Dropbox/        Pictures/
+Desktop/   	    Google Drive/   Public/
 ~~~
 
 Here,
-we can see that `/home/oski` contains 11 **sub-directories**.
-The names that don't have trailing slashes, like `file.txt` are plain old files.
+we can see that home contains 12 **sub-directories**.
+The names that don't have trailing slashes, such as textfile.txt are plain old files.
 
 And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
 
@@ -148,19 +147,19 @@ And note that there is a space between `ls` and `-F`: without it, the shell thin
 > cause the operating system to try to open it with a music player
 > when someone double-clicks it.
 
-Now let's take a look at what's in Rochelle's `data` directory by running `ls -F data`, i.e., the command `ls` with the **arguments** `-F` and `data`. The second argument --- the one *without* a leading dash --- tells `ls` that
+Now let's take a look at what's in Rochelle's `Movies` directory by running `ls -F Movies`, i.e., the command `ls` with the **arguments** `-F` and `bin`. The second argument --- the one *without* a leading dash --- tells `ls` that
 we want a listing of something other than our current working directory:
 
 ~~~ {.input}
-$ ls -F data
+$ ls -F Movies
 ~~~
 ~~~ {.output}
-articles/  articles.txt  bar.txt  foo.txt  recipes/
+Comedy/		Thriller/		Action/		movie_file.mov
 ~~~
 
-The output shows us that there are four text files and two sub-sub-directories.Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
+The output shows us that there is one file and three sub-sub folders. Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
-Notice, by the way that we spelled the directory name `data`. It doesn't have a trailing slash: that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart. And it doesn't begin with a slash because it's a **relative path**, i.e., it tells `ls` how to find something from where we are, rather than from the root of the file system.
+Notice, by the way that we spelled the directory name `Movies`. It doesn't have a trailing slash: that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart. And it doesn't begin with a slash because it's a **relative path**, i.e., it tells `ls` how to find something from where we are, rather than from the root of the file system.
 
 > #### Parameters vs. Arguments
 >
@@ -169,16 +168,24 @@ Notice, by the way that we spelled the directory name `data`. It doesn't have a 
 > In practice, however, most people use them interchangeably or inconsistently,
 > so we will too.
 
-If we run `ls -F /data` (*with* a leading slash) we get a different answer,
-because `/data` is an **absolute path**:
+To understand this try running `ls -F bin` and `ls -F /bin` (*with* a leading slash). You see we get different answers,
+because `/bin` is an **absolute path**. You also conveniently see all the available bash commands:
 
 ~~~ {.input}
-$ ls -F /data
+$ ls -F /bin
 ~~~
 ~~~ {.output}
-access.log    backup/    hardware.cfg
-network.cfg
+[*     		df*    			launchctl*  pwd*   		tcsh*
+bash*  		domainname*    	link*  		rcp*   		test*
+cat*   		echo*  			ln*    		rm*    		unlink*
+chmod* 		ed*    			ls*    		rmdir* 		wait4path*
+cp*    		expr*  			mkdir* 		sh*    		zsh*
+csh*   		hostname*      	mv*    		sleep*
+date*  		kill*  			pax*   		stty*
+dd*    		ksh*   			ps*    		sync*
 ~~~
+
+Remember that explanation of how these commands call little programs to work with another? The programs are right here!
 
 The leading `/` tells the computer to follow the path from the root of the file system, so it always refers to exactly one directory, no matter where we are when we run the command.
 
@@ -194,29 +201,47 @@ $ pwd
 $ ls
 ~~~
 ~~~ {.output}
-data       file.txt                  Public                     Videos
-Desktop    Music                     R
-Documents  Pictures                  setup_ipython_notebook.sh
-Downloads  programming-fundamentals  Templates
+Applications	Documents 		Library		textfile.txt
+bin 			Downloads 		Movies
+Box Sync 		Dropbox         Pictures
+Desktop   		Google Drive    Public
 ~~~
+
+### Downloading the Github Repository
+
+We are now going to download the materials we'll use for the rest of the class. You can `cd` into your `Desktop`. We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in. To `cd` into `Desktop` we simply type:
+
+~~~
+$ cd Desktop
+~~~
+
+If you are using Windows and have downloaded Git Bash, or you know you have Git installed, you can get the materials by typing:
+
+~~~
+$ git clone https://github.com/dlab-berkeley/programming-fundamentals.git
+~~~
+
+Alternatively, go to the [repository](https://github.com/dlab-berkeley/programming-fundamentals) in your browser and download the zip file to your desktop.
+
+Once you `cd` into your `Desktop` and type `ls` you should now see the `programming-fundamentals` folder appear in your listing.
 
 ### Moving Around
 
-We can use `cd` followed by a directory name to change our working directory. `cd` stands for "change directory", which is a bit misleading: the command doesn't change the directory, it changes the shell's idea of what directory we are in.
+Let's go inside that directory:
 
 ~~~ {.input}
 $ cd programming-fundamentals
 ~~~
 
-`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/data`.
+`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/Desktop/programming-fundamentals`.
 
-If we run `ls` without arguments now, it lists the contents of `/home/oski/data`, because that's where we now are:
+If we run `ls` without arguments now, it lists the contents of `/home/oski/Desktop/programming-fundamentals`, because that's where we now are:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/programming-fundamentals
+/home/oski/Desktop/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ ls -F
@@ -230,7 +255,7 @@ $ ls -F
 We now know how to go down the directory tree: how do we go up? We could use an absolute path:
 
 ~~~ {.input}
-$ cd /home/oski/
+$ cd /home/oski/Desktop
 ~~~
 
 but it's almost always simpler to use `cd ..` to go up one level:
@@ -239,20 +264,20 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/data
+/home/oski/Desktop/programming-fundamentals
 ~~~
 ~~~ {.input}
 $ cd ..
 ~~~
 
 `..` is a special directory name meaning "the directory containing this one",
-or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/home/oski/`:
+or more succinctly, the **parent** of the current directory. Sure enough, if we run `pwd` after running `cd ..`, we're back in `/home/oski/Desktop`:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/
+/home/oski/Desktop
 ~~~
 
 The special directory `..` doesn't usually show up when we run `ls`. If we want to display it, we can give `ls` the `-a` flag:
@@ -260,25 +285,8 @@ The special directory `..` doesn't usually show up when we run `ls`. If we want 
 ~~~ {.input}
 $ ls -a
 ~~~
-~~~ {.output}
-.              .gnome                    .rstudio-desktop
-..             .ICEauthority             setup_ipython_notebook.sh
-.bash_history  .ipynb_checkpoints        .subversion
-.bash_logout   .ipython                  Templates
-.bashrc        .local                    .thumbnails
-.cache         .mozilla                  .vboxclient-clipboard.pid
-.config        Music                     .vboxclient-display.pid
-data           Pictures                  .vboxclient-draganddrop.pid
-.dbus          .pip                      .vboxclient-seamless.pid
-Desktop        .pki                      .vbox_version
-Documents      .profile                  Videos
-Downloads      programming-fundamentals  .Xauthority
-file.txt       Public                    .xsession-errors
-.gconf         R                         .xsession-errors.old
-.gitconfig     .Rhistory
-~~~
 
-`-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..` (which, if we're in `/home/oski`, refers to the `/users` directory).
+This will then list all the files on our Desktop. `-a` stands for "show all"; it forces `ls` to show us file and directory names that begin with `.`, such as `..`.
 
 > #### Hidden Files: For Your Own Protection
 >
@@ -296,7 +304,7 @@ As you can see, it also displays another special directory that's just called `.
 > If you ever want to get to the home directory immediately, you can use the
 > shortcut `~`. For example, type `cd ~` and you'll get back home in a jiffy.
 > `~` will also stand in for your home directory in paths, so for instance
-> `~/data` is the same as `/home/oski/data`. This only works if it is the
+> `~/Desktop` is the same as `/home/oski/Desktop`. This only works if it is the
 > first character in the path: `here/there/~/elsewhere` is not
 > `/home/oski/elsewhere`.
 
@@ -309,7 +317,7 @@ Everything Rochelle needs for her text project is in the `data` directory of the
 
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data
+$ cd ~/Desktop/programming-fundamentals/data
 $ ls
 ~~~
 ~~~ {.output}
@@ -364,20 +372,26 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 #### Challenge 1
 
-If `pwd` displays `/home/oski/programming-fundamentals`, what will `ls ../documents` display?
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals/data/articles`, what will `ls ../downloads` display?
 
-1.  `../documents: No such file or directory`
-2.  `bce-help.desktop  Shared`
-3.  `bce-help.desktop/  Shared/`
-4.  no output.
+1.  `no output`
+2.  `human-rights-2000.TXT  	human-rights-2004.TXT  	human-rights-2008.TXT
+     human-rights-2001.TXT  	human-rights-2005.TXT  	human-rights-2009.TXT
+     human-rights-2002.TXT  	human-rights-2006.TXT  	split_ln.py
+     human-rights-2003.TXT  	human-rights-2007.TXT`
+3.  `animals.txt    	articles       	downloads`
+4.  `error`
 
 #### Challenge 2
 
-If `pwd` displays `/home/oski`, and `-r` tells `ls` to display things in reverse order, what command will display:
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals`, and `-r` tells `ls` to display things in reverse order, what command will display:
+
 ~~~
-Videos/                     Public/                    Music/      Documents/
-Templates/                  programming-fundamentals/  file.txt    Desktop/
-setup_ipython_notebook.sh*  Pictures/                  Downloads/  data/
+test/  			      1-5_scripts.md 		1-0_shell.md
+resource.md    		  1-4_loop.md    		0-2_help.md
+data/  			      1-3_pipe.md    		0-1_BCE.md
+README.md      		  1-2_create.md  		0-0_Introduction.md
+LICENSE			      1-1_fildir.md
 ~~~
 
 1.  `ls pwd`

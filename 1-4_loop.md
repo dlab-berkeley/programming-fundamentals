@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Loops
-minutes: 15
+minutes: 20
 ---
 
 # The Unix Shell: Loops and Repeating Things
@@ -17,11 +17,9 @@ minutes: 15
 
 Wildcards and tab completion are two ways to reduce typing (and typing mistakes). Another is to tell the shell to do something over and over again.
 
-Wildcards and tab completion are two ways to reduce typing (and typing mistakes). Another is to tell the shell to do something over and over again.
-
 Let's go back to our programming-fundamentals/data/articles directory, where we have over 1000 text articles on different regions of the world.
 
-Let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
+Before merging, let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
 
 First we can make a directory and copy our files:
 
@@ -60,7 +58,7 @@ Instead, we can use a **loop** to do some operation once for each thing in a lis
 
 
 ~~~ {.input}
-$ for filename in africa1.text africa2.txt
+$ for filename in africa1.txt africa2.txt
  do
     wc -w $filename
  done
@@ -90,7 +88,7 @@ so this loop prints out the word count of each data file in turn.
 We have called the variable in this loop `filename` in order to make its purpose clearer to human readers. The shell itself doesn't care what the variable is called; if we wrote this loop as:
 
 ~~~ {.input}
-$ for x in africa1.text africa2.txt
+$ for x in africa1.txt africa2.txt
  do
     wc -w $x
  done
@@ -99,7 +97,7 @@ $ for x in africa1.text africa2.txt
 or:
 
 ~~~ {.input}
-$ for temperature in africa1.text africa2.txt
+$ for temperature in africa1.txt africa2.txt
  do
     wc -w $temperature
  done
@@ -271,61 +269,66 @@ then she can re-run `cat africa1` simply by typing `!475`.
 
 ## Exercises
 
-### Challenge 1
+#### Challenge 1
 
-We've been using bash to print a lot of things to the screen. Write a script
-that prints the count number of each kind of animal in data/animals.txt, and
-save it in my_files/script.sh (hint: use `uniq`, but that won't be enough!).
-
-#### Challenge 2
-
-Write a shell script called `longest.sh` that takes the name of a directory and
-a filename extension as its parameters, and prints out the number of lines and
-name of the file with the most lines in that directory with that extension. For
-example:
+Suppose that `ls` initially displays:
 
 ~~~
-> bash my_files/longest.sh /tmp/data pdb
+fructose.dat    glucose.dat   sucrose.dat
 ~~~
 
-would print the name of the `.pdb` file in `/tmp/data` that has
-the most lines.
-
-#### Challenge 3
-
-Joel's `data` directory contains three files: `fructose.dat`, `glucose.dat`,
-and `sucrose.dat`. Explain what a script called `example.sh` would do when run
-as `bash example.sh *.dat` if it contained the following lines:
+What is the output of:
 
 ~~~
-# Script 1
-echo *.*
-~~~
-
-~~~
-# Script 2
-for filename in $1 $2 $3
+for datafile in *.dat
 do
-    cat $filename
+    ls *.dat
 done
 ~~~
 
+Now test your theory and redirect your answer to `programming-fundamentals/my_files/challenge_1.txt`!
+
+#### Challenge 2
+
+What is the effect of this loop if each .dat file contains only the word `sugar`?
+
 ~~~
-# Script 3
-echo $@.dat
+for sugar in fructose.dat glucose.dat sucrose.dat
+do
+    echo $sugar
+    cat $sugar > xylose.dat
+done
 ~~~
 
-#### Challenge 4
+Now test your theory and redirect the output to `programming-fundamentals/my_files/challenge_2.txt`, use `nano` to edit the file and append the contents of `xylose.dat` to your `challenge_2.txt`.
 
-What happens if you rename `example.sh` to `example.R`?
+#### Challenge 3
 
-When you feel you have met these challenges successfully, cd into test/ and
-type
+The `expr` does simple arithmetic using command-line parameters:
 
-~~~ {.input}
-. 1-5_test.sh
 ~~~
+$ expr 3 + 5
+8
+$ expr 30 / 5 - 2
+4
+~~~
+
+Given this, what is the output of:
+
+~~~
+for left in 2 3
+do
+    for right in $left
+    do
+        expr $left + $right
+    done
+done
+~~~
+
+Now test your theory and redirect your answer to `programming-fundamentals/my_files/challenge_3.txt`!
+
+`cd` into `test`, and type `. 1-4_test.sh` once you've completed the challenges.
 
 ---
 
-Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/05-script.html)
+Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/04-loop.html)

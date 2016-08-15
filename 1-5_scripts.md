@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Shell Scripts
-minutes: 15
+minutes: 20
 ---
 # The Unix Shell: Scripts
 
@@ -29,7 +29,7 @@ $ nano group.sh
 cat africa*.txt | wc -l
 ~~~
 
-This is a variation on command we created earlier: It concatenates all of the africa files into one large text files containing all africa articles.
+This is a variation on command we created earlier: It concatenates all of the africa files into one large text file containing all africa articles.
 
 Remember, we are *not* running it as a command just yet: we are putting the commands in a file.
 
@@ -191,6 +191,16 @@ After a moment's work in an editor to remove the serial numbers on the commands,
 > cat all-asia.txt
 > history | tail -5 | colrm 1 7
 > ~~~
+>
+> In order to get a range in your history, simply combine head and tail
+> arguments, e.g.:
+>
+> ~~~
+> $ history | tail -15 | head -5 | colrm 1 7 > new_script.sh
+> ~~~
+>
+> would place the five commands from 15 commands before into a new_script.sh
+> file without the serial numbers.
 
 In practice, most people develop shell scripts by running commands at the shell prompt a few times to make sure they're doing the right thing, then saving them in a file for re-use.
 
@@ -200,7 +210,7 @@ This style of work allows people to recycle what they discover about their data 
 
 #### Challenge 1
 
-Write a shell script called `longest.sh` that takes the name of a
+Write a shell script called `longest.sh` in `my_files/` that takes the name of a
 directory and a filename extension as its parameters, and prints
 out the number of lines and name of the file with the most lines in
 that directory with that extension. For example:
@@ -215,17 +225,17 @@ the most lines.
 #### Challenge 2
 
 Joel's `data` directory contains three files: `fructose.dat`,
-`glucose.dat`, and `sucrose.dat`. Explain what a script called
-`example.sh` would do when run as `bash example.sh *.dat` if it
+`glucose.dat`, and `sucrose.dat`. Each of the `.dat` files contains only the word `sugar`. Explain what a script called
+`example.sh` (also in the directory!) would do when run as `bash example.sh *.dat` if it
 contained the following lines:
 
 ~~~
-# Script 1
+# Script a
 echo *.*
 ~~~
 
 ~~~
-# Script 2
+# Script b
 for filename in $1 $2 $3
 do
     cat $filename
@@ -233,9 +243,11 @@ done
 ~~~
 
 ~~~
-# Script 3
+# Script c
 echo $@.dat
 ~~~
+
+Now test your theory and redirect the output to `my_files/challenge_2a.txt`, `my_files/challenge_2b.txt`, and `my_files/challenge_2c.txt` respectively.
 
 #### Challenge 3
 

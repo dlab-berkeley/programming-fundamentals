@@ -1,7 +1,7 @@
 ---
 title: The Unix Shell
 subtitle: Pipes and Filters
-minutes: 15
+minutes: 20
 ---
 # The Unix Shell: Pipes and Filters
 

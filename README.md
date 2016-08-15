@@ -4,7 +4,6 @@ An intro to the basics that instructors often assume you know, but that you prob
 By the end of this course, students should be able to:
 
 *   Understand basic programming terminologies, structures, and workflows
-*   Get comfortable with the Berkeley Common Environment
 *   Use shall/bash/terminal without fear
 *   Know and use essential Unix commands
 *   Write your own script that automates tasks
