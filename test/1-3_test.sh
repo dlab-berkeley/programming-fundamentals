@@ -13,7 +13,7 @@ fi
 
 echo "Challenge 2"
 
-if [ `cat ../my_files/asia_count` -eq 77301 ] ; then
+if [ "`cat ../my_files/asia_count`"="77301" ] ; then
 	echo ...passed ;
 else
 	echo ...failed ;

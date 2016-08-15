@@ -361,21 +361,21 @@ human-rights-2003.TXT  human-rights-2007.TXT
 
 #### Challenge 1
 
-`cd` into the workshop repo. Create a directory called "my_files".
+`cd` into `programming-fundamentals`. Create a directory called `my_files`. 
 
 #### Challenge 2
 
-Within that directory, create a file called "script.sh"
+Within that directory, create a file called `script.sh`. 
 
 #### Challenge 3
 
-Copy script.sh into my_files/backup/
+Copy script.sh into `my_files/backup/`
 
 #### Challenge 4
 
-The command `ls -t` returns a listing arranged by time of last edit. Add this command to script.sh.
+The command `ls -t` returns a listing arranged by time of last edit. Add this command to `script.sh`.
 
-When you feel you have met these challenges successfully, cd into test/ and type
+When you feel you have met these challenges successfully, cd into `test/` and type
 
 ~~~ {.input}
 . 1-2_test.sh

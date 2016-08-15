@@ -255,7 +255,7 @@ Sort it numerically and place the output in a file called "nsorts.txt". Then, so
 
 #### Challenge 2
 
-How would you count all of the words contained in articles about asia found in data/articles/? Store this number under my_files/ in a file called "asia_count"
+How would you count all of the words contained in articles about asia found in data/articles/? Store this number under my_files/ in a file called "asia_count". (HINT: Look up `colrm` -- `man colrm` or `colrm --help`)
 
 #### Challenge 3
 

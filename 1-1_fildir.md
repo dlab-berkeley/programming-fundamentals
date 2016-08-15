@@ -125,7 +125,17 @@ Here,
 we can see that home contains 12 **sub-directories**.
 The names that don't have trailing slashes, such as textfile.txt are plain old files.
 
-And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
+And note that there is a space between `ls` and `-F`: without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist. If you want to better understand a command and its flags, for example `ls`, you can type:
+
+~~~
+$ man ls
+~~~
+
+To quite, type `q`. If you are on Windows you'll need to type the Mac succinct version:
+
+~~~
+$ ls --help
+~~~
 
 > #### What's In A Name?
 >
@@ -364,8 +374,7 @@ This is called **tab completion**, and we will see it in many other tools as we 
 > ####  Quick File Paths
 >
 > If you quickly need the path of a file or directory, you can also copy the
-> file/directory in the GUI (in BCE: click on file, type `CTRL + c`) and paste
-> it into your shell (in BCE: `CTRL + Shift + v`). The full path of the file
+> file/directory in the GUI and paste it into your shell. The full path of the file
 > or directory will appear.
 
 ## Exercises
@@ -410,7 +419,7 @@ What does the command `cd` without a directory name do?
 
 #### Challenge 4
 
-What does the command `ls` do when used with the -s arguments?
+What does the command `ls` do when used with the `-s` arguments? What about `-l`?
 
 
 ---
