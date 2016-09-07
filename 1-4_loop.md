@@ -300,7 +300,7 @@ do
 done
 ~~~
 
-Now test your theory and redirect the output to `programming-fundamentals/my_files/challenge_2.txt`, use `nano` to edit the file and append the contents of `xylose.dat` to your `challenge_2.txt`.
+Now test your theory and redirect the output to `programming-fundamentals/my_files/challenge_2.txt`. Then append the contents of `xylose.dat` to your `challenge_2.txt`. (HINT: use `cat` and redirection)
 
 #### Challenge 3
 

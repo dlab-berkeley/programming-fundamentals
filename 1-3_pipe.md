@@ -128,6 +128,15 @@ $ head -1 sorted-lengths
 
 Using the parameter `-1` with `head` tells it that we only want the first line of the file; `-20` would get the first 20, and so on. Since `sorted-lengths` contains the lengths of our files ordered from least to greatest, the output of `head` must be the file with the fewest lines.
 
+What do you think `tail` does?
+
+~~~
+$ tail -1 sorted-lengths
+~~~
+~~~
+   70982 total
+~~~
+
 ### Pipes
 
 If you think this is confusing, you're in good company: even once you understand what `wc`, `sort`, and `head` do, all those intermediate files make it hard to follow what's going on. We can make it easier to understand by running `sort` and `head` together:

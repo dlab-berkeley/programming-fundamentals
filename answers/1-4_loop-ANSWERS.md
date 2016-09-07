@@ -60,7 +60,7 @@ do
     echo $sugar
     cat $sugar > xylose.dat
 done > ../challenge_2.txt
-cat ../challenge_2 xylose.dat > ../challenge_2.txt
+cat ../challenge_2.txt xylose.dat > ../challenge_2.txt
 ~~~
 
 

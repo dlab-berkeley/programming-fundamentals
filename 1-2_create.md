@@ -64,10 +64,11 @@ $ ls -F thesis
 
 ### Text Editors
 
-Let's change our working directory to `thesis` using `cd`, then run a text editor called Nano to create a file called `draft.txt`:
+Let's change our working directory to `thesis` using `cd`, then use the command `touch` to create a file called `draft.txt`, and run a text editor called Nano to edit the file:
 
 ~~~ {.input}
 $ cd thesis
+$ touch draft.txt
 $ nano draft.txt
 ~~~
 
@@ -135,6 +136,7 @@ $ pwd
 /home/oski/Desktop/programming-fundamentals/thesis
 ~~~
 ~~~ {.input}
+$ touch draft.txt
 $ nano draft.txt
 $ ls
 ~~~
