@@ -30,7 +30,7 @@ add numbers
 
 ~~~
 sort -n sorts.txt > nsorts.txt
-sort sorts.txt > nsorts.txt
+sort sorts.txt > asorts.txt
 ~~~
 
 No, the are different because BASH will not sort the numbers if you sort alphabetically.

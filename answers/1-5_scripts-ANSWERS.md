@@ -22,8 +22,10 @@ the most lines.
 
 ~~~
 cd myfiles
-echo "wc -l "$1"/*."$2" | sort -n | tail -2 | head -1" > longest.sh
+echo 'wc -l "$1"/*."$2" | sort -n | tail -2 | head -1' > longest.sh
 ~~~
+
+Watch out for single and double quotes!
 
 #### Challenge 2
 
