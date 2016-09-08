@@ -206,6 +206,15 @@ In practice, most people develop shell scripts by running commands at the shell 
 
 This style of work allows people to recycle what they discover about their data and their workflow with one call to `history` and a bit of editing to clean up the output and save it as a shell script.
 
+So what is a good example of a shell script for practical use? Look at `regen_pdfs.sh`:
+
+~~~
+cd programming-fundamentals
+nano regen_pdfs.sh
+~~~
+
+This script is used for the materials you're reading now! While you may not have the program `markdown-pdf` installed, you can see how it's called in a bash script to batch convert a number of files. One of the true powers of bash is gluing together other programs, maybe written in different languages, to perform a sequence of events, especially events dealing with files.
+
 ## Exercises
 
 #### Challenge 1
