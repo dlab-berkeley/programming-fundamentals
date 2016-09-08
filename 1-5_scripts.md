@@ -206,6 +206,8 @@ In practice, most people develop shell scripts by running commands at the shell 
 
 This style of work allows people to recycle what they discover about their data and their workflow with one call to `history` and a bit of editing to clean up the output and save it as a shell script.
 
+### Practical scripts
+
 So what is a good example of a shell script for practical use? Look at `regen_pdfs.sh`:
 
 ~~~
