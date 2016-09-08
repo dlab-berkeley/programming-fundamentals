@@ -54,18 +54,23 @@ Now test your theory and redirect the output to `my_files/challenge_2a.txt`, `my
 
 ~~~
 cd my_files/sugar
+rm *.txt
+touch example.sh
 
 # Script a
-echo *.* > challenge_2a.txt
+nano example.sh
+***** ADD CODE *****
+bash example.sh > ../challenge_2a.txt
 
 # Script b
-for filename in $1 $2 $3
-do
-    cat $filename
-done > challenge_2b.txt
+nano example.sh
+***** ADD CODE *****
+bash example.sh ../challenge_2b.txt
 
 # Script c
-echo $@.dat > challenge_2c.txt
+nano example.sh
+***** ADD CODE *****
+bash example.sh > ../challenge_2c.txt
 ~~~
 
 

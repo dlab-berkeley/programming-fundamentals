@@ -12,7 +12,7 @@ fi
 echo "Challenge 2a"
 
 TEST=$(cat "../my_files/challenge_2a.txt")
-VALUE="example.sh fructose.dat glucose.dat sucrose.dat"
+VALUE="example.sh fructose.dat glucose.dat sucrose.dat xylose.dat"
 
 if [ "$TEST" == "$VALUE" ] ; then
 	echo ...passed ;
@@ -37,7 +37,7 @@ fi
 echo "Challenge 2c"
 
 TEST=$(cat "../my_files/challenge_2c.txt")
-VALUE="fructose.dat glucose.dat sucrose.dat.dat"
+VALUE="fructose.dat glucose.dat sucrose.dat xylose.dat.dat"
 
 if [ "$TEST" == "$VALUE" ] ; then
 	echo ...passed ;

@@ -29,10 +29,12 @@ Now test your theory and redirect your answer to `programming-fundamentals/my_fi
 cd my_files
 mkdir sugar
 touch sugar/fructose.dat    sugar/glucose.dat   sugar/sucrose.dat
-for datafile in sugar/*.dat
+cd sugar
+ls
+for datafile in *.dat
 do
     ls *.dat
-done > challenge_1.txt
+done > ../challenge_1.txt
 ~~~
 
 #### Challenge 2
@@ -59,8 +61,8 @@ for sugar in fructose.dat glucose.dat sucrose.dat
 do
     echo $sugar
     cat $sugar > xylose.dat
-done > ../challenge_2.txt
-cat ../challenge_2.txt xylose.dat > ../challenge_2.txt
+done > challenge_2_loop.txt
+cat challenge_2_loop.txt xylose.dat > ../challenge_2.txt
 ~~~
 
 
