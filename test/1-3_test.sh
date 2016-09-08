@@ -13,7 +13,7 @@ fi
 
 echo "Challenge 2"
 
-if [ "`cat ../my_files/asia_count`" == "`wc -w ../data/articles/asia*.txt | tail -1 | colrm 1 3 | colrm 6`" ] ; then
+if [ "`cat ../my_files/unique_animals.txt`" == "`sort ../data/animals.txt | uniq`"  ] ; then
 	echo ...passed ;
 else
 	echo ...failed ;
@@ -21,7 +21,7 @@ fi
 
 echo "Challenge 3"
 
-if [ "`cat ../my_files/unique_animals.txt`" == "`sort ../data/animals.txt | uniq`"  ] ; then
+if [ "`cat ../my_files/asia_count`" == "`wc -w ../data/articles/asia*.txt | tail -1 | cut -c 2-7`" ] ; then
 	echo ...passed ;
 else
 	echo ...failed ;

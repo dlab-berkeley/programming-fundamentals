@@ -37,15 +37,6 @@ No, the are different because BASH will not sort the numbers if you sort alphabe
 
 #### Challenge 2
 
-How would you count all of the words contained in articles about asia found in data/articles/? Store this number under my_files/ in a file called "asia_count". (HINT: Look up `colrm` -- `man colrm` or `colrm --help`)
-
-~~~
-cd my_files
-wc -w ../data/articles/asia*.txt | tail -1 | colrm 1 3 | colrm 6 > asia_count
-~~~
-
-#### Challenge 3
-
 The command `uniq` removes adjacent duplicated lines from its input.
 For example, if a file `salmon.txt` contains:
 
@@ -84,4 +75,25 @@ Process this list such that there is only one value for each animal, and save it
 
 ~~~
 sort ../data/animals.txt | uniq > unique_animals.txt
+~~~
+
+#### Challenge 3
+
+The command `cut` will cut out a sequence, for characters the argument `-c` must be added.
+
+~~~
+$ echo hello
+hello
+~~~
+
+~~~
+$ echo hello | cut -c 2-4
+ell
+~~~
+
+How would you count all of the words contained in articles about asia found in data/articles/? Store this number under my_files/ in a file called "asia_count".
+
+~~~
+cd my_files
+wc -w ../data/articles/asia*.txt | tail -1 | cut -c 2-7 > asia_count
 ~~~

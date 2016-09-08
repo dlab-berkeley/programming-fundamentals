@@ -115,7 +115,7 @@ $ sort -n lengths
   1576 africa96.txt
 ~~~
 
-We can put the sorted list of lines in another temporary file called `sorted-lengths` by putting `sorted-lengths` after the command, just as we used `lengths` to put the output of `wc` into `lengths`. Once we've done that,
+We can reverse sort with an addtional argument `sort -n -r lengths`. We can put the sorted list of lines in another temporary file called `sorted-lengths` by putting `sorted-lengths` after the command, just as we used `lengths` to put the output of `wc` into `lengths`. Once we've done that,
 we can run another command called `head` to get the first few lines in `sorted-lengths`:
 
 ~~~ {.input}
@@ -264,10 +264,6 @@ Sort it numerically and place the output in a file called "nsorts.txt". Then, so
 
 #### Challenge 2
 
-How would you count all of the words contained in articles about asia found in data/articles/? Store this number under my_files/ in a file called "asia_count". (HINT: Look up `colrm` -- `man colrm` or `colrm --help`)
-
-#### Challenge 3
-
 The command `uniq` removes adjacent duplicated lines from its input.
 For example, if a file `salmon.txt` contains:
 
@@ -309,6 +305,22 @@ When you feel you have met these challenges successfully, cd into test/ and type
 ~~~ {.input}
 . 1-3_test.sh
 ~~~
+
+#### Challenge 3
+
+The command `cut` will cut out a sequence, for characters the argument `-c` must be added.
+
+~~~
+$ echo hello
+hello
+~~~
+
+~~~
+$ echo hello | cut -c 2-4
+ell
+~~~
+
+How would you count all of the words contained in articles about asia found in data/articles/? Store this number under my_files/ in a file called "asia_count".
 
 ---
 

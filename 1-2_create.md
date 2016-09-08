@@ -214,6 +214,13 @@ $ ls thesis
 draft.txt
 ~~~
 
+To see the contents of a file, we can call the command `cat`, short for concatenate.
+
+~~~
+$ cat thesis/draft.txt
+hello!
+~~~
+
 `draft.txt` isn't a particularly informative name, so let's change the file's name using `mv`, which is short for "move":
 
 ~~~ {.input}
@@ -227,6 +234,13 @@ $ ls thesis
 ~~~
 ~~~ {.output}
 quotes.txt
+~~~
+
+To check it has the same contents, we can use `cat` again:
+
+~~~
+$ cat thesis/quotes.txt
+hello!
 ~~~
 
 Just for the sake of inconsistency, `mv` also works on directories -- there is no separate `mvdir` command.
