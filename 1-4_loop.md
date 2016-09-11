@@ -52,7 +52,7 @@ mv: target `original-*.txt' is not a directory
 This is because there are no files matching the wildcard `original-*.txt`.
 In this case, Bash passes the unexpanded wildcard as a parameter to the `mv` command.
 
-### Variables
+### Variables 
 
 In this case, we want to repeat the command on multiple files, but we don't want to write a new line of code with each different filename. Instead, we can create a **variable**, which we assign a value (e.g. a name), then use as a placeholder for that value in the operations we run. We can change the value assigned to the variable, in order to use the same lines of code to run the operations on different items or values.
 
