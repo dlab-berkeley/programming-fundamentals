@@ -43,9 +43,23 @@ More specifically, when we type `whoami` the shell:
 3.  displays that program's output, then
 4.  displays a new prompt to tell us that it's ready for more commands.
 
+### Bash Syntax
+
+Note that when we use the shell, we're giving the computer instructions in code, like with other programming languages. Since the purpose here is to interact with the computer's file system, the **things** are usually files or directories, and the **actions** are usually commands we want to execute on those files/directories, or commands to launch other programs stored in the computer's file system.
+
+The syntax supports that intent. The basic form of an instruction we enter is a line containing the following parts:
+
+1.  a command (the action)
+2.  optional flags to tailor the command to how we wish to use it
+  - indicated by a "-" followed by a letter or option name
+3.  files or directories (the things) we want to operate on
+  - a command may require two, e.g. a source and a destination if we're moving or copying files
+  - a command may allow an arbitrary list of files, if it can be run on many files at once
+  - a command may not require any, or may work on a default if none is specified, which we'll learn about next
+
 ### Home Directories
 
-Next, let's find out where we are by running a command called `pwd` (which stands for "print working directory").
+To continue, let's find out where we are by running a command called `pwd` (which stands for "print working directory").
 
 At any moment, our **current working directory** is our current default directory, i.e., the directory that the computer assumes we want to run commands in  unless we explicitly specify something else.
 
