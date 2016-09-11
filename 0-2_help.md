@@ -20,7 +20,7 @@ Most programmers can program in more than one language. That's because they know
 
 In other words, programming is an extendible skill. Basic programming concepts -- conditionals, for loops, functions -- can be found in almost any programming language.
 
-Programming languages generally involve the following elements:
+Programming languages generally involve the following elements: 
 
 - They give **instructions** to a computer, to store, process, and/or retrieve information
 - The instructions center around **things** and **actions**, i.e. data and operations performed on data
