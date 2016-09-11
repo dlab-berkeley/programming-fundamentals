@@ -4,7 +4,7 @@ subtitle: Loops
 minutes: 20
 ---
 
-# The Unix Shell: Loops and Repeating Things
+# The Unix Shell: Variables, Loops and Repeating Things
 
 > ## Learning Objectives
 >
@@ -52,9 +52,38 @@ mv: target `original-*.txt' is not a directory
 This is because there are no files matching the wildcard `original-*.txt`.
 In this case, Bash passes the unexpanded wildcard as a parameter to the `mv` command.
 
+### Variables
+
+In this case, we want to repeat the command on multiple files, but we don't want to write a new line of code with each different filename. Instead, we can create a **variable**, which we assign a value (e.g. a name), then use as a placeholder for that value in the operations we run. We can change the value assigned to the variable, in order to use the same lines of code to run the operations on different items or values.
+
+First, we create a variable and assign it a value.
+
+~~~ {.input}
+$ filename=africa1.txt
+~~~
+
+Then we can run a command, using the variable as a placeholder for the value we stored in it. We retrieve the variable's value by putting `$` in front of it.
+
+~~~ {.input}
+$ wc -w $filename
+~~~
+~~~ {.output}
+539 africa1.txt
+~~~
+
+Notice what happens if we don't include the `$`: the computer tries to interpret `filename` as an actual file or folder, rather than a variable containing a real filename.
+
+~~~ {.input}
+$ wc -w filename
+~~~
+~~~ {.error}
+wc: filename: open: No such file or directory
+~~~
+
+
 ### Loops
 
-Instead, we can use a **loop** to do some operation once for each thing in a list. Here's a simple example that displays the word counts of each file in turn:
+Now that we can refer to a specific thing using a variable as a placeholder, we can repeat the same operation on multiple things, using a **loop** to do the operation once for each thing in a list. Here's a simple example that displays the word counts of each file in turn:
 
 
 ~~~ {.input}
@@ -70,13 +99,9 @@ $ for filename in africa1.txt africa2.txt
 
 When the shell sees the keyword `for`, it knows it is supposed to repeat a command (or group of commands) once for each thing in a list. In this case, the list is the two filenames.
 
-### Variables
+Each time through the loop, the name of the thing currently being operated on is assigned to the variable we created in the `for` line, called `filename`. Inside the loop, we get the variable's value by putting `$` in front of it as before: `$filename` is `africa1.txt` the first time through the loop, `africa2.txt` the second, and so on.
 
-Each time through the loop, the name of the thing currently being operated on is assigned to the **variable** called `filename`. Inside the loop, we get the variable's value by putting `$` in front of it: `$filename` is `africa1.txt` the first time through the loop, `africa2.txt` the second, and so on.
-
-By using the dollar sign we are telling the shell interpreter to treat `filename` as a variable name and substitute its value on its place, but not as some text or external command. When using variables it is also  possible to put the names into curly braces to clearly delimit the variable name: `$filename` is equivalent to `${filename}`, but is different from `${file}name`. You may find this notation in other people's programs.
-
-Finally, the command that's actually being run is our old friend `wc`,
+The command that's actually being run is our old friend `wc` again,
 so this loop prints out the word count of each data file in turn.
 
 > #### Follow the Prompt
