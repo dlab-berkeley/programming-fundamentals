@@ -43,7 +43,7 @@ More specifically, when we type `whoami` the shell:
 3.  displays that program's output, then
 4.  displays a new prompt to tell us that it's ready for more commands.
 
-### Bash Syntax
+### Bash Syntax 
 
 Note that when we use the shell, we're giving the computer instructions in code, like with other programming languages. Since the purpose here is to interact with the computer's file system, the **things** are usually files or directories, and the **actions** are usually commands we want to execute on those files/directories, or commands to launch other programs stored in the computer's file system.
 
