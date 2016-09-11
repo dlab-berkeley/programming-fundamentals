@@ -20,6 +20,17 @@ Most programmers can program in more than one language. That's because they know
 
 In other words, programming is an extendible skill. Basic programming concepts -- conditionals, for loops, functions -- can be found in almost any programming language.
 
+Programming languages generally involve the following elements:
+
+- They give **instructions** to a computer, to store, process, and/or retrieve information
+- The instructions center around **things** and **actions**, i.e. data and operations performed on data
+- **Things** are items or values you refer to: a number, a name
+  - You may handle with them one by one, or in lists, arrays, or more complex data structures
+  - Later we'll show how you can use variables to store values as you work with them
+- **Actions** are operations you tell the computer to perform: create, delete
+  - You may enact them one by one, or combine them into longer procedures, often in the form of named functions
+  - Later we'll show how you can repeat operations on multiple things using loops, one of the major building blocks of functions and programs
+
 That being said, programming languages differ from one another in the following ways:
 
 1. **Syntax**: whether to add a semicolon at the end of each line, etc.
