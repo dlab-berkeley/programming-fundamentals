@@ -247,25 +247,25 @@ $ git clone https://github.com/dlab-berkeley/programming-fundamentals.git
 
 Alternatively, go to the [repository](https://github.com/dlab-berkeley/programming-fundamentals) in your browser and download the zip file to your desktop.
 
-Once you `cd` into your `Desktop` and type `ls` you should now see the `programming-fundamentals` folder appear in your listing.
+Once you `cd` into your `Desktop` and type `ls` you should now see the `programming-fundamentals-master` folder appear in your listing.
 
 ### Moving Around
 
 Let's go inside that directory:
 
 ~~~ {.input}
-$ cd programming-fundamentals
+$ cd programming-fundamentals-master
 ~~~
 
-`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/Desktop/programming-fundamentals`.
+`cd` doesn't print anything, but if we run `pwd` after it, we can see that we are now in `/home/oski/Desktop/programming-fundamentals-master`.
 
-If we run `ls` without arguments now, it lists the contents of `/home/oski/Desktop/programming-fundamentals`, because that's where we now are:
+If we run `ls` without arguments now, it lists the contents of `/home/oski/Desktop/programming-fundamentals-master`, because that's where we now are:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/Desktop/programming-fundamentals
+/home/oski/Desktop/programming-fundamentals-master
 ~~~
 ~~~ {.input}
 $ ls -F
@@ -288,7 +288,7 @@ but it's almost always simpler to use `cd ..` to go up one level:
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/Desktop/programming-fundamentals
+/home/oski/Desktop/programming-fundamentals-master
 ~~~
 ~~~ {.input}
 $ cd ..
@@ -341,7 +341,7 @@ Everything Rochelle needs for her text project is in the `data` directory of the
 
 
 ~~~ {.input}
-$ cd ~/Desktop/programming-fundamentals/data
+$ cd ~/Desktop/programming-fundamentals-master/data
 $ ls
 ~~~
 ~~~ {.output}
@@ -365,7 +365,7 @@ If she is in her home directory, Rochelle can see what files she has using the c
 
 ~~~ {.input}
 $ cd ~
-$ ls programming-fundamentals/data/downloads
+$ ls programming-fundamentals-master/data/downloads
 ~~~
 
 This is a lot to type, but she can let the shell do most of the work. If she types:
@@ -377,7 +377,7 @@ $ ls prog
 and then presses tab, the shell automatically completes the directory name for her:
 
 ~~~ {.input}
-$ ls programming-fundamentals/
+$ ls programming-fundamentals-master/
 ~~~
 
 Pressing tab again does nothing, since there are multiple possibilities. Pressing tab twice brings up a list of all the files and directories, and so on.
@@ -395,7 +395,7 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 #### Challenge 1
 
-If `pwd` displays `/home/oski/Desktop/programming-fundamentals/data/articles`, what will `ls ../downloads` display?
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master/data/articles`, what will `ls ../downloads` display?
 
 1.  `no output`
 2.  `human-rights-2000.TXT  	human-rights-2004.TXT  	human-rights-2008.TXT
@@ -407,7 +407,7 @@ If `pwd` displays `/home/oski/Desktop/programming-fundamentals/data/articles`, w
 
 #### Challenge 2
 
-If `pwd` displays `/home/oski/Desktop/programming-fundamentals`, and `-r` tells `ls` to display things in reverse order, what command will display:
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master`, and `-r` tells `ls` to display things in reverse order, what command will display:
 
 ~~~
 test/  			      1-5_scripts.md 		1-0_shell.md
