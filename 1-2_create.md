@@ -105,7 +105,7 @@ $ ls
 draft.txt
 ~~~
 
-#### Alternative: Open Notebook or TextEdit
+#### Alternative: Notepad or TextEdit
 
 You'll need to use a Unix text editor like nano, emacs or vim when you only have access to the shell (such as when you're logged in remotely to another computer through SSH, for cloud computing). However, if you're working with text files located on your laptop, you can also use the shell to open a stand-alone application to edit your text files. Try the following:
 
@@ -119,15 +119,9 @@ $ Notepad draft.txt
 $ open -a TextEdit draft.txt
 ~~~
 
-This should open the file `draft.txt` in a new Notepad or TextEdit window. Add some text, then click __Save As__ in the __File__ menu and save it as `draft2.txt` (leaving it in the same folder). Now close that window and return to the shell. When we type `ls` again, we should see the new version we've just saved.
+This should open the file `draft.txt` in a new Notepad or TextEdit window. Add some text, then click __Save__ in the __File__ menu. Now close that window and return to the shell.
 
-~~~ {.input}
-$ ls
-~~~
-~~~ {.output}
-draft.txt
-draft2.txt
-~~~
+If you open the same file in nano again, you'll see the text that you added in Notepad or TextEdit. These are just different ways of manipulating the same files on your computer. Notepad or TextEdit require you to be working on your Windows or Mac laptop, while nano or vim can be used when you just have a Unix shell.
 
 
 ### Removing
