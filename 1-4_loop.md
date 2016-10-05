@@ -17,14 +17,14 @@ minutes: 20
 
 Wildcards and tab completion are two ways to reduce typing (and typing mistakes). Another is to tell the shell to do something over and over again.
 
-Let's go back to our programming-fundamentals/data/articles directory, where we have over 1000 text articles on different regions of the world.
+Let's go back to our programming-fundamentals-master/data/new-york-times directory.
 
-Before merging, let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-africa1.txt` and `original-africa2.txt`.
+Before merging, let's say we'd like to make a backup directory called 'backup' and copy our articles in there, renaming each one `original-human-rights-2000.TXT` and `original-human-rights-2001.TXT`.
 
 First we can make a directory and copy our files:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/articles
+$ cd ~/programming-fundamentals-master/data/new-york-times
 $ mkdir backup
 $ cp *.txt backup
 $ ls backup
@@ -34,22 +34,22 @@ So far so good. But when we try to rename the files, we can't use:
 
 ~~~ {.input}
 $ cd backup
-$ mv *.txt original-*.txt
+$ mv *.TXT original-*.TXT
 ~~~
 
 because that would expand to:
 
 ~~~ {.input}
-$ mv africa1.txt africa2.txt ... west999.txt original-*.txt
+$ mv human-rights-2000.TXT human-rights-2001.TXT ... human-rights-2009.TXT original-*.TXT
 ~~~
 
 This wouldn't back up our files, instead we get an error
 
 ~~~ {.error}
-mv: target `original-*.txt' is not a directory
+mv: target `original-*.TXT' is not a directory
 ~~~
 
-This is because there are no files matching the wildcard `original-*.txt`.
+This is because there are no files matching the wildcard `original-*.TXT`.
 In this case, Bash passes the unexpanded wildcard as a parameter to the `mv` command.
 
 ### Variables 
@@ -59,7 +59,7 @@ In this case, we want to repeat the command on multiple files, but we don't want
 First, we create a variable and assign it a value.
 
 ~~~ {.input}
-$ filename=africa1.txt
+$ filename=human-rights-2000.TXT
 ~~~
 
 Then we can run a command, using the variable as a placeholder for the value we stored in it. We retrieve the variable's value by putting `$` in front of it.
@@ -68,7 +68,7 @@ Then we can run a command, using the variable as a placeholder for the value we 
 $ wc -w $filename
 ~~~
 ~~~ {.output}
-539 africa1.txt
+63661 human-rights-2000.TXT
 ~~~
 
 Notice what happens if we don't include the `$`: the computer tries to interpret `filename` as an actual file or folder, rather than a variable containing a real filename.
@@ -87,19 +87,19 @@ Now that we can refer to a specific thing using a variable as a placeholder, we 
 
 
 ~~~ {.input}
-$ for filename in africa1.txt africa2.txt
- do
-    wc -w $filename
- done
+$ for filename in human-rights-2000.TXT human-rights-2001.TXT
+> do
+>    wc -w $filename
+> done
 ~~~
 ~~~ {.output}
- 539 africa1.txt
- 243 africa2.txt
+ 63661 human-rights-2000.TXT
+ 56035 human-rights-2001.TXT
 ~~~
 
 When the shell sees the keyword `for`, it knows it is supposed to repeat a command (or group of commands) once for each thing in a list. In this case, the list is the two filenames.
 
-Each time through the loop, the name of the thing currently being operated on is assigned to the variable we created in the `for` line, called `filename`. Inside the loop, we get the variable's value by putting `$` in front of it as before: `$filename` is `africa1.txt` the first time through the loop, `africa2.txt` the second, and so on.
+Each time through the loop, the name of the thing currently being operated on is assigned to the variable we created in the `for` line, called `filename`. Inside the loop, we get the variable's value by putting `$` in front of it as before: `$filename` is `human-rights-2000.TXT` the first time through the loop, `human-rights-2001.TXT` the second, and so on.
 
 The command that's actually being run is our old friend `wc` again,
 so this loop prints out the word count of each data file in turn.
@@ -113,22 +113,33 @@ so this loop prints out the word count of each data file in turn.
 We have called the variable in this loop `filename` in order to make its purpose clearer to human readers. The shell itself doesn't care what the variable is called; if we wrote this loop as:
 
 ~~~ {.input}
-$ for x in africa1.txt africa2.txt
- do
-    wc -w $x
- done
+$ for x in human-rights-2000.TXT human-rights-2001.TXT
+> do
+>    wc -w $x
+> done
 ~~~
 
 or:
 
 ~~~ {.input}
-$ for temperature in africa1.txt africa2.txt
- do
-    wc -w $temperature
- done
+$ for temperature in human-rights-2000.TXT human-rights-2001.TXT
+> do
+>    wc -w $temperature
+> done
 ~~~
 
 it would work exactly the same way. *Don't do this.* Programs are only useful if people can understand them, so meaningless names (like `x`) or misleading names (like `temperature`) increase the odds that the program won't do what its readers think it does.
+
+Let's use a for loop to backup all of our files in the new-york-times directory:
+
+~~~ {.input}
+$ for filename in *.TXT
+> do
+>    mv $filename original-$filename
+> done
+~~~
+
+
 
 ### More Loops
 
