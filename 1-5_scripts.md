@@ -18,20 +18,34 @@ We are finally ready to see what makes the shell such a powerful programming env
 
 For historical reasons, a bunch of commands saved in a file is usually called a **shell script**, but make no mistake: these are actually small programs.
 
-Let's start by going back to `articles` and creating a file called `group.sh`:
+Let's create a script to backup our files, the way we did in the last segment. To start, let's go back to `new-york-times`, delete the backup we made last time:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/articles
-$ touch group.sh
-$ nano group.sh
-~~~
-~~~
-cat africa*.txt | wc -l
+$ cd ~/programming-fundamentals-master/data/new-york-times
+$ rm backup/*.TXT
+$ rmdir backup
 ~~~
 
-This is a variation on command we created earlier: It concatenates all of the africa files into one large text file containing all africa articles.
+Then let's create a file called `backup.sh` so we can do this in a script instead:
 
-Remember, we are *not* running it as a command just yet: we are putting the commands in a file.
+~~~ {.input}
+$ touch backup.sh
+$ nano backup.sh
+~~~
+
+Put the following commands, which we used last time directly in the shell, into this script file:
+
+~~~
+mkdir backup
+for filename in *.TXT
+do
+    cp $filename backup/original-$filename
+done 
+~~~
+
+Then save and quit.
+
+Remember, we are *not* running these commands just yet: we are putting the commands in a file.
 
 ### Running a script
 
@@ -42,13 +56,18 @@ First we have to tell the shell what program the script is in. If we want to run
 Our shell is called `bash`, so we run the following command:
 
 ~~~ {.input}
-$ bash group.sh
+$ bash backup.sh
+$ ls backup
 ~~~
 ~~~ {.output}
-136
+original-human-rights-2000.TXT	original-human-rights-2005.TXT
+original-human-rights-2001.TXT	original-human-rights-2006.TXT
+original-human-rights-2002.TXT	original-human-rights-2007.TXT
+original-human-rights-2003.TXT	original-human-rights-2008.TXT
+original-human-rights-2004.TXT	original-human-rights-2009.TXT
 ~~~
 
-Sure enough, our script's output is exactly what we would get if we ran that pipeline directly. It concatenated all of the africa files and then counted the number of lines, which is 136 (one line for each article).
+Sure enough, our script has created a directory `backup` with copies of the files in our current directory, with the prefix `original-` added to the filenames.
 
 > ## Text vs. Whatever
 >
@@ -64,15 +83,19 @@ Sure enough, our script's output is exactly what we would get if we ran that pip
 
 ### Variables in Scripts
 
-What if we want concatenate an arbitrary group of files? We could edit `group.sh` each time to change the filename, but that would probably take longer than just retyping the command.
+What if we want to backup an arbitrary list of files? We could edit `backup.sh` each time to change the filename, but that would probably take longer than just retyping the command.
 
-Instead, let's edit `group.sh` and replace `africa*.txt` with a special variable called `"$@"`:
+Instead, let's edit `backup.sh` and replace `*.TXT` with a special variable called `"$@"`:
 
 ~~~ {.input}
-$ nano group.sh
+$ nano backup.sh
 ~~~
 ~~~ {.output}
-cat "$@" | wc -l
+mkdir backup
+for filename in "$@"
+do
+    cp $filename backup/original-$filename
+done 
 ~~~
 
 Inside a shell script, `$1` means "the first filename (or other parameter) on the command line". `$2` means the second and so on. But in this case, we can't use `$1`, `$2`, and so on because we don't know how many files there are.
@@ -80,76 +103,58 @@ Instead, we use the special variable `$@`, which means, "All of the command-line
 
 We put `$@` inside double-quotes to handle the case of parameters containing spaces.
 
-~~~ {.input}
-$ bash group.sh africa*.txt
-~~~
-~~~ {.output}
-136
-~~~
-
-or on a different file like this:
+Let's delete the last backup directory we made, which had more files than we want to backup, then run the script on just a couple files:
 
 ~~~ {.input}
-$ bash group.sh asia*.txt
+$ rm backup/*.TXT
+$ rmdir backup
+$ bash backup.sh human-rights-2000.TXT human-rights-2001.TXT
+$ ls backup
 ~~~
 ~~~ {.output}
-145
+original-human-rights-2000.TXT	original-human-rights-2001.TXT
 ~~~
+
 
 ### Commenting
 
-This works, but it may take the next person who reads `group.sh` a moment to figure out what it does. We can improve our script by adding some **comments** at the top:
+This works, but it may take the next person who reads `backup.sh` a moment to figure out what it does. We can improve our script by adding some **comments** at the top:
 
 ~~~ {.input}
-$ cat group.sh
+$ cat backup.sh
 ~~~
 ~~~ {.output}
-# Concatenates a group of files and returns the total number of lines.
-# Usage: group.sh files
-cat "$@" | wc -l
+# Copy select files in the current directory to a new backup directory
+# Usage: backup.sh files
+mkdir backup
+for filename in "$@"
+do
+    cp $filename backup/original-$filename
+done
 ~~~
 
 A comment starts with a `#` character and runs to the end of the line.
 The computer ignores comments, but they're invaluable for helping people understand and use scripts.
+
+Each time you modify the script, you should check that the comment is still accurate: an explanation that sends the reader in the wrong direction is worse than none at all.
 
 > ## Why Isn't It Doing Anything? {.callout}
 >
 > What happens if a script is supposed to process a bunch of files, but we
 > don't give it any filenames? For example, what if we type:
 >
->     $ bash group.sh
+>     $ bash backup.sh
 >
 > but don't say `*.dat` (or anything else)? In this case, `$@` expands to
-> nothing at all, so the pipeline inside the script is effectively:
+> nothing at all, so the for loop inside the script is effectively:
 >
->     cat | wc -l
+>     for filename in 
+>     do
+>         cp $filename backup/original-$filename
+>     done 
 >
-> Since it doesn't have any filenames, `wc` assumes it is supposed to
-> process standard input, so it just sits there and waits for us to give
-> it some data interactively. From the outside, though, all we see is it
-> sitting there: the script doesn't appear to do anything.
+> Since it doesn't have any filenames, the loop repeats zero times.
 
-### Redirecting
-
-We can use our script to redirect output files, too. Let's change the script to just:
-
-~~~ {.input}
-$ cat group.sh
-~~~
-~~~ {.output}
-# Concatenates a group of files and returns the total number of lines.
-# Usage: group.sh files
-cat "$@"
-~~~
-
-Now we can use the `>` trick to output our result.
-
-~~~ {.input}
-$ bash group.sh asia*.txt > all-asia.txt
-$ cat all-asia.txt
-~~~
-
-The only caveat is that each time you modify the script, you should check that the comment is still accurate: an explanation that sends the reader in the wrong direction is worse than none at all.
 
 ### Scripts from History
 
