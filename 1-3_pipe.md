@@ -200,12 +200,12 @@ and writes lines of text to standard output can be combined with every other pro
 
 ## Rochelle's Pipeline: Concatenating Files.
 
-Rochelle has her bulk text downloads in the `new-york-times/2015-01-01` directory described earlier.
+Rochelle has her bulk text downloads in the `new-york-times` directory described earlier.
 
 As a quick sanity check, she types:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/new-york-times/2015-01-01
+$ cd ~/programming-fundamentals/data/new-york-times
 $ wc -l *.TXT
 ~~~
 ~~~ {.output}
