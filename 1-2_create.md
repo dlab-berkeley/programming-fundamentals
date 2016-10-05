@@ -320,7 +320,6 @@ Knowing just this much about files and directories, Rochelle is ready to organiz
 ~~~ {.input}
 $ cd ~/programming-fundamentals/data
 $ mkdir new-york-times
-$ mkdir new-york-times/2015-01-01
 ~~~
 
 Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
@@ -341,8 +340,8 @@ human-rights-2003.TXT  human-rights-2007.TXT
 Rochelle wants to move them into the directory she just created.
 
 ~~~ {.input}
-$ cp human-rights-2000.TXT ../new-york-times/2015-01-01
-$ ls ../new-york-times/2015-01-01
+$ cp human-rights-2000.TXT ../new-york-times
+$ ls ../new-york-times
 ~~~
 ~~~ {.output}
 human-rights-2000.TXT
@@ -351,8 +350,8 @@ human-rights-2000.TXT
 Huzzah! But does Rochelle really have to time in a command for each file she wants to move? No, there's an easier way! Instead of giving an input for each file, Rochelle can write `cp *.TXT`.  The `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files
 
 ~~~ {.input}
-$ cp *.TXT ../new-york-times/2015-01-01
-$ ls ../new-york-times/2015-01-01
+$ cp *.TXT ../new-york-times
+$ ls ../new-york-times
 ~~~
 ~~~ {.output}
 human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
