@@ -7,8 +7,6 @@ do
   markdown-pdf $fname
 done
 
-rm pdfs/*
-
 for fname in ./*.pdf
 do
   mv $fname pdfs/
