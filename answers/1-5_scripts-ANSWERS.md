@@ -8,6 +8,17 @@ ANSWERS
 
 #### Challenge 1
 
+Write a shell script called `backup.sh` in `my_files/` that backs up all of the files with a certain extension to a backup folder specified by the user. The user should supply two arguments, the first being the extension and the second being the name of the backup folder to use. For example, the command `bash backup.sh TXT my_backup` would copy all files ending in .TXT from the current folder to the folder my_backup.
+
+~~~
+for filename in *.$1
+do
+    cp $filename $2/original-$filename
+done 
+~~~
+
+#### Challenge 2
+
 Write a shell script called `longest.sh` in `my_files/` that takes the name of a
 directory and a filename extension as its parameters, and prints
 out the number of lines and name of the file with the most lines in
@@ -27,57 +38,9 @@ echo 'wc -l "$1"/*."$2" | sort -n | tail -2 | head -1' > longest.sh
 
 Watch out for single and double quotes!
 
-#### Challenge 2
-
-Joel's `data` directory contains three files: `fructose.dat`,
-`glucose.dat`, and `sucrose.dat`. Each of the `.dat` files contains only the word `sugar`. Explain what a script called
-`example.sh` (also in the directory!) would do when run as `bash example.sh *.dat` if it
-contained the following lines:
-
-~~~
-# Script a
-echo *.*
-~~~
-
-~~~
-# Script b
-for filename in $1 $2 $3
-do
-    cat $filename
-done
-~~~
-
-~~~
-# Script c
-echo $@.dat
-~~~
-
-Now test your theory and redirect the output to `my_files/challenge_2a.txt`, `my_files/challenge_2b.txt`, and `my_files/challenge_2c.txt` respectively.
-
-~~~
-cd my_files/sugar
-rm *.txt
-touch example.sh
-
-# Script a
-nano example.sh
-***** ADD CODE *****
-bash example.sh > ../challenge_2a.txt
-
-# Script b
-nano example.sh
-***** ADD CODE *****
-bash example.sh ../challenge_2b.txt
-
-# Script c
-nano example.sh
-***** ADD CODE *****
-bash example.sh > ../challenge_2c.txt
-~~~
-
 
 #### Challenge 3
 
 What happens if you rename `example.sh` to `example.R`?
 
-It still runs because your claiming it as a bash script when you type `bash` before the name of the file.
+It still runs because you're claiming it as a bash script when you type `bash` before the name of the file.
