@@ -130,61 +130,6 @@ $ for temperature in human-rights-2000.TXT human-rights-2001.TXT
 
 it would work exactly the same way. *Don't do this.* Programs are only useful if people can understand them, so meaningless names (like `x`) or misleading names (like `temperature`) increase the odds that the program won't do what its readers think it does.
 
-Let's use a for loop to backup all of our files in the new-york-times directory:
-
-~~~ {.input}
-$ for filename in *.TXT
-> do
->    mv $filename original-$filename
-> done
-~~~
-
-
-
-### More Loops
-
-Here's a slightly more complicated loop:
-
-~~~ {.input}
-for filename in africa*.txt
-do
-    echo $filename
-    tail -1 $filename | wc -w
-done
-~~~
-~~~ {.output}
-...
-africa97.txt
-     515
-africa98.txt
-     653
-africa99.txt
-     597
-~~~
-
-The shell starts by expanding `africa*.txt` to create the list of files it will process. The **loop body** then executes two commands for each of those files. The first, `echo`, just prints its command-line parameters to standard output. For example:
-
-~~~ {.input}
-$ echo hello there
-~~~
-
-prints:
-
-~~~ {.output}
-hello there
-~~~
-
-In this case, since the shell expands `$filename` to be the name of a file, `echo $filename` just prints the name of the file. Note that we can't write this as:
-
-~~~ {.input}
-for filename in africa*.txt
-do
-    $filename
-    tail -1 $filename | wc -w
-done
-~~~
-
-because then the first time through the loop, when `$filename` expanded to `africa1.txt`, the shell would try to run `africa1.txt` as a program. Finally, the `tail` and `wc` combination computes the word count of the last line of each file.
 
 > #### Spaces in Names
 >
@@ -244,22 +189,22 @@ because then the first time through the loop, when `$filename` expanded to `afri
 Going back to our original file renaming problem, we can solve it using this loop:
 
 ~~~ {.input}
-for filename in *.txt
-do
-    mv $filename original-$filename
-done
+$ for filename in *.TXT
+> do
+>    mv $filename original-$filename
+> done
 ~~~
 
-This loop runs the `mv` command once for each filename. The first time, when `$filename` expands to `africa1.txt`, the shell executes:
+This loop runs the `mv` command once for each filename. The first time, when `$filename` expands to `human-rights-2000.TXT`, the shell executes:
 
 ~~~ {.input}
-mv africa1.txt original-africa1.txt
+mv human-rights-2000.TXT original-human-rights-2000.TXT
 ~~~
 
 The second time, the command is:
 
 ~~~ {.input}
-mv africa2.txt original-africa2.txt
+mv human-rights-2001.TXT original-human-rights-2001.TXT
 ~~~
 
 > #### Measure Twice, Run Once
@@ -270,7 +215,7 @@ mv africa2.txt original-africa2.txt
 > For example, we could write our file renaming loop like this:
 >
 > ~~~
-> for filename in *.txt
+> for filename in *.TXT
 > do
 >     echo mv $filename original-$filename
 > done
@@ -279,8 +224,9 @@ mv africa2.txt original-africa2.txt
 > Instead of running `mv`, this loop runs `echo`, which prints out:
 >
 > ~~~
-> mv africa1.txt original-africa1.txt
-> mv africa2.txt original-africa2.txt
+> mv human-rights-2000.TXT original-human-rights-2000.TXT
+> mv human-rights-2001.TXT original-human-rights-2001.TXT
+> ...
 > ~~~
 >
 > *without* actually running those commands. We can then use up-arrow to
