@@ -3,15 +3,7 @@
 echo "Challenge 1"
 
 TEST=$(cat "../my_files/challenge_1.txt")
-VALUE="fructose.dat
-glucose.dat
-sucrose.dat
-fructose.dat
-glucose.dat
-sucrose.dat
-fructose.dat
-glucose.dat
-sucrose.dat"
+VALUE="3"
 
 if [ "$TEST" == "$VALUE" ] ; then
 	echo ...passed ;
@@ -22,10 +14,11 @@ fi
 
 echo "Challenge 2"
 TEST=$(cat "../my_files/challenge_2.txt")
-VALUE="fructose.dat
-glucose.dat
-sucrose.dat
-sugar"
+VALUE="2
+4
+6
+8
+10"
 
 if [ "$TEST" == "$VALUE" ] ; then
 	echo ...passed ;
