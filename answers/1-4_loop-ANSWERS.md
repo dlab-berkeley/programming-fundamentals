@@ -65,5 +65,5 @@ do
     do
         expr $left + $right
     done
-done > challenge_3.txt
+done > my_files/challenge_3.txt
 ~~~
