@@ -395,11 +395,12 @@ human-rights-2003.TXT  human-rights-2007.TXT
 
 #### Challenge 1
 
-`cd` into `programming-fundamentals`. Create a directory called `my_files`. 
+`cd` into `programming-fundamentals-master`. Create a directory called `my_files`. 
 
 #### Challenge 2
 
-Within that directory, create a file called `script.sh`. 
+Within that directory, create a file called `script.sh`. (It's just like a text file, but we'll label it with the extension ".sh"
+because we're going to put shell commands inside the file.)
 
 #### Challenge 3
 
@@ -407,7 +408,7 @@ Copy script.sh into `my_files/backup/`
 
 #### Challenge 4
 
-The command `ls -t` returns a listing arranged by time of last edit. Add this command to `script.sh`.
+The command `ls -t` returns a listing arranged by time of last edit. Open `script.sh` in a text editor and add the command `ls -t` as a line in the file. Save and return to the shell prompt.
 
 When you feel you have met these challenges successfully, cd into `test/` and type
 
