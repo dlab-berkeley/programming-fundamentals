@@ -16,7 +16,7 @@ minutes: 20
 
 ### Creating Things
 
-We now know how to explore files and directories, but how do we create them in the first place? Let's go back to `programming-fundamentals`, `/home/oski/Desktop/programming-fundamentals`,
+We now know how to explore files and directories, but how do we create them in the first place? Let's go back to `programming-fundamentals-master`, `/home/oski/Desktop/programming-fundamentals-master`,
 and use `ls -F` to see what it contains:
 
 ~~~ {.input}
@@ -146,13 +146,13 @@ $ ls
 > there's no guarantee they'll work in any particular situation, since the
 > computer may recycle the file's disk space right away.
 
-Let's re-create that file and then move up one directory to `/home/oski/Desktop/programming-fundamentals` using `cd ..`:
+Let's re-create that file and then move up one directory to `/home/oski/Desktop/programming-fundamentals-master` using `cd ..`:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/Desktop/programming-fundamentals/thesis
+/home/oski/Desktop/programming-fundamentals-master/thesis
 ~~~
 ~~~ {.input}
 $ touch draft.txt
@@ -220,7 +220,7 @@ Let's create that directory and file one more time. (Note that this time we're r
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/Desktop/programming-fundamentals
+/home/oski/Desktop/programming-fundamentals-master
 ~~~
 ~~~ {.input}
 $ mkdir thesis
@@ -309,7 +309,7 @@ ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
 
 ## Rochelle's Pipeline: Organizing and Moving Files
 
-Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she `cd's` into the `programming-fundamentals` directory. From there, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the texts. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
+Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she `cd's` into the `programming-fundamentals-master` directory. From there, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the texts. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
 
 > Rochelle names her directories "year-month-day", with leading zeroes for
 > months and days, because the shell displays file and directory names in
@@ -318,7 +318,7 @@ Knowing just this much about files and directories, Rochelle is ready to organiz
 > ('7').
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data
+$ cd ~/Desktop/programming-fundamentals-master/data
 $ mkdir new-york-times
 ~~~
 
