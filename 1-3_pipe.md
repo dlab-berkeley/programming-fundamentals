@@ -16,49 +16,52 @@ Now that we know a few basic commands, we can finally look at the shell's most p
 
 ### Counting
 
-We'll start with a directory called `data/articles` that contains text files of news articles. They are organized by the region they cover. So africa1.txt is the first article about Africa, africa2.txt the second and so on.
+Let's recall what we put in the folder `data/new-york-times` that we created in the last section.
 
 ~~~ {.input}
-$ ls ~/programming-fundamentals/data/articles
+$ ls ~/Desktop/programming-fundamentals-master/data/new-york-times
 ~~~
 
-Wow, that's a lot of files!
-
-Let's go into that directory with `cd` and run the command `wc africa*.txt`.
-`wc` is the "word count" command: it counts the number of lines, words, and characters in files. Remember that the `*` in `africa*.txt` matches zero or more characters, so the shell turns `africa*.txt` into a complete list of `.txt` files that start with `africa`:
+It contains a bunch of text files of human rights articles, one for each year since 2000. Let's go into that directory with `cd` and run the command `wc *.TXT`.
+`wc` is the "word count" command: it counts the number of lines, words, and characters in files. Remember that the `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals/data/articles
-$ wc africa*.txt
+$ cd ~/Desktop/programming-fundamentals-master/data/new-york-times
+$ wc *.TXT
 ~~~
 ~~~ {.output}
-      ...
-       1     101     608 africa95.txt
-       1    1576    9632 africa96.txt
-       1     515    3218 africa97.txt
-       1     653    4177 africa98.txt
-       1     597    3748 africa99.txt
-     136   70982  442767 total
+   63661  443554 2955653 human-rights-2000.TXT
+   56035  376067 2525823 human-rights-2001.TXT
+   60045  408972 2733887 human-rights-2002.TXT
+   46873  318846 2134607 human-rights-2003.TXT
+   62611  437901 2904671 human-rights-2004.TXT
+   55557  380036 2544693 human-rights-2005.TXT
+   62905  440014 2920015 human-rights-2006.TXT
+   44866  309723 2067324 human-rights-2007.TXT
+   54580  379235 2513340 human-rights-2008.TXT
+   66540  454083 3014810 human-rights-2009.TXT
+  573673 3948431 26314823 total
 ~~~
 
 
 If we run `wc -l` instead of just `wc`, the output shows only the number of lines per file:
 
 ~~~ {.input}
-$ wc -l africa*.txt
+$ wc -l *.TXT
 ~~~
 ~~~ {.output}
-      ...
-       1 africa94.txt
-       1 africa95.txt
-       1 africa96.txt
-       1 africa97.txt
-       1 africa98.txt
-       1 africa99.txt
-     136 total
+   63661 human-rights-2000.TXT
+   56035 human-rights-2001.TXT
+   60045 human-rights-2002.TXT
+   46873 human-rights-2003.TXT
+   62611 human-rights-2004.TXT
+   55557 human-rights-2005.TXT
+   62905 human-rights-2006.TXT
+   44866 human-rights-2007.TXT
+   54580 human-rights-2008.TXT
+   66540 human-rights-2009.TXT
+  573673 total
 ~~~
-
-So we see that each article has only 1 lines. How can this be, if the number of words vary so widely? Open a file and try to guess why.
 
 We can also use `-w` to get only the number of words, or `-c` to get only the number of characters.
 
@@ -69,7 +72,7 @@ Which of these files is shortest? It's an easy question to answer when there are
 Our first step toward a solution is to run the command:
 
 ~~~ {.input}
-$ wc -w africa*.txt > lengths
+$ wc -w *.TXT > lengths
 ~~~
 
 The `>` tells the shell to **redirect** the command's output to a file instead of printing it to the screen. The shell will create the file if it doesn't exist, or overwrite the contents of that file if it does.
@@ -90,13 +93,17 @@ We can now send the content of `lengths` to the screen using `cat lengths`.
 $ cat lengths
 ~~~
 ~~~ {.output}
-    ...
-   101 africa95.txt
-  1576 africa96.txt
-   515 africa97.txt
-   653 africa98.txt
-   597 africa99.txt
-   591 africa9.txt
+  443554 human-rights-2000.TXT
+  376067 human-rights-2001.TXT
+  408972 human-rights-2002.TXT
+  318846 human-rights-2003.TXT
+  437901 human-rights-2004.TXT
+  380036 human-rights-2005.TXT
+  440014 human-rights-2006.TXT
+  309723 human-rights-2007.TXT
+  379235 human-rights-2008.TXT
+  454083 human-rights-2009.TXT
+ 3948431 total
 ~~~
 
 ### Sorting
@@ -107,60 +114,53 @@ Now let's use the `sort` command to sort its contents. We will also use the -n f
 $ sort -n lengths
 ~~~
 ~~~ {.output}
-   ...
-  1143 africa134.txt
-  1155 africa43.txt
-  1227 africa25.txt
-  1329 africa24.txt
-  1576 africa96.txt
-~~~
-
-We can reverse sort with an addtional argument `sort -n -r lengths`. We can put the sorted list of lines in another temporary file called `sorted-lengths` by putting `sorted-lengths` after the command, just as we used `lengths` to put the output of `wc` into `lengths`. Once we've done that,
-we can run another command called `head` to get the first few lines in `sorted-lengths`:
-
-~~~ {.input}
-$ sort -n lengths > sorted-lengths
-$ head -1 sorted-lengths
-~~~
-~~~ {.output}
-   70 africa49.txt
-~~~
-
-Using the parameter `-1` with `head` tells it that we only want the first line of the file; `-20` would get the first 20, and so on. Since `sorted-lengths` contains the lengths of our files ordered from least to greatest, the output of `head` must be the file with the fewest lines.
-
-What do you think `tail` does?
-
-~~~
-$ tail -1 sorted-lengths
-~~~
-~~~
-   70982 total
+  309723 human-rights-2007.TXT
+  318846 human-rights-2003.TXT
+  376067 human-rights-2001.TXT
+  379235 human-rights-2008.TXT
+  380036 human-rights-2005.TXT
+  408972 human-rights-2002.TXT
+  437901 human-rights-2004.TXT
+  440014 human-rights-2006.TXT
+  443554 human-rights-2000.TXT
+  454083 human-rights-2009.TXT
+ 3948431 total
 ~~~
 
 ### Pipes
 
-If you think this is confusing, you're in good company: even once you understand what `wc`, `sort`, and `head` do, all those intermediate files make it hard to follow what's going on. We can make it easier to understand by running `sort` and `head` together:
+We just performed two operations consecutively on the same data, by storing the output from the first operation into a file, then calling the second operation on the contents of the saved file. We can also do this another way. Instead of saving the intermediary output into a file, we can run `wc` and `sort` together:
 
 ~~~ {.input}
-$ sort -n lengths | head -1
+$ wc -w *.TXT | sort -n
 ~~~
 ~~~ {.output}
-   70 africa49.txt
+  309723 human-rights-2007.TXT
+  318846 human-rights-2003.TXT
+  376067 human-rights-2001.TXT
+  379235 human-rights-2008.TXT
+  380036 human-rights-2005.TXT
+  408972 human-rights-2002.TXT
+  437901 human-rights-2004.TXT
+  440014 human-rights-2006.TXT
+  443554 human-rights-2000.TXT
+  454083 human-rights-2009.TXT
+ 3948431 total
 ~~~
 
 The vertical bar between the two commands is called a **pipe**. It tells the shell that we want to use the output of the command on the left as the input to the command on the right. The computer might create a temporary file if it needs to, or copy data from one program to the other in memory, or something else entirely; we don't have to know or care.
 
-We can use another pipe to send the output of `wc` directly to `sort`, which then sends its output to `head`:
+We can use another pipe to send the output of `sort` to a command called `head`, which gives us the lines at the top of that output. (The command `tail` gives us the lines at the bottom.) We can specify how many lines we want with a flag, so we'll use `-1` to get just the first line:
 
 ~~~ {.input}
-$ wc -w africa*.txt | sort -n | head -1
+$ wc -w *.TXT | sort -n | head -1
 ~~~
 ~~~ {.output}
-  70 africa49.txt
+  309723 human-rights-2007.TXT
 ~~~
 
 This is exactly like a mathematician nesting functions like *log(3x)*
-and saying "the log of three times *x*". In our case, the calculation is "head of sort of word count of `africa*.txt`".
+and saying "the log of three times *x*". In our case, the calculation is "head of sort of word count of `*.TXT`".
 
 We can use this logic in many different combinations. For instance, to see how many files are in this directory, we can command:
 
@@ -168,7 +168,7 @@ We can use this logic in many different combinations. For instance, to see how m
 $ ls -1 | wc -l
 ~~~
 ~~~ {.output}
-  958
+  11
 ~~~
 
 This uses `wc` to do a count of the number of lines (`-l`) in the output of `ls -1`.
@@ -179,9 +179,9 @@ Here's what actually happens behind the scenes when we create a pipe. When a com
 
 The shell is actually just another program. Under normal circumstances, whatever we type on the keyboard is sent to the shell on its standard input, and whatever it produces on standard output is displayed on our screen. When we tell the shell to run a program, it creates a new process and temporarily sends whatever we type on our keyboard to that process's standard input, and whatever the process sends to standard output to the screen.
 
-Here's what happens when we run `wc -w africa*.txt > lengths`. The shell starts by telling the computer to create a new process to run the `wc` program. Since we've provided some filenames as parameters, `wc` reads from them instead of from standard input. And since we've used `>` to redirect output to a file, the shell connects the process's standard output to that file.
+Here's what happens when we run `wc -w *.TXT > lengths`. The shell starts by telling the computer to create a new process to run the `wc` program. Since we've provided some filenames as parameters, `wc` reads from them instead of from standard input. And since we've used `>` to redirect output to a file, the shell connects the process's standard output to that file.
 
-If we run `wc -w africa*.txt | sort -n` instead, the shell creates two processes (one for each process in the pipe) so that `wc` and `sort` run simultaneously. The standard output of `wc` is fed directly to the standard input of `sort`; since there's no redirection with `>`, `sort`'s output goes to the screen. And if we run `wc -w africa*.txt | sort -n | head -1`, we get three processes with data flowing from the files, through `wc` to `sort`, and from `sort` through `head` to the screen.
+If we run `wc -w *.TXT | sort -n` instead, the shell creates two processes (one for each process in the pipe) so that `wc` and `sort` run simultaneously. The standard output of `wc` is fed directly to the standard input of `sort`; since there's no redirection with `>`, `sort`'s output goes to the screen. And if we run `wc -w *.TXT | sort -n | head -1`, we get three processes with data flowing from the files, through `wc` to `sort`, and from `sort` through `head` to the screen.
 
 This simple idea is why Unix has been so successful. Instead of creating enormous programs that try to do many different things, Unix programmers focus on creating lots of simple tools that each do one job well, and that work well with each other. This programming model is called "pipes and filters". We've already seen pipes; a **filter** is a program like `wc` or `sort` that transforms a stream of input into a stream of output. Almost all of the standard Unix tools can work this way: unless told to do otherwise, they read from standard input, do something with what they've read, and write to standard output.
 
@@ -191,36 +191,16 @@ and writes lines of text to standard output can be combined with every other pro
 > #### Redirecting Input
 > As well as using `>` to redirect a program's output, we can use `<` to
 > redirect its input, i.e., to read from a file instead of from standard
-> input. For example, instead of writing `wc africa1.txt`, we could write
-> `wc < africa1.txt`. In the first case, `wc` gets a command line
+> input. For example, instead of writing `wc human-rights-2000.TXT`, we could write
+> `wc < human-rights-2000.TXT`. In the first case, `wc` gets a command line
 > parameter telling it what file to open. In the second, `wc` doesn't have
 > any command line parameters, so it reads from standard input, but we
-> have told the shell to send the contents of `africa1.txt` to `wc`'s
+> have told the shell to send the contents of `wc < human-rights-2000.TXT` to `wc`'s
 > standard input.
 
 ## Rochelle's Pipeline: Concatenating Files.
 
 Rochelle has her bulk text downloads in the `new-york-times` directory described earlier.
-
-As a quick sanity check, she types:
-
-~~~ {.input}
-$ cd ~/programming-fundamentals/data/new-york-times
-$ wc -l *.TXT
-~~~
-~~~ {.output}
-   63661 human-rights-2000.TXT
-   56035 human-rights-2001.TXT
-   60045 human-rights-2002.TXT
-   46873 human-rights-2003.TXT
-   62611 human-rights-2004.TXT
-   55557 human-rights-2005.TXT
-   62905 human-rights-2006.TXT
-   44866 human-rights-2007.TXT
-   54580 human-rights-2008.TXT
-   66540 human-rights-2009.TXT
-  573673 total
-~~~
 
 Now she wants to concatenate (or merge) all of these text files into one big text file that she can later use to parse into a CSV.
 
@@ -250,7 +230,7 @@ Notice that `all.TXT` is the sum of all the lines of the other `*.TXT` files.
 
 #### Challenge 1
 
-Create a file under my_files called "sorts.txt" that contains these data
+Create a file under my_files called "sorts.txt" that contains these data. (Use a text editor, put one number on each line in the file, and save.)
 
 ~~~
 10
