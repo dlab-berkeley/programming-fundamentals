@@ -18,12 +18,11 @@ We are finally ready to see what makes the shell such a powerful programming env
 
 For historical reasons, a bunch of commands saved in a file is usually called a **shell script**, but make no mistake: these are actually small programs.
 
-Let's create a script to backup our files, the way we did in the last segment. To start, let's go back to `new-york-times`, delete the backup we made last time:
+Let's create a script to backup our files, the way we did in the last segment. To start, let's go back to `new-york-times`, and empty the backup directory we made last time:
 
 ~~~ {.input}
-$ cd ~/programming-fundamentals-master/data/new-york-times
+$ cd ~/Desktop/programming-fundamentals-master/data/new-york-times
 $ rm backup/*.TXT
-$ rmdir backup
 ~~~
 
 Then let's create a file called `backup.sh` so we can do this in a script instead:
@@ -36,7 +35,6 @@ $ nano backup.sh
 Put the following commands, which we used last time directly in the shell, into this script file:
 
 ~~~
-mkdir backup
 for filename in *.TXT
 do
     cp $filename backup/original-$filename
@@ -67,7 +65,7 @@ original-human-rights-2003.TXT	original-human-rights-2008.TXT
 original-human-rights-2004.TXT	original-human-rights-2009.TXT
 ~~~
 
-Sure enough, our script has created a directory `backup` with copies of the files in our current directory, with the prefix `original-` added to the filenames.
+Sure enough, our script has made copies of the files in our current directory, with the prefix `original-` added to the filenames, and put them in the directory `backup`.
 
 > ## Text vs. Whatever
 >
@@ -91,7 +89,6 @@ Instead, let's edit `backup.sh` and replace `*.TXT` with a special variable call
 $ nano backup.sh
 ~~~
 ~~~ {.output}
-mkdir backup
 for filename in "$@"
 do
     cp $filename backup/original-$filename
@@ -103,11 +100,10 @@ Instead, we use the special variable `$@`, which means, "All of the command-line
 
 We put `$@` inside double-quotes to handle the case of parameters containing spaces.
 
-Let's delete the last backup directory we made, which had more files than we want to backup, then run the script on just a couple files:
+Let's empty the backup directory again (so we can see which files get added this time), then run the script on just a couple files:
 
 ~~~ {.input}
 $ rm backup/*.TXT
-$ rmdir backup
 $ bash backup.sh human-rights-2000.TXT human-rights-2001.TXT
 $ ls backup
 ~~~
@@ -124,9 +120,8 @@ This works, but it may take the next person who reads `backup.sh` a moment to fi
 $ cat backup.sh
 ~~~
 ~~~ {.output}
-# Copy select files in the current directory to a new backup directory
+# Copy select files in the current directory to the directory "backup"
 # Usage: backup.sh files
-mkdir backup
 for filename in "$@"
 do
     cp $filename backup/original-$filename
@@ -226,6 +221,10 @@ This script is used for the materials you're reading now! While you may not have
 
 #### Challenge 1
 
+Write a shell script called `backup.sh` in `my_files/` that backs up all of the files with a certain extension to a backup directory specified by the user. The user should supply two arguments, the first being the extension and the second being the name of the backup directory to use. For example, the command `bash backup.sh txt my_backup` would copy all files ending in ".txt" from the current directory to the directory `my_backup`.
+
+#### Challenge 2
+
 Write a shell script called `longest.sh` in `my_files/` that takes the name of a
 directory and a filename extension as its parameters, and prints
 out the number of lines and name of the file with the most lines in
@@ -237,33 +236,6 @@ that directory with that extension. For example:
 
 would print the name of the `.pdb` file in `/tmp/data` that has
 the most lines.
-
-#### Challenge 2
-
-Joel's `data` directory contains three files: `fructose.dat`,
-`glucose.dat`, and `sucrose.dat`. Each of the `.dat` files contains only the word `sugar`. Explain what a script called
-`example.sh` (also in the directory!) would do when run as `bash example.sh *.dat` if it
-contained the following lines:
-
-~~~
-# Script a
-echo *.*
-~~~
-
-~~~
-# Script b
-for filename in $1 $2 $3
-do
-    cat $filename
-done
-~~~
-
-~~~
-# Script c
-echo $@.dat
-~~~
-
-Now test your theory and redirect the output to `my_files/challenge_2a.txt`, `my_files/challenge_2b.txt`, and `my_files/challenge_2c.txt` respectively.
 
 #### Challenge 3
 
