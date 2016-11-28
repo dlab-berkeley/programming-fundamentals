@@ -2,7 +2,7 @@
 
 echo "Challenge 1"
 
-if [ "`bash ../my_files/backup.sh txt my_backup`" == "`for filename in *.txt; do     cp $filename my_backup/original-$filename; done`" ] ; then
+if [ "`bash ../my_files/backup.sh sh my_backup`" == "`for filename in *.sh; do     cp $filename my_backup/original-$filename; done`" ] ; then
 	echo ...passed
 else
 	echo ...failed
