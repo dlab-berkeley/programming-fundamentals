@@ -58,7 +58,6 @@ done
 Now test your theory and redirect your answer to `programming-fundamentals/my_files/challenge_3.txt`!
 
 ~~~
-cd my_files
 for left in 2 3
 do
     for right in $left
