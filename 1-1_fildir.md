@@ -395,6 +395,8 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 ## Exercises
 
+Write down, or think through, the answers to the following questions, then run the appropriate commands to check your answer.
+
 #### Challenge 1
 
 If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master/data/articles`, what will `ls ../downloads` display?
