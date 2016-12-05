@@ -2,11 +2,15 @@
 
 echo "Challenge 1"
 
+mkdir my_backup
+
 if [ "`bash ../my_files/backup.sh sh my_backup`" == "`for filename in *.sh; do     cp $filename my_backup/original-$filename; done`" ] ; then
 	echo ...passed
 else
 	echo ...failed
 fi
+
+rm -r my_backup
 
 
 echo "Challenge 2"

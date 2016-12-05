@@ -404,11 +404,11 @@ because we're going to put shell commands inside the file.)
 
 #### Challenge 3
 
-Copy script.sh into `my_files/backup/`
+Create a directory `my_files/backup/` and copy script.sh into `my_files/backup/`
 
 #### Challenge 4
 
-The command `ls -t` returns a listing arranged by time of last edit. Open `script.sh` in a text editor and add the command `ls -t` as a line in the file. Save and return to the shell prompt.
+The command `ls -t` returns a listing arranged by time of last edit. Open the `script.sh` in `my_files/backup/` in a text editor and add the command `ls -t` as a line in the file. Save and return to the shell prompt.
 
 When you feel you have met these challenges successfully, cd into `test/` and type
 

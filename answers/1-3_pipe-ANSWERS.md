@@ -97,3 +97,5 @@ How would you count all of the words contained in articles about asia found in d
 cd my_files
 wc -w ../data/articles/asia*.txt | tail -1 | cut -c 4-8 > asia_count
 ~~~
+
+NB: In Windows Git Bash the cut will be 2-6.
