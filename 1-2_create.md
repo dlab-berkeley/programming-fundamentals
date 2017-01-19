@@ -29,52 +29,54 @@ $ pwd
 $ ls -F
 ~~~
 ~~~ {.output}
-0-0_Introduction.md    	1-2_create.md  		README.md
-0-1_BCE.md     		      1-3_pipe.md    		data/
-0-2_help.md    		      1-4_loop.md    		resource.md
-1-0_shell.md   		      1-5_scripts.md 		test/
-1-1_fildir.md  		      LICENSE
+0-0_Introduction.md	2-1_R-Python.md		mac_file_system.jpg
+0-1_howtoprog.md	Install.md		pdfs
+0-2_OS.md		LICENSE			regen_pdfs.sh
+1-0_shell.md		README.md		resource.md
+1-1_fildir.md		answers			test
+1-2_create.md		data
 ~~~
 
-Let's create a new directory called `thesis` using the command `mkdir thesis` (which has no output):
+Let's create a new directory called `scripts` using the command `mkdir scripts` (which has no output):
 
 ~~~ {.input}
-$ mkdir thesis
+$ mkdir scripts
 ~~~
 
-As you might (or might not) guess from its name, `mkdir` means "make directory". Since `thesis` is a relative path (i.e., doesn't have a leading slash), the new directory is created in the current working directory:
+As you might (or might not) guess from its name, `mkdir` means "make directory". Since `scripts` is a relative path (i.e., doesn't have a leading slash), the new directory is created in the current working directory:
 
 ~~~ {.input}
 $ ls -F
 ~~~
 ~~~ {.output}
-0-0_Introduction.md    	1-2_create.md  		README.md
-0-1_BCE.md     		      1-3_pipe.md    		data/
-0-2_help.md    		      1-4_loop.md    		resource.md
-1-0_shell.md   		      1-5_scripts.md 		test/
-1-1_fildir.md  		      LICENSE           thesis/
+0-0_Introduction.md	2-1_R-Python.md		mac_file_system.jpg
+0-1_howtoprog.md	Install.md		pdfs/
+0-2_OS.md		LICENSE			regen_pdfs.sh
+1-0_shell.md		README.md		resource.md
+1-1_fildir.md		answers/		scripts/
+1-2_create.md		data/			test/
 ~~~
 
 However, there's nothing in it yet:
 
 ~~~ {.input}
-$ ls -F thesis
+$ ls -F scripts
 ~~~
 
 
 ### Text Editors
 
-Let's change our working directory to `thesis` using `cd`, then use the command `touch` to create a file called `draft.txt`, and run a text editor called Nano to edit the file:
+Let's change our working directory to `scripts` using `cd`, then use the command `touch` to create a file called `python_script.py`, and run a text editor called `vim` to edit the file:
 
 ~~~ {.input}
-$ cd thesis
-$ touch draft.txt
-$ nano draft.txt
+$ cd scripts
+$ touch python_script.py
+$ vim python_script.py
 ~~~
 
 > #### Which Editor?
 >
-> When we say, "`nano` is a text editor," we really do mean "text": it can
+> When we say, "`vim` is a text editor," we really do mean "text": it can
 > only work with plain character data, not tables, images, or any other
 > human-friendly media. We use it in examples because almost anyone can
 > drive it anywhere without training, but please use something more
@@ -92,17 +94,44 @@ $ nano draft.txt
 > links, etc) using simple syntax.
 
 
-Let's type in a few lines of text, then use Control-O to write our data to disk:
+Let's type in a simple line of Python code, first type `i` to enter `insert` mode in vim, then enter the following:
 
-![nano](https://swcarpentry.github.io/shell-novice/fig/nano-screenshot.png)
+~~~
+print('Wow! I'm programming!')
+~~~
 
-Once our file is saved, we can use Control-X to quit the editor and return to the shell. (Unix documentation often uses the shorthand `^A` to mean "control-A".) `nano` doesn't leave any output on the screen after it exits, but `ls` now shows that we have created a file called `draft.txt`:
+To `write`, or save, the file, we first type `Esc` to get out of insert mode, then:
+
+~~~
+:w
+~~~
+
+Then press `Enter`, then:
+
+~~~
+:q
+~~~
+
+to quit vim. This could also be combined into one command:
+
+~~~
+:wq
+~~~
 
 ~~~ {.input}
 $ ls
 ~~~
 ~~~ {.output}
-draft.txt
+python_script.py
+~~~
+
+We can now run it:
+
+~~~ {.input}
+python python_script.py
+~~~
+~~~ {.output}
+Wow! I'm programming!
 ~~~
 
 #### Alternative: Notepad or TextEdit
@@ -111,25 +140,25 @@ You'll need to use a Unix text editor like nano, emacs or vim when you only have
 
 (Windows)
 ~~~ {.input}
-$ Notepad draft.txt
+$ Notepad python_script.py
 ~~~
 
 (Mac)
 ~~~ {.input}
-$ open -a TextEdit draft.txt
+$ open -a TextEdit python_script.py
 ~~~
 
-This should open the file `draft.txt` in a new Notepad or TextEdit window. Add some text, then click __Save__ in the __File__ menu. Now close that window and return to the shell.
+This should open the file `python_script.py in a new Notepad or TextEdit window. Add some text, then click __Save__ in the __File__ menu. Now close that window and return to the shell.
 
 If you open the same file in nano again, you'll see the text that you added in Notepad or TextEdit. These are just different ways of manipulating the same files on your computer. Notepad or TextEdit require you to be working on your Windows or Mac laptop, while nano or vim can be used when you just have a Unix shell.
 
 
 ### Removing
 
-Let's tidy up by running `rm draft.txt`:
+Let's tidy up by running `rm python_script.py`:
 
 ~~~ {.input}
-$ rm draft.txt
+$ rm python_script.py
 ~~~
 
 This command removes files ("rm" is short for "remove"). If we run `ls` again,its output is empty once more, which tells us that our file is gone:
@@ -146,55 +175,54 @@ $ ls
 > there's no guarantee they'll work in any particular situation, since the
 > computer may recycle the file's disk space right away.
 
-Let's re-create that file and then move up one directory to `/home/oski/Desktop/programming-fundamentals-master` using `cd ..`:
+Let's re-create a file and then move up one directory to `/home/oski/Desktop/programming-fundamentals-master` using `cd ..`:
 
 ~~~ {.input}
 $ pwd
 ~~~
 ~~~ {.output}
-/home/oski/Desktop/programming-fundamentals-master/thesis
+/home/oski/Desktop/programming-fundamentals-master/scripts
 ~~~
 ~~~ {.input}
-$ touch draft.txt
-$ nano draft.txt
+$ touch r_script.R
 $ ls
 ~~~
 ~~~ {.output}
-draft.txt
+r_script.R
 ~~~
 ~~~ {.input}
 $ cd ..
 ~~~
 
-If we try to remove the entire `thesis` directory using `rm thesis`,
+If we try to remove the entire `scripts` directory using `rm scripts`,
 we get an error message:
 
 ~~~ {.input}
-$ rm thesis
+$ rm scripts
 ~~~
 ~~~ {.error}
-rm: cannot remove `thesis': Is a directory
+rm: cannot remove `scripts': Is a directory
 ~~~
 
 This happens because `rm` only works on files, not directories. The right command is `rmdir`, which is short for "remove directory". It doesn't work yet either, though, because the directory we're trying to remove isn't empty:
 
 ~~~ {.input}
-$ rmdir thesis
+$ rmdir scripts
 ~~~
 ~~~ {.error}
-rmdir: failed to remove `thesis': Directory not empty
+rmdir: failed to remove `scripts': Directory not empty
 ~~~
 
-This little safety feature can save you a lot of grief, particularly if you are a bad typist. To really get rid of `thesis` we must first delete the file `draft.txt`:
+This little safety feature can save you a lot of grief, particularly if you are a bad typist. To really get rid of `scripts` we must first delete the file `r_script.R`:
 
 ~~~ {.input}
-$ rm thesis/draft.txt
+$ rm scripts/r_script.R
 ~~~
 
 The directory is now empty, so `rmdir` can delete it:
 
 ~~~ {.input}
-$ rmdir thesis
+$ rmdir scripts
 ~~~
 
 > #### With Great Power Comes Great Responsibility
@@ -204,7 +232,7 @@ $ rmdir thesis
 > `-r` flag (which stands for "recursive"):
 >
 > ~~~
-> $ rm -r thesis
+> $ rm -r scripts
 > ~~~
 >
 > This removes everything in the directory, then the directory itself. If
@@ -214,7 +242,7 @@ $ rmdir thesis
 
 ### Moving
 
-Let's create that directory and file one more time. (Note that this time we're running `nano` with the path `thesis/draft.txt`, rather than going into the `thesis` directory and running `nano` on `draft.txt` there.)
+Let's create that directory and file one more time.
 
 ~~~ {.input}
 $ pwd
@@ -223,66 +251,108 @@ $ pwd
 /home/oski/Desktop/programming-fundamentals-master
 ~~~
 ~~~ {.input}
-$ mkdir thesis
+$ mkdir scripts
 ~~~
+
+Let's try a different way to add text to a file, first we need to learn `echo`:
+
 ~~~ {.input}
-$ nano thesis/draft.txt
-$ ls thesis
+$ echo "Hello world!"
 ~~~
 ~~~ {.output}
-draft.txt
+Hello world!
 ~~~
+
+So the `echo` command will simply return whatever text we give it between quotes. Let's try redirecting this echo into a file:
+
+~~~
+$ echo "print('This is printing in Python.')" > scripts/python_script.py
+$ echo "print('This is printing in R.')" > scripts/r_script.R
+~~~
+
+The `>` tells the shell to **redirect** the command's output to a file instead of printing it to the screen. The shell will create the file if it doesn't exist, or overwrite the contents of that file if it does.
+
+~~~ {.input}
+$ ls scripts
+~~~
+~~~ {.output}
+python_script.py	r_script.R
+~~~
+
+We can run both too:
+
+~~~ {.input}
+$ python scripts/python_script.py
+~~~
+~~~ {.output}
+This is printing in Python.
+~~~
+
+~~~ {.input}
+$ Rscript scripts/r_script.R
+~~~
+~~~ {.output}
+[1] "This is printing in R."
+~~~
+
+Coincidentally, Python and R both print with the same syntax, and many other languages print with a very similar syntax. But you'll soon learn that R and Python each have their own different syntax for most other tasks.
+
+We can now send the content of `python_script.py` to the screen using `cat python_script.py`.
+`cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
 
 To see the contents of a file, we can call the command `cat`, short for concatenate.
 
 ~~~
-$ cat thesis/draft.txt
-hello!
+$ cat scripts/python_script.py
+print('This is printing in Python')
 ~~~
 
-`draft.txt` isn't a particularly informative name, so let's change the file's name using `mv`, which is short for "move":
+Let's change the file's name using `mv`, which is short for "move":
 
 ~~~ {.input}
-$ mv thesis/draft.txt thesis/quotes.txt
+$ mv scripts/python_script.py scripts/python_printing.py
 ~~~
 
-The first parameter tells `mv` what we're "moving", while the second is where it's to go. In this case, we're moving `thesis/draft.txt` to `thesis/quotes.txt`, which has the same effect as renaming the file. Sure enough, `ls` shows us that `thesis` now contains one file called `quotes.txt`:
+The first parameter tells `mv` what we're "moving", while the second is where it's to go. In this case, we're moving `scripts/python_script.py` to `scripts/python_printing.py`, which has the same effect as renaming the file. Sure enough, `ls` shows us that `scripts` now contains one file called `python_printing.py`:
 
 ~~~ {.input}
-$ ls thesis
+$ ls scripts
 ~~~
 ~~~ {.output}
-quotes.txt
+python_printing.py	r_script.R
 ~~~
 
 To check it has the same contents, we can use `cat` again:
 
 ~~~
-$ cat thesis/quotes.txt
-hello!
+$ cat scripts/python_printing.py
+print('This is printing in Python')
 ~~~
 
 Just for the sake of inconsistency, `mv` also works on directories -- there is no separate `mvdir` command.
 
-Let's move `quotes.txt` into the current working directory. We use `mv` once again, but this time we'll just use the name of a directory as the second parameter to tell `mv` that we want to keep the filename, but put the file somewhere new. (This is why the command is called "move".) In this case, the directory name we use is the special directory name `.` that we mentioned earlier.
+Let's move `python_printing.py` into the current working directory. We use `mv` once again, but this time we'll just use the name of a directory as the second parameter to tell `mv` that we want to keep the filename, but put the file somewhere new. (This is why the command is called "move".) In this case, the directory name we use is the special directory name `.` that we mentioned earlier.
 
 ~~~ {.input}
-$ mv thesis/quotes.txt .
+$ mv scripts/python_printing.py .
 ~~~
 
-The effect is to move the file from the directory it was in to the current working directory. `ls` now shows us that `thesis` is empty:
+The effect is to move the file from the directory it was in to the current working directory. `ls` now shows us that the file is gone:
 
 ~~~ {.input}
-$ ls thesis
-~~~
-
-Further, `ls` with a filename or directory name as a parameter only lists that file or directory. We can use this to see that `quotes.txt` is still in our current directory:
-
-~~~ {.input}
-$ ls quotes.txt
+$ ls scripts
 ~~~
 ~~~ {.output}
-quotes.txt
+r_script.R
+~~~
+
+Further, `ls` with a filename or directory name as a parameter only lists that file or directory. We can use this to see that `python_printing.py` is still in our current directory:
+
+~~~ {.input}
+$ ls python_printing.py
+~~~
+~~~ {.output}
+python_printing.py
 ~~~
 
 
@@ -291,105 +361,22 @@ quotes.txt
 The `cp` command works very much like `mv`, except it copies a file instead of moving it. We can check that it did the right thing using `ls` with two paths as parameters --- like most Unix commands, `ls` can be given thousands of paths at once:
 
 ~~~ {.input}
-$ cp quotes.txt thesis/quotations.txt
-$ ls quotes.txt thesis/quotations.txt
+$ cp python_printing.py scripts/python_script.py
+$ ls python_printing.py scripts/python_script.py
 ~~~
 ~~~ {.output}
-quotes.txt   thesis/quotations.txt
+python_printing.py scripts/python_script.py
 ~~~
 
-To prove that we made a copy, let's delete the `quotes.txt` file in the current directory and then run that same `ls` again. This time it tells us that it can't find `quotes.txt` in the current directory, but it does find the copy in `thesis` that we didn't delete:
+To prove that we made a copy, let's delete the `python_printing.py` file in the current directory and then run that same `ls` again. This time it tells us that it can't find `python_printing.py` in the current directory, but it does find the copy in `scripts` that we didn't delete:
 
 ~~~ {.input}
-$ ls quotes.txt thesis/quotations.txt
+$ rm python_printing.py
+$ ls python_printing.py scripts/python_script.py
 ~~~
 ~~~ {.error}
-ls: cannot access quotes.txt: No such file or directory thesis/quotations.txt
+ls: cannot access quotes.txt: No such file or directory python_printing.py
 ~~~
-
-## Rochelle's Pipeline: Organizing and Moving Files
-
-Knowing just this much about files and directories, Rochelle is ready to organize the files for her text project. First, she `cd's` into the `programming-fundamentals-master` directory. From there, she creates a directory called `new-york-times` (to remind herself where the data came from) inside her `data` directory. Inside that, she creates a directory called `2015-01-01`, which is the date she started processing the texts. She used to use names like `conference-paper` and `revised-results`, but she found them hard to understand after a couple of years. (The final straw was when she found herself creating a directory called `revised-revised-results-3`.)
-
-> Rochelle names her directories "year-month-day", with leading zeroes for
-> months and days, because the shell displays file and directory names in
-> alphabetical order. If she used month names, December would come before July;
-> if she didn't use leading zeroes, November ('11') would come before July
-> ('7').
-
-~~~ {.input}
-$ cd ~/Desktop/programming-fundamentals-master/data
-$ mkdir new-york-times
-~~~
-
-Now she's ready to add the text files that she downloaded from LexisNexis into the directory.
-
-The text files that she downloaded are, unsurprisingly, in the directory `downloads`
-
-~~~ {.input}
-$ cd downloads
-$ ls
-~~~
-~~~ {.output}
-human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
-human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
-human-rights-2002.TXT  human-rights-2006.TXT
-human-rights-2003.TXT  human-rights-2007.TXT
-~~~
-
-Rochelle wants to move them into the directory she just created.
-
-~~~ {.input}
-$ cp human-rights-2000.TXT ../new-york-times
-$ ls ../new-york-times
-~~~
-~~~ {.output}
-human-rights-2000.TXT
-~~~
-
-Huzzah! But does Rochelle really have to time in a command for each file she wants to move? No, there's an easier way! Instead of giving an input for each file, Rochelle can write `cp *.TXT`.  The `*` in `*.TXT` matches zero or more characters, so the shell turns `*.TXT` into a complete list of `.TXT` files
-
-~~~ {.input}
-$ cp *.TXT ../new-york-times
-$ ls ../new-york-times
-~~~
-~~~ {.output}
-human-rights-2000.TXT  human-rights-2004.TXT  human-rights-2008.TXT
-human-rights-2001.TXT  human-rights-2005.TXT  human-rights-2009.TXT
-human-rights-2002.TXT  human-rights-2006.TXT
-human-rights-2003.TXT  human-rights-2007.TXT
-~~~
-
-> ## Wildcards {.callout}
->
-> `*` is a **wildcard**. It matches zero or more
-> characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and so on.
-> On the other hand, `p*.pdb` only matches `pentane.pdb` and
-> `propane.pdb`, because the 'p' at the front only matches itself.
->
-> `?` is also a wildcard, but it only matches a single character. This
-> means that `p?.pdb` matches `pi.pdb` or `p5.pdb`, but not `propane.pdb`.
-> We can use any number of wildcards at a time: for example, `p*.p?*`
-> matches anything that starts with a 'p' and ends with '.', 'p', and at
-> least one more character (since the '?' has to match one character, and
-> the final '\*' can match any number of characters). Thus, `p*.p?*` would
-> match `preferred.practice`, and even `p.pi` (since the first '\*' can
-> match no characters at all), but not `quality.practice` (doesn't start
-> with 'p') or `preferred.p` (there isn't at least one character after the
-> '.p').
->
-> When the shell sees a wildcard, it expands the wildcard to create a
-> list of matching filenames *before* running the command that was
-> asked for. As an exception, if a wildcard expression does not match
-> any file, Bash will pass the expression as a parameter to the command
-> as it is. For example typing `ls *.pdf` in the new-york-times directory
-> (which contains only files with names ending with `.TXT`) results in
-> an error message that there is no file called `*.pdf`.
-> However, generally commands like `wc` and `ls` see the lists of
-> file names matching these expressions, but not the wildcards
-> themselves. It is the shell, not the other programs, that deals with
-> expanding wildcards, and this another example of orthogonal design.
-
 
 ## Exercises
 
@@ -399,16 +386,15 @@ human-rights-2003.TXT  human-rights-2007.TXT
 
 #### Challenge 2
 
-Within that directory, create a file called `script.sh`. (It's just like a text file, but we'll label it with the extension ".sh"
-because we're going to put shell commands inside the file.)
+Within that directory, create a file called `my_script.R`.
 
 #### Challenge 3
 
-Create a directory `my_files/backup/` and copy script.sh into `my_files/backup/`
+Create a directory `my_files/backup/` and copy `my_script.R` into `my_files/backup/` (first create `backup`!)
 
 #### Challenge 4
 
-The command `ls -t` returns a listing arranged by time of last edit. Open the `script.sh` in `my_files/backup/` in a text editor and add the command `ls -t` as a line in the file. Save and return to the shell prompt.
+Have the script in `my_files` print "I love programming!" to the command line.
 
 When you feel you have met these challenges successfully, cd into `test/` and type
 

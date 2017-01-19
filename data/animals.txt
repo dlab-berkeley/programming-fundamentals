@@ -1,8 +1,0 @@
-deer
-rabbit
-raccoon
-rabbit
-deer
-fox
-rabbit
-bear

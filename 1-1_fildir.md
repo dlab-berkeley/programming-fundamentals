@@ -335,24 +335,28 @@ As you can see, it also displays another special directory that's just called `.
 > `/home/oski/elsewhere`.
 
 
-## Rochelle's Pipeline: Getting Ready
+## Exploring the repository
 
-In order to start her text analysis project, Rochelle first has to figure out where her data is stored.
-
-Everything Rochelle needs for her text project is in the `data` directory of the git repository (i.e. the directory) `programming-fundamentals`. So Rochelle will migrate there.
+Let's see what we've downloaded:
 
 
 ~~~ {.input}
-$ cd ~/Desktop/programming-fundamentals-master/data
+$ cd ~/Desktop/programming-fundamentals-master
 $ ls
 ~~~
 ~~~ {.output}
-articles  downloads
+0-0_Introduction.md	2-1_R-Python.md		mac_file_system.jpg
+0-1_howtoprog.md	Install.md		pdfs
+0-2_OS.md		LICENSE			regen_pdfs.sh
+1-0_shell.md		README.md		resource.md
+1-1_fildir.md		answers			test
+1-2_create.md		data
 ~~~
 
-Each of Rochelle's text files is labeled according to the parameters leading to her LexisNexis Search. Since she searched and downloaded articles containing the phrase 'human rights' for each year, she will call her files `human-rights-2001.txt`, `human-rights-2002.txt`, and so on. All files are in currently in the `downloads` directory.
+It looks like all the information from this workshop! Let's see what we have in data:
 
 ~~~ {.input}
+$ cd data
 $ cd downloads
 $ ls
 ~~~
@@ -363,20 +367,20 @@ human-rights-2002.TXT  human-rights-2006.TXT
 human-rights-2003.TXT  human-rights-2007.TXT
 ~~~
 
-If she is in her home directory, Rochelle can see what files she has using the command:
+If you are in your home directory, you can see what files you have using the command:
 
 ~~~ {.input}
 $ cd ~
 $ ls programming-fundamentals-master/data/downloads
 ~~~
 
-This is a lot to type, but she can let the shell do most of the work. If she types:
+This is a lot to type, but you can let the shell do most of the work. If you type:
 
 ~~~ {.input}
 $ ls prog
 ~~~
 
-and then presses tab, the shell automatically completes the directory name for her:
+and then press tab, the shell automatically completes the directory name for you:
 
 ~~~ {.input}
 $ ls programming-fundamentals-master/
@@ -414,11 +418,12 @@ If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master/data/artic
 If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master`, and `-r` tells `ls` to display things in reverse order, what command will display:
 
 ~~~
-test/  			      1-5_scripts.md 		1-0_shell.md
-resource.md    		  1-4_loop.md    		0-2_help.md
-data/  			      1-3_pipe.md    		0-1_BCE.md
-README.md      		  1-2_create.md  		0-0_Introduction.md
-LICENSE			      1-1_fildir.md
+test/			answers/		1-1_fildir.md
+resource.md		README.md		1-0_shell.md
+regen_pdfs.sh		LICENSE			0-2_OS.md
+pdfs/			Install.md		0-1_howtoprog.md
+mac_file_system.jpg	2-1_R-Python.md		0-0_Introduction.md
+data/			1-2_create.md
 ~~~
 
 1.  `ls pwd`

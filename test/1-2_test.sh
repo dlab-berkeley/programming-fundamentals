@@ -26,9 +26,9 @@ fi
 
 echo "Challenge 4"
 
-FOUR="`cat ../my_files/backup/script.sh`"
+FOUR="`cat ../my_files/my_script.R`"
 
-if [ "$FOUR" == "ls -t" ] ; then
+if [ "$FOUR" == "print('I love programming!')" ] ; then
         echo ...passed ;
 else
         echo ...failed ;

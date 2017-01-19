@@ -6,61 +6,7 @@ minutes: 10
 
 # The Unix Shell: Introducing the Shell
 
-> ## Learning Objectives
->
-> *   Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
-> *   Explain when and why command-line interfaces should be used instead of graphical interfaces.
-
-Rochelle Terman, a Recovering Political Scientist in Training, wants to do analysis of some New York Times she downloaded from [LexisNexis](http://www.lexisnexis.com/hottopics/lnacademic/). LexisNexis only lets her download up to 500 articles at a time, but she wants to analyze several years of coverage. So she downloads several text files, each containing no more than 500 articles, along with metadata for each article (date, desk, author, length, subject, etc).
-
-Each text file looks something like this:
-
-> 1 of 500 DOCUMENTS
->
-> The New York Times
-> September 25, 2011 Sunday
-> Correction Appended
-> Late Edition - Final
->
-> Monitoring Rights In Chechen Region, A Month at a Time
-> BYLINE: By SETH MYDANS
-> SECTION: Section A; Column 0; Foreign Desk; Pg. 8
-> LENGTH: 1150 words
->
-> GROZNY, Russia -- They never go out alone, and when they are in their small
-> apartment here in the capital of Chechnya, a flat screen on the wall
-> displays a continuous feed from security cameras in the hall and stairway
-> outside...
->
-> 2 of 500 DOCUMENTS
->
-> The New York Times Blogs
-> (The Lede)
-> October 14, 2011 Friday
->
-> Human Rights Group Welcomes Obama's Decision to Send Troops to Uganda
->
-> BYLINE: ROBERT MACKEY
->
-> LENGTH: 465 words
->
-> As my colleagues Thom Shanker and Rick Gladstone report, "President Obama
-> said Friday that he had ordered the deployment of 100 armed military
-> advisers to ...
-
-Now she wants to turn those big text files into a spreadsheet, each each row being an article, and columns for the text and metadata.
-
-This requires her to:
-
-1.  Combine all the bulk downloads into one file.
-2.  Parse each field (BYLINE, LENTH, text, etc) into its own column.
-3.  Analyze, publish, get a great tenure track job, and retire early.
-
-The problem is, Rochelle has procrastinated for the last year and now has to get this project done ASAP. If she completes steps 1-2 by hand, it will take her approximately a gazillian years.
-
-While we won't be able to complete this project today, this lesson will be a step in the right direction. Today we will work mostly with the filesystem using the shell to move, copy, rename, and merge files. Although that may not sound super exciting, it contains the FUN!damentals of programming and teaches how to work in one of the most important environments for programming. The shell runs the other languages you may learn, such as Python, R, node.JS, etc., and can link them all together in a nice workflow, which can be automated, repeated, and scheduled. Additionally, many of you are probably interested in accessing remote servers on campus to run computationally-intensive scripts. All of this is done through the shell. Once you ssh into the server, you will not have a GUI with which to interact, but only the shell.
-
-### Computer-Human Interfaces
+## Computer-Human Interfaces
 
 At a high level, computers do four things:
 
