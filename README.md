@@ -1,13 +1,5 @@
+An intro to the basics that instructors often assume you know, but that you probably never had good instruction on! After this workshop, you should be able to more easily start learning to program (e.g., in our R or Python Fundamentals series), follow instructions and documentation online (e.g., StackExchange), and communicate better with your collaborators who are programming. If you are just starting out and don’t know which language to learn, or what a programming language even is, this workshop is for you! No prior knowledge expected. This interactive workshop will cover:
 
-An intro to the basics that instructors often assume you know, but that you probably never had good instruction on! After this course, you should be able to more easily start learning to program (e.g., in R or python), follow instructions and documentation online (e.g. StackExchange), and communicate better with your collaborators who are programming.
-
-By the end of this course, students should be able to:
-
-*   Understand basic programming terminologies, structures, and workflows
-*   Use shall/bash/terminal without fear
-*   Know and use essential Unix commands
-*   Write your own script that automates tasks
-*   Run somebody else's script on your own data
-*   Install packages, modules, and other software from the command line
-*   Read StackExchange, online documentation, or other instructions and know what the heck they're talking about
-
+1. Navigating the filesystem
+2. Common BASH commands
+3. A brief, general introduction to the R and Python programming environments

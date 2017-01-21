@@ -78,9 +78,7 @@ $ vim python_script.py
 >
 > When we say, "`vim` is a text editor," we really do mean "text": it can
 > only work with plain character data, not tables, images, or any other
-> human-friendly media. We use it in examples because almost anyone can
-> drive it anywhere without training, but please use something more
-> powerful for real work. On Unix systems (such as Linux and Mac OS X),
+> human-friendly media. On Unix systems (such as Linux and Mac OS X),
 > many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
 > [Vim](http://www.vim.org/) (both of which are completely unintuitive,
 > even by Unix standards), or a graphical editor such as
@@ -88,7 +86,7 @@ $ vim python_script.py
 > On Windows, you may wish to use [Notepad++](http://notepad-plus-plus.org/).
 >
 > Text editors are not limited to .txt files. Code is also text - so any
-> file with an extension like .py (for python) .sh (for shell) can also be
+> file with an extension like .py (for python), .R (for R), .sh (for shell) can also be
 > edited in a text editor. So can files containing markup, like .html (for
 > HTML) or .md (for markdown). Markup is a way to format text (bold, lists,
 > links, etc) using simple syntax.
@@ -112,7 +110,7 @@ Then press `Enter`, then:
 :q
 ~~~
 
-to quit vim. This could also be combined into one command:
+to quit vim. This can also be combined into one command:
 
 ~~~
 :wq
@@ -125,7 +123,7 @@ $ ls
 python_script.py
 ~~~
 
-We can now run it:
+We can now run it calling the python interpreter:
 
 ~~~ {.input}
 python python_script.py
@@ -161,7 +159,7 @@ Let's tidy up by running `rm python_script.py`:
 $ rm python_script.py
 ~~~
 
-This command removes files ("rm" is short for "remove"). If we run `ls` again,its output is empty once more, which tells us that our file is gone:
+This command removes files ("rm" is short for "remove"). If we run `ls` again, its output is empty once more, which tells us that our file is gone:
 
 ~~~ {.input}
 $ ls
@@ -192,6 +190,10 @@ r_script.R
 ~~~
 ~~~ {.input}
 $ cd ..
+$ pwd
+~~~
+~~~ {.output}
+/home/oski/Desktop/programming-fundamentals-master
 ~~~
 
 If we try to remove the entire `scripts` directory using `rm scripts`,
@@ -254,7 +256,7 @@ $ pwd
 $ mkdir scripts
 ~~~
 
-Let's try a different way to add text to a file, first we need to learn `echo`:
+Let's try a different way to add text to a file, first we need to learn the bash command `echo`:
 
 ~~~ {.input}
 $ echo "Hello world!"
@@ -295,16 +297,17 @@ $ Rscript scripts/r_script.R
 [1] "This is printing in R."
 ~~~
 
-Coincidentally, Python and R both print with the same syntax, and many other languages print with a very similar syntax. But you'll soon learn that R and Python each have their own different syntax for most other tasks.
+Coincidentally, Python and R both print with the same syntax (though the return looks slightly different), and many other languages print with a very similar syntax. But you'll soon learn that R and Python each have their own different syntax for most other tasks.
 
-We can now send the content of `python_script.py` to the screen using `cat python_script.py`.
-`cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
+We can also send the content of `python_script.py` to the screen using `cat python_script.py`. `cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
 
 To see the contents of a file, we can call the command `cat`, short for concatenate.
 
 ~~~
 $ cat scripts/python_script.py
-print('This is printing in Python')
+~~~
+~~~
+print('This is printing in Python.')
 ~~~
 
 Let's change the file's name using `mv`, which is short for "move":
@@ -326,7 +329,9 @@ To check it has the same contents, we can use `cat` again:
 
 ~~~
 $ cat scripts/python_printing.py
-print('This is printing in Python')
+~~~
+~~~
+print('This is printing in Python.')
 ~~~
 
 Just for the sake of inconsistency, `mv` also works on directories -- there is no separate `mvdir` command.
@@ -375,7 +380,7 @@ $ rm python_printing.py
 $ ls python_printing.py scripts/python_script.py
 ~~~
 ~~~ {.error}
-ls: cannot access quotes.txt: No such file or directory python_printing.py
+ls: cannot access python_printing.py: No such file or directory python_printing.py
 ~~~
 
 ## Exercises
