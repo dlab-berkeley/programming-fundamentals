@@ -9,7 +9,7 @@ done
 
 for fname in ../*.pdf
 do
-  mv $fname pdfs/
+  mv $fname ../pdfs/
 done
 
 for fname in ../answers/*.md

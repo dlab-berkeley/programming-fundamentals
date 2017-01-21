@@ -395,7 +395,7 @@ Within that directory, create a file called `my_script.R`.
 
 #### Challenge 3
 
-Create a directory `my_files/backup/` and copy `my_script.R` into `my_files/backup/` (first create `backup`!)
+Create a directory `my_files/backup/` and copy `my_script.R` into `my_files/backup/`.
 
 #### Challenge 4
 

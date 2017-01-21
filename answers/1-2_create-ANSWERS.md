@@ -17,16 +17,16 @@ mkdir my_files
 
 #### Challenge 2
 
-Within that directory, create a file called `script.sh`. 
+Within that directory, create a file called `my_script.R`. 
 
 ~~~
 cd my_files
-touch script.sh
+touch my_script.R
 ~~~
 
 #### Challenge 3
 
-Copy script.sh into `my_files/backup/`
+Create a directory `my_files/backup/` and copy `my_script.R` into `my_files/backup/`.
 
 ~~~
 mkdir backup
@@ -35,16 +35,16 @@ cp script.sh backup
 
 #### Challenge 4
 
-The command `ls -t` returns a listing arranged by time of last edit. Add this command to `script.sh`.
+Have the script in `my_files` print "I love programming!" to the command line.
 
 ~~~
-echo "ls -t" > backup/script.sh
+echo "print('I love programming!')" > my_script.R
 ~~~
 
 or
 
 ~~~
-nano backup/script.sh
+vim my_script.R
 ~~~
 
-Add the command, and type `CTRL + O` to write, press `ENTER` to save the file, and `CTRL + X` to exit.
+Add the command, and type `Esc` and `:wq` to write and quit.
