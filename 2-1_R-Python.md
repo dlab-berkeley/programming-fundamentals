@@ -47,13 +47,13 @@ We can also store information by defining a *variable*, which we can then refer 
 
 In R this is done with `<-`:
 
-~~~
+~~~ {.sourceCode .R}
 > my_var <- 5
 ~~~
 
 In Python, variables are assigned with `=`:
 
-~~~
+~~~ {.sourceCode .python}
 In [1]: my_var = 5
 ~~~
 
@@ -61,13 +61,13 @@ Now try the same mathematical operators using my_var and another number and see 
 
 We can also assign text to a variable. In R:
 
-~~~
+~~~ {.sourceCode .R}
 > my_name <- "Chris"
 ~~~
 
 In Python:
 
-~~~
+~~~ {.sourceCode .python}
 In [2]: my_name = "Chris"
 ~~~
 
@@ -75,14 +75,14 @@ We can begin to see differences in terminology and thinking when we ask R and Py
 
 In R:
 
-~~~ {.input}
+~~~ {.sourceCode .R}
 > class(my_var)
 ~~~
 ~~~ {.output}
 [1] "numeric"
 ~~~
 
-~~~ {.input}
+~~~ {.sourceCode .R}
 > class(my_name)
 ~~~
 ~~~ {.output}
@@ -91,14 +91,14 @@ In R:
 
 In Python:
 
-~~~ {.input}
+~~~ {.sourceCode .python}
 In [3]: type(my_var)
 ~~~
 ~~~ {.output}
 Out[3]: int
 ~~~
 
-~~~ {.input}
+~~~ {.sourceCode .python}
 In [4]: type(my_name)
 ~~~
 ~~~ {.output}
