@@ -58,28 +58,18 @@ Why learn to program?
 > programming documentation, StackExchange and other online fora, or D-Lab
 > workshops.
 
-Specifically, by the end of this 3 hours course, I want everyone here be able to:
+By the end of this workshop, I want everyone here be able to:
 
 * Understand basic programming terminologies, structures, and workflows
 * Use shell/bash/terminal without fear
 * Know and use essential Unix commands
-* Write your own script that automates tasks
 * Run somebody else's script on your own data
 * Install packages, modules, and other software from the command line
 * Read StackExchange, online documentation, or other instructions and know what the heck they're talking about
 
 ### About Me and Disclaimers
 
-My name is Rochelle Terman and I'm a Ph.D. Candidate in Political Science.
-
-* A year ago, I didn't know how to program. Now I program almost every day.
-* I program mostly in Python, R, and PHP. I'm interested in text analysis, webscraping, and visualization.
-* I also do a lot of web development, especially in Drupal + Wordpress.
-* My dissertation is on human rights.
-* I won't be able to answer all your questions.
-* No one will.
-* But especially me.
-* Because programming is one endless Google Search.
+Instructor introduces her or hisself and provides motivation for the workshop.
 
 ### Acknowledgments
 

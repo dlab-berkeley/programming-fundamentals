@@ -29,7 +29,6 @@ Programming languages generally involve the following elements:
   - Later we'll show how you can use variables to store values as you work with them
 - **Actions** are operations you tell the computer to perform: create, delete
   - You may enact them one by one, or combine them into longer procedures, often in the form of named functions
-  - Later we'll show how you can repeat operations on multiple things using loops, one of the major building blocks of functions and programs
 
 That being said, programming languages differ from one another in the following ways:
 
@@ -37,7 +36,7 @@ That being said, programming languages differ from one another in the following 
 2. **Usage**: JavaScript is for building websites, R is for statistics, Python is general purpose, etc.
 3. **Level**: how close are you to the hardware. 'C' is often considered to be the lowest (or one of the lowest) level languages.
 4. **Compiled vs. Interpreted:** compiles code into an executable program before running, vs. executing instructions directly. C/C++ and Java are compiled, R and Python are interpreted.
-5. **Object-oriented:** "objects" are data + functions. Some programming languages are object-oriented (e.g. C++, Python), and some aren't (e.g. C).
+5. **Object-oriented**: Some programming languages are object-oriented (e.g. C++, Python), and some aren't (e.g. C).
 6. **Many more**: Here's a [list](https://en.wikipedia.org/wiki/List_of_programming_languages_by_type) of all the types of programming languages out there.
 
 So what should your first programming language be? That is, what programming language should you use to learn *how to program*? At the end of the day, the answer depends on what you want to get out of programming. Many people recommend Python because its fun, easy, and multi-purpose. Here's an [article](http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665) that can offer more advice.
