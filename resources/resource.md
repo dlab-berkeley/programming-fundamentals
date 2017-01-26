@@ -37,3 +37,7 @@ subtitle: Reference
 *   `echo "hello!"` prints the text between quotes to the shell.
 *   `>` redirects the output of a command to a file.
 *   `touch path` creates an empty file if it doesn't already exist.
+
+## Vim
+
+'insert' mode by typing `i` in 'normal' mode. When you are done and want to exit vim, make sure you are in 'normal' mode (press `Esc` a few times for good measure), then type `:q` then `Enter` to quit, `:wq` then `Enter` to save and quit, or `:q!` then `Enter` to save without quitting.
