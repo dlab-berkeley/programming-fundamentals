@@ -17,4 +17,7 @@ do
   markdown-pdf $fname
 done
 
+markdown-pdf resource.md
+mv resource.pdf ../pdfs/
+
 echo "pdf files successfully regenerated"

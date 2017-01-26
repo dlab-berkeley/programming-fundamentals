@@ -15,7 +15,7 @@ At a high level, computers do four things:
 -   communicate with each other
 -   interact with us
 
-They can do the last of these in many different ways, including direct brain-computer links and speech interfaces. Since these are still in their infancy,most of us use windows, icons, mice, and pointers. These technologies didn't become widespread until the 1980s, but their roots go back to Doug Engelbart's work in the 1960s, which you can see in what has been called "[The Mother of All Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
+They can do the last of these in many different ways, including direct brain-computer links and speech interfaces. Since these are still in their infancy, most of us use windows, icons, mice, and pointers. These technologies didn't become widespread until the 1980s, but their roots go back to Doug Engelbart's work in the 1960s, which you can see in what has been called "[The Mother of All Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
 
 Going back even further, the only way to interact with early computers was to rewire them. But in between, from the 1950s to the 1980s, most people used line printers. These devices only allowed input and output of the letters, numbers, and punctuation found on a standard keyboard, so programming languages and interfaces had to be designed around that constraint.
 
@@ -51,6 +51,8 @@ On the other hand, the shell allows us to combine existing tools in powerful way
 
 In addition, the command line is often the easiest way to interact with remote machines. As clusters and cloud computing become more popular for scientific data crunching, being able to drive them is becoming a necessary skill.
 
+Today we'll learn the bare necessities of bash, so that you can go on to learn other programming languages like R and Python, and be comfortable creating, executing, and deleting these scripts in the Unix filesystem.
+
 ---
 
-Adapted from: [Software Carpentry](http://software-carpentry.org/v5/novice/shell/00-intro.html)
+Adapted from: [Software Carpentry](http://swcarpentry.github.io/shell-novice/)

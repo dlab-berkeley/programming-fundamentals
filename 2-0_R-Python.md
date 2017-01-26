@@ -30,16 +30,20 @@ Similarities:
 | - [R Studio](https://www.rstudio.com) GUI  | - Text Editors, IDEs, and the [Jupyter](http://jupyter.org) Notebook  |
 | - Quick statistical analyses | - Easy text (string) manipulation |
 | - Beautiful, easy plotting (ggplot) | - More difficult plotting (matplotlib) |
-| - More difficult webscraping and API work | - Easy, streamlined webscraping and API work, build websites and apps (Flask, Django) |
-| - Though changing, R has traditionally been used in academia and data science | - Python is used in all sorts of programming domains |
+| - More difficult webscraping and API work | - Easy, streamlined webscraping and API work, also build websites and apps (Flask, Django) |
+| - R has traditionally been used in academia and data science | - Python is used in all sorts of programming domains |
 | - Slower than Python at scale | - Faster than R at scale |
 
 
 See this [blog post](https://www.datacamp.com/community/tutorials/r-or-python-for-data-analysis#gs.S_vlpQU) for a great comparison of the two languages!
 
+If this information still can't help you decide, you may consider learning the language your community knows best. If your lab, PI, or department is more familiar with one language, it can save a lot of effort by just learning that one, and you can pick of the other after!
+
 ### R and Python in the shell
 
-Let's open up two shells side-by-side, and type `R` in one and `ipython` in the other. Both can be used just like calculators, try some basic math such as `5 + 2` or `10 * 20` in either.
+Let's open up two shells side-by-side, and type `R` then `Enter` in one and `ipython` then `Enter` in the other. Both environments should then open up in the shell.
+
+To start, both can be used just like calculators, try some basic math such as `5 + 2` or `10 * 20` in either.
 
 ### Defining variables in R and Python.
 

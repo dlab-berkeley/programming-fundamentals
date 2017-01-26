@@ -25,7 +25,7 @@ $
 
 The dollar sign is a **prompt**, which shows us that the shell is waiting for input; your shell may show something more elaborate.
 
-Type the command `whoami`, then press the Enter key (sometimes marked Return) to send the command to the shell.
+Type the command `whoami`, then press the `Enter` key (sometimes marked `Return`) to send the command to the shell.
 
 The command's output is the ID of the current user, i.e., it shows us who the shell thinks we are:
 
@@ -195,7 +195,7 @@ Notice, by the way that we spelled the directory name `Movies`. It doesn't have 
 > so we will too.
 
 To understand this try running `ls -F bin` and `ls -F /bin` (*with* a leading slash). You see we get different answers,
-because `/bin` is an **absolute path**. You also conveniently see all the available bash commands:
+because `/bin` is an **absolute path**. You also conveniently see many of the available bash commands:
 
 ~~~ {.input}
 $ ls -F /bin
@@ -353,7 +353,7 @@ $ ls
 1-2_create.md		data
 ~~~
 
-It looks like all the information from this workshop! Let's see what we have in data:
+It looks like all the information for this workshop! Let's see what we have in data:
 
 ~~~ {.input}
 $ cd data
@@ -399,7 +399,7 @@ This is called **tab completion**, and we will see it in many other tools as we 
 
 ## Exercises
 
-Write down, or think through, the answers to the following questions, then run the appropriate commands to check your answer.
+Write down, or think through, the answers to the following questions, then run the appropriate commands to check your answers.
 
 #### Challenge 1
 

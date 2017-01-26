@@ -82,7 +82,7 @@ $ vim python_script.py
 > many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
 > [Vim](http://www.vim.org/) (both of which are completely unintuitive,
 > even by Unix standards), or a graphical editor such as
-> [Gedit](http://projects.gnome.org/gedit/), which is on BCE.
+> [Gedit](http://projects.gnome.org/gedit/), which is on BCE, or [Sublime Text](https://www.sublimetext.com).
 > On Windows, you may wish to use [Notepad++](http://notepad-plus-plus.org/).
 >
 > Text editors are not limited to .txt files. Code is also text - so any
@@ -110,11 +110,13 @@ Then press `Enter`, then:
 :q
 ~~~
 
-to quit vim. This can also be combined into one command:
+and `Enter` to quit vim. This can also be combined into one command:
 
 ~~~
 :wq
 ~~~
+
+When we ask for a listing, we can see our script is still there:
 
 ~~~ {.input}
 $ ls
@@ -123,7 +125,7 @@ $ ls
 python_script.py
 ~~~
 
-We can now run it calling the python interpreter:
+We can also run the program from the shell by calling the python interpreter:
 
 ~~~ {.input}
 python python_script.py
@@ -131,6 +133,8 @@ python python_script.py
 ~~~ {.output}
 Wow! I'm programming!
 ~~~
+
+Awesome!
 
 #### Alternative: Notepad or TextEdit
 
@@ -194,6 +198,12 @@ $ pwd
 ~~~
 ~~~ {.output}
 /home/oski/Desktop/programming-fundamentals-master
+~~~
+~~~ {.input}
+$ ls scripts
+~~~
+~~~ {.output}
+scripts
 ~~~
 
 If we try to remove the entire `scripts` directory using `rm scripts`,
@@ -265,14 +275,14 @@ $ echo "Hello world!"
 Hello world!
 ~~~
 
-So the `echo` command will simply return whatever text we give it between quotes. Let's try redirecting this echo into a file:
+So the `echo` command will simply return whatever text we give it between quotes. Let's try redirecting this echo into a file with the redirect symbol `>`:
 
 ~~~
 $ echo "print('This is printing in Python.')" > scripts/python_script.py
 $ echo "print('This is printing in R.')" > scripts/r_script.R
 ~~~
 
-The `>` tells the shell to **redirect** the command's output to a file instead of printing it to the screen. The shell will create the file if it doesn't exist, or overwrite the contents of that file if it does.
+The `>` tells the shell to **redirect** the command's output, which as we saw above is whatever is between quotes, to a file instead of printing it to the screen. The shell will create the file if it doesn't exist, or overwrite the contents of that file if it does.
 
 ~~~ {.input}
 $ ls scripts
@@ -299,9 +309,7 @@ $ Rscript scripts/r_script.R
 
 Coincidentally, Python and R both print with the same syntax (though the return looks slightly different), and many other languages print with a very similar syntax. But you'll soon learn that R and Python each have their own different syntax for most other tasks.
 
-We can also send the content of `python_script.py` to the screen using `cat python_script.py`. `cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
-
-To see the contents of a file, we can call the command `cat`, short for concatenate.
+We can also send the content of `python_script.py` to the screen as output using `cat python_script.py`. `cat` stands for "concatenate": it prints the contents of files one after another. There's only one file in this case, so `cat` just shows us what it contains:
 
 ~~~
 $ cat scripts/python_script.py
@@ -342,7 +350,7 @@ Let's move `python_printing.py` into the current working directory. We use `mv` 
 $ mv scripts/python_printing.py .
 ~~~
 
-The effect is to move the file from the directory it was in to the current working directory. `ls` now shows us that the file is gone:
+The effect is to move the file from the directory it was in to the current working directory. `ls` now shows us that the python file is gone:
 
 ~~~ {.input}
 $ ls scripts
@@ -351,7 +359,7 @@ $ ls scripts
 r_script.R
 ~~~
 
-Further, `ls` with a filename or directory name as a parameter only lists that file or directory. We can use this to see that `python_printing.py` is still in our current directory:
+Further, `ls` with a filename or directory name as a parameter only lists that file or directory. We can use this to see that `python_printing.py` is now in our current directory:
 
 ~~~ {.input}
 $ ls python_printing.py
@@ -399,9 +407,9 @@ Create a directory `my_files/backup/` and copy `my_script.R` into `my_files/back
 
 #### Challenge 4
 
-Have the script in `my_files` print "I love programming!" to the command line.
+Have the R script in `my_files` print "I love programming!" to the command line.
 
-When you feel you have met these challenges successfully, cd into `test/` and type
+When you feel you have met these challenges successfully, cd into `resources/` and type
 
 ~~~ {.input}
 . 1-2_test.sh

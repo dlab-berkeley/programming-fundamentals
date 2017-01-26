@@ -46,30 +46,30 @@ Why learn to program?
     Some things are impossible, or nearly impossible to do by hand. Computers open the door for new tools and methods, but many require programming skills.
 
 3.   *New Data.*
-    The Internet is a wealth of data, waiting to be analyzed! Whether its collecting Twitter data, working with the Congress API, or scraping websites, programming knowledge is a must.
+    The Internet is a wealth of data waiting to be analyzed! Whether its collecting Twitter data, working with the Congress API, or scraping websites, programming knowledge is a must.
 
 4.   *Better Science.*
     (Quality) programming can open the door to better transparency, reproducibility, and collaboration in the Social Sciences.
 
 ### Learning Objectives
 
-> The basic learning objective of this course is to leave here with the
+> The basic learning objective of this workshop is to leave here with the
 > knowledge and skills required to learn on your own, whether that's through
-> programming documentation, StackExchange and other online fora, or D-Lab
-> workshops.
+> programming documentation, StackExchange and other online fora, or further [D-Lab](http://dlab.berkeley.edu/training)
+> workshops!
 
 By the end of this workshop, I want everyone here be able to:
 
 * Understand basic programming terminologies, structures, and workflows
 * Use shell/bash/terminal without fear
 * Know and use essential Unix commands
-* Run somebody else's script on your own data
-* Install packages, modules, and other software from the command line
+* Run somebody else's script
+* Know where different programming languages reside on your computer, and how to actually use them
 * Read StackExchange, online documentation, or other instructions and know what the heck they're talking about
 
 ### About Me and Disclaimers
 
-Instructor introduces her or hisself and provides motivation for the workshop.
+[Instructor introduces themself and provides motivation for the workshop.]
 
 ### Acknowledgments
 
