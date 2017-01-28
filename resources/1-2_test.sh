@@ -10,7 +10,7 @@ fi
 
 echo "Challenge 2"
 
-if [ -e ../my_files/script.sh ] ; then
+if [ -e ../my_files/my_script.R ] ; then
 	echo ...passed ;
 else
 	echo ...failed ;
@@ -18,7 +18,7 @@ fi
 
 echo "Challenge 3"
 
-if [ -e ../my_files/backup/script.sh ] ; then
+if [ -e ../my_files/backup/my_script.R ] ; then
         echo ...passed ;
 else
         echo ...failed ;
