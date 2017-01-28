@@ -403,7 +403,7 @@ Write down, or think through, the answers to the following questions, then run t
 
 #### Challenge 1
 
-If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master/data/articles`, what will `ls ../downloads` display?
+If `pwd` displays `/home/oski/Desktop/programming-fundamentals-master/data/py_script`, what will `ls ../downloads` display?
 
 1.  `no output`
 2.  `human-rights-2000.TXT  	human-rights-2004.TXT  	human-rights-2008.TXT
