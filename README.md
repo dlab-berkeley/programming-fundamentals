@@ -6,7 +6,7 @@ An intro to the basics that instructors often assume you know, but that you prob
 
 ### Technology requirements: 
 
-Please install [Git Bash](https://git-for-windows.github.io) (Windows only), [R](https://www.r-project.org), [R Studio](https://www.rstudio.com), and [Python 3.5 via Anaconda](https://www.continuum.io/downloads). 
+Please install [Git Bash](https://git-for-windows.github.io) (Windows only), [R](https://www.r-project.org), [R Studio](https://www.rstudio.com), and [Python 3.5 via Anaconda](https://www.continuum.io/downloads) with the Graphical Installer. 
 
 Git Bash (Windows ONLY):
 
@@ -30,4 +30,4 @@ All systems:
 
 * Install [R](https://www.r-project.org)
 * Install [R Studio](https://www.rstudio.com)
-* Install [Python 3.5 with Anaconda](https://www.continuum.io/downloads)
+* Install [Python 3.5 with Anaconda](https://www.continuum.io/downloads) with the Graphical Installer
