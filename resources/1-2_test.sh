@@ -28,7 +28,7 @@ echo "Challenge 4"
 
 FOUR="`cat ../my_files/my_script.R`"
 
-if [ "$FOUR" == "print('I love programming!')" ] ; then
+if [ "$FOUR" == "print('I love programming!')" ] | [ "$FOUR" == 'print("I love programming!")' ] ; then
         echo ...passed ;
 else
         echo ...failed ;

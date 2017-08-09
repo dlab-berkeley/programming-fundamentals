@@ -98,7 +98,7 @@ Inside that directory are several other directories: `bin` (which is where some 
 > If you're working on a Mac, the file structure will look similar, but not
 > identical. The following image shows a file system graph for the typical Mac.
 
-<a href=url><img src="https://github.com/dlab-berkeley/programming-fundamentals/tree/master/resources/mac_file_system.jpg" width="500"></a>
+<a href=url><img src="https://github.com/dlab-berkeley/programming-fundamentals/blob/master/resources/mac_file_system.jpg" width="500"></a>
 
 Notice that there is more than one folder called "Library", at different places in the tree. You can think of this like any hierarchical system with items located within larger ones. For instance, if you had data on U.S. cities, you might have more than one city called "Albany". So you'd probably identify each city with its state (e.g. "Albany, NY" and "Albany, CA"), and maybe also the country ("U.S."), which might be the "root" of all your data. On the other hand, if you were just telling a friend that you're going up to Albany for lunch, you wouldn't say you're going to "Albany, CA, U.S.", because your friend knows you mean the Albany in this local area. We can specify locations in our file system in similar ways: starting from the root, or just from our current location.
 

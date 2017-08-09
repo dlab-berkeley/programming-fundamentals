@@ -95,7 +95,7 @@ $ vim python_script.py
 Let's type in a simple line of Python code, first type `i` to enter `insert` mode in vim, then enter the following:
 
 ~~~
-print('Wow! I'm programming!')
+print("Wow! I'm programming!")
 ~~~
 
 To `write`, or save, the file, we first type `Esc` to get out of insert mode, then:
@@ -269,7 +269,7 @@ $ mkdir scripts
 Let's try a different way to add text to a file, first we need to learn the bash command `echo`:
 
 ~~~ {.input}
-$ echo "Hello world!"
+$ echo 'Hello world!''
 ~~~
 ~~~ {.output}
 Hello world!
